@@ -5,7 +5,7 @@
 // ---------------------------------------------
 $wp_customize->add_section( 'felix_products_section',  array(
     'title'         => __( 'Featured Products', 'felix-landing-page' ),
-    'description'   => __( 'Select Featured Products to display on the landing page' ),
+    'description'   => __( 'Featured products to display on the landing page', 'felix-landing-page' ),
     'panel'         => 'felix_landing_page'
 ) );
 
@@ -20,10 +20,9 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'type'              => 'radio',
         'section'           => 'felix_products_section',
         'label'             => __( 'Display products', 'felix-landing-page' ),
-        'description'       => __( 'Choose whether the products are to be hidden or shown', 'felix-landing-page' ),
         'choices'           => array(
-            'hide'             => __( 'Hide', 'felix-landing-page' ),
-            'show'             => __( 'Show', 'felix-landing-page' )
+            'show'             => __( 'Show', 'felix-landing-page' ),
+            'hide'             => __( 'Hide', 'felix-landing-page' )   
     ) ) );
     
     
