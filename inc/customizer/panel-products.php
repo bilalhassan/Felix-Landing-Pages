@@ -17,6 +17,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
         
     ) );
     $wp_customize->add_control( 'felix_hide_or_show_products', array(
+        'type'              => 'option',
         'type'              => 'radio',
         'section'           => 'felix_products_section',
         'label'             => __( 'Display products', 'felix-landing-page' ),
@@ -30,6 +31,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
 
     // 1
     $wp_customize->add_setting( 'felix_products[0]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => ''
@@ -45,6 +47,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
     
     // 2
     $wp_customize->add_setting( 'felix_products[1]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => ''
@@ -60,6 +63,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
     
     // 3
     $wp_customize->add_setting( 'felix_products[2]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => ''
@@ -75,6 +79,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
      
     // 4
     $wp_customize->add_setting( 'felix_products[3]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => ''
@@ -90,6 +95,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
     
     // 5
     $wp_customize->add_setting( 'felix_products[4]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => ''
@@ -105,6 +111,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
     
     // 6
     $wp_customize->add_setting( 'felix_products[5]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => ''

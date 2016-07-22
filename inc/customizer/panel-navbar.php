@@ -12,6 +12,7 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
 
     // Link 1
     $wp_customize->add_setting( 'felix_nav_link[0][text]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_text'
@@ -24,6 +25,7 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
         'description'       => __( 'Text', 'felix-landing-page' )
     ) );
     $wp_customize->add_setting( 'felix_nav_link[0][url]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'esc_url_raw'
@@ -38,6 +40,7 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
     
     // Link 2
     $wp_customize->add_setting( 'felix_nav_link[1][text]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_text'
@@ -50,6 +53,7 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
         'description'       => __( 'Text', 'felix-landing-page' )
     ) );
     $wp_customize->add_setting( 'felix_nav_link[1][url]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_text'
@@ -64,6 +68,7 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
     
     // Link 3
     $wp_customize->add_setting( 'felix_nav_link[2][text]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_text'
@@ -76,6 +81,7 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
         'description'       => __( 'Text', 'felix-landing-page' )
     ) );
     $wp_customize->add_setting( 'felix_nav_link[2][url]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'esc_url_raw'
@@ -90,6 +96,7 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
     
     // Link 4
     $wp_customize->add_setting( 'felix_nav_link[3][text]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_text'
@@ -102,6 +109,7 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
         'description'       => __( 'Text', 'felix-landing-page' )
     ) );
     $wp_customize->add_setting( 'felix_nav_link[3][url]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'esc_url_raw'

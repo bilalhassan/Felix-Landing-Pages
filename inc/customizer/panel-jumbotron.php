@@ -12,6 +12,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
 
     // Jumbotron visibility toggle
     $wp_customize->add_setting( 'felix_hide_or_show_jumbotron', array(
+        'type'              => 'option',
         'default'           => 'show',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_hide_or_show'
@@ -29,6 +30,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     
     // Primary image
     $wp_customize->add_setting( 'felix_jumbotron_primary_image', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'esc_url_raw'
@@ -43,6 +45,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     
     // Secondary image
     $wp_customize->add_setting( 'felix_jumbotron_secondary_image', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'esc_url_raw'
@@ -56,6 +59,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     
     // Title
     $wp_customize->add_setting( 'felix_jumbotron_title', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_text'
@@ -70,6 +74,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     
     // Subtitle
     $wp_customize->add_setting( 'felix_jumbotron_subtitle', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_text'
@@ -85,6 +90,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     
     // Button 1
     $wp_customize->add_setting( 'felix_jumbotron_button[0][text]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_text'
@@ -97,6 +103,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
         'description'       => __( 'Text', 'felix-landing-page' )
     ) );
     $wp_customize->add_setting( 'felix_jumbotron_button[0][url]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'get_url_raw'
@@ -111,6 +118,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     
     // Button 2
     $wp_customize->add_setting( 'felix_jumbotron_button[1][text]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_text'
@@ -123,6 +131,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
         'description'       => __( 'Text', 'felix-landing-pages' )
     ) );
     $wp_customize->add_setting( 'felix_jumbotron_button[1][url]', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'get_url_raw'

@@ -11,6 +11,7 @@ $wp_customize->add_section( 'felix_content_section',  array(
 
     // Title
     $wp_customize->add_setting( 'felix_content_title', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_text'
@@ -23,8 +24,9 @@ $wp_customize->add_section( 'felix_content_section',  array(
     ) );
 
     
-     // Subtitle
+    // Subtitle
     $wp_customize->add_setting( 'felix_content_subtitle', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_text'
@@ -39,6 +41,7 @@ $wp_customize->add_section( 'felix_content_section',  array(
     
      // Content
     $wp_customize->add_setting( 'felix_content_content', array(
+        'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_text'
