@@ -5,7 +5,7 @@
 // ---------------------------------------------
 $wp_customize->add_section( 'felix_general_section',  array(
     'title'         => __( 'General', 'felix-landing-page' ),
-    'description'   => __( 'General configuration' ),
+    'description'   => __( 'General configuration options.' ),
     'panel'         => 'felix_landing_page'
 ) );
     

@@ -5,7 +5,7 @@
 // ---------------------------------------------
 $wp_customize->add_section( 'felix_header_section',  array(
     'title'         => __( 'Header', 'felix-landing-page', 'felix-landing-page' ),
-    'description'   => __( 'Header configuration', 'felix-landing-page' ),
+    'description'   => __( 'Page header confuration.', 'felix-landing-page' ),
     'panel'         => 'felix_landing_page'
 ) );
     

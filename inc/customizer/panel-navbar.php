@@ -5,7 +5,7 @@
 // ---------------------------------------------
 $wp_customize->add_section( 'felix_navbar_section',  array(
     'title'         => __( 'Navigation Bar Links', 'felix-landing-page' ),
-    'description'   => __( 'Set the links for the navigation bar', 'felix-landing-page' ),
+    'description'   => __( 'Configure the links for the navigation bar.', 'felix-landing-page' ),
     'panel'         => 'felix_landing_page'
 ) );
 

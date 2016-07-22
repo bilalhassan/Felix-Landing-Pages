@@ -5,7 +5,7 @@
 // ---------------------------------------------
 $wp_customize->add_section( 'felix_footer_section',  array(
     'title'         => __( 'Footer', 'felix-landing-page' ),
-    'description'   => __( 'Configure landing page footer', 'felix-landing-page' ),
+    'description'   => __( 'Page footer configuration.', 'felix-landing-page' ),
     'panel'         => 'felix_landing_page'
 ) );
 

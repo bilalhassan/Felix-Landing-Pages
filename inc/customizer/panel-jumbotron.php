@@ -5,7 +5,8 @@
 // ---------------------------------------------
 $wp_customize->add_section( 'felix_jumbotron_section',  array(
     'title'         => __( 'Hero Image', 'felix-landing-page' ),
-    'description'   => __( 'Hero Image configuration', 'felix-landing-page' ),
+    'description'   => __( 'The Hero image section can have both a primary background image and a secondary ' .
+                           'foreground image. Optionally, up to 2 buttons and titles can be configured.', 'felix-landing-page' ),
     'panel'         => 'felix_landing_page'
 ) );
 

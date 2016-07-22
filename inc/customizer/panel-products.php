@@ -5,7 +5,7 @@
 // ---------------------------------------------
 $wp_customize->add_section( 'felix_products_section',  array(
     'title'         => __( 'Featured Products', 'felix-landing-page' ),
-    'description'   => __( 'Featured products to display on the landing page', 'felix-landing-page' ),
+    'description'   => __( 'Select up to 6 products to be featured.', 'felix-landing-page' ),
     'panel'         => 'felix_landing_page'
 ) );
 

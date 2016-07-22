@@ -5,7 +5,7 @@
 // ---------------------------------------------
 $wp_customize->add_section( 'felix_content_section',  array(
     'title'         => __( 'Content Area', 'felix-landing-page' ),
-    'description'   => __( 'Content area displayed on the landing page', 'felix-landing-page' ),
+    'description'   => __( 'Add static content to be displayed. ', 'felix-landing-page' ),
     'panel'         => 'felix_landing_page'
 ) );
 
