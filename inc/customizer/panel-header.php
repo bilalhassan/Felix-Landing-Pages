@@ -10,7 +10,8 @@ $wp_customize->add_section( 'felix_header_section',  array(
 ) );
     
     // Display logo
-     // Jumbotron visibility toggle
+    
+    // Jumbotron visibility toggle
     $wp_customize->add_setting( 'felix_title_or_logo', array(
         'type'              => 'option',
         'default'           => 'both',

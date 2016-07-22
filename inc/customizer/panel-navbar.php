@@ -120,5 +120,3 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
         'section'           => 'felix_navbar_section',
         'description'       => __( 'URL', 'felix-landing-page' )
     ) );
-    
-    

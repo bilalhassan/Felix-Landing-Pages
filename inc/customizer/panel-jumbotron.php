@@ -11,24 +11,24 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
 ) );
 
 
-    // Jumbotron visibility toggle
-    $wp_customize->add_setting( 'felix_hide_or_show_jumbotron', array(
+    // Toggle primary Jumbotron image
+    $wp_customize->add_setting( 'felix_toggle_primary_jumbotron', array(
         'type'              => 'option',
         'default'           => 'show',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_hide_or_show'
         
     ) );
-    $wp_customize->add_control( 'felix_hide_or_show_jumbotron', array(
+    $wp_customize->add_control( 'felix_toggle_primary_jumbotron', array(
         'type'              => 'radio',
         'section'           => 'felix_jumbotron_section',
-        'label'             => __( 'Display the Hero Image', 'felix-landing-page' ),
+        'label'             => __( 'Display the primary Hero Image', 'felix-landing-page' ),
         'choices'           => array(
             'show'             => __( 'Show', 'felix-landing-page' ),
             'hide'             => __( 'Hide', 'felix-landing-page' )       
     ) ) );
     
-    
+        
     // Primary image
     $wp_customize->add_setting( 'felix_jumbotron_primary_image', array(
         'type'              => 'option',
@@ -41,6 +41,24 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
         'settings'          => 'felix_jumbotron_primary_image',
         'section'           => 'felix_jumbotron_section',
         'label'             => __( 'Hero primary image', 'felix-landing-page' ),
+    ) ) );
+    
+    
+    // Toggle secondary Jumbotron image
+    $wp_customize->add_setting( 'felix_toggle_secondary_jumbotron', array(
+        'type'              => 'option',
+        'default'           => 'show',
+        'transport'         => 'refresh',
+        'sanatize_callback' => 'felix_sanitize_hide_or_show'
+        
+    ) );
+    $wp_customize->add_control( 'felix_toggle_secondary_jumbotron', array(
+        'type'              => 'radio',
+        'section'           => 'felix_jumbotron_section',
+        'label'             => __( 'Display the secondary Hero Image', 'felix-landing-page' ),
+        'choices'           => array(
+            'show'             => __( 'Show', 'felix-landing-page' ),
+            'hide'             => __( 'Hide', 'felix-landing-page' )       
     ) ) );
     
     
@@ -57,6 +75,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
         'section'           => 'felix_jumbotron_section',
         'label'             => __( 'Hero secondary image', 'felix-landing-page' ),
     ) ) );
+    
     
     // Title
     $wp_customize->add_setting( 'felix_jumbotron_title', array(
@@ -86,7 +105,6 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
         'section'           => 'felix_jumbotron_section',
         'label'             => __( 'Subtitle', 'felix-landing-page' ),
     ) );
-    
     
     
     // Button 1
@@ -143,5 +161,3 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
         'section'           => 'felix_jumbotron_section',
         'description'       => __( 'URL', 'felix-landing-pages' )
     ) );
-    
-    

@@ -8,14 +8,15 @@ function felix_customize_register( $wp_customize ) {
     ) );
     
     require_once( 'customizer/panel-general.php' );
+    require_once( 'customizer/panel-blockorder.php' );
     require_once( 'customizer/panel-header.php' );
     require_once( 'customizer/panel-jumbotron.php' );
-    require_once( 'customizer/panel-products.php' );
-    require_once( 'customizer/panel-articles.php' );
     require_once( 'customizer/panel-navbar.php' );
+    require_once( 'customizer/panel-products.php' );
     require_once( 'customizer/panel-content.php' );
+    require_once( 'customizer/panel-articles.php' );
     require_once( 'customizer/panel-footer.php' );
-    
+     
 }
 add_action( 'customize_register', 'felix_customize_register' );
 
@@ -63,7 +64,7 @@ function felix_get_all_posts_array( $post_type = "post" ) {
         'order'          => 'ASC'
     ) );
     
-   $posts_array = array( -1 => "" );
+   $posts_array = array( 'none' => __( 'None' ) );
    
    foreach( $posts as $post ) :
        
@@ -78,3 +79,25 @@ function felix_get_all_posts_array( $post_type = "post" ) {
    return $posts_array;
    
 }
+
+function felix_block_names() {
+    
+    $blocks = array(
+        'disabled'  => __( 'Disabled', 'felix-landing-page' ),
+        'header'    => __( 'Header', 'felix-landing-page' ),
+        'hero'      => __( 'Hero', 'felix-landing-page' ),
+        'navbar'    => __( 'Navigation Bar', 'felix-landing-page' ),
+        'products'  => __( 'Featured Products', 'felix-landing-page' ),
+        'content'   => __( 'Content', 'felix-landing-page' ),
+        'articles'  => __( 'Featured Articles', 'felix-landing-page' ),
+        'Footer'    => __( 'Footer' )
+    );
+    
+    return $blocks;
+    
+}
+
+function felix_customizer_scripts_enqueue() {
+    wp_enqueue_script( 'felix-customizer-js', FELIX_LANDING_PAGE_URL . 'inc/assets/scripts/customizer.js', array( 'jquery' ), false, true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'felix_customizer_scripts_enqueue');
