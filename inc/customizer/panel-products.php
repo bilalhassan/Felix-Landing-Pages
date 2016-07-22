@@ -34,7 +34,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanatize_callback' => 'felix_sanitize'
         
     ) );
     $wp_customize->add_control( 'felix_products[0]', array(
@@ -50,7 +50,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanatize_callback' => 'felix_sanitize'
         
     ) );
     $wp_customize->add_control( 'felix_products[1]', array(
@@ -66,7 +66,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanatize_callback' => 'felix_sanitize'
         
     ) );
     $wp_customize->add_control( 'felix_products[2]', array(
@@ -82,7 +82,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanatize_callback' => 'felix_sanitize'
         
     ) );
     $wp_customize->add_control( 'felix_products[3]', array(
@@ -98,7 +98,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanatize_callback' => 'felix_sanitize'
         
     ) );
     $wp_customize->add_control( 'felix_products[4]', array(
@@ -114,7 +114,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanatize_callback' => 'felix_sanitize'
         
     ) );
     $wp_customize->add_control( 'felix_products[5]', array(
