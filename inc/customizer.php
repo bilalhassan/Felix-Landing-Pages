@@ -54,14 +54,14 @@ function felix_sanitize( $input ) {
     return $input;
 }
 
-function felix_get_all_posts_array( $post_type = "post" ) {
+function felix_get_posts_array( $post_type = "post", $limit = -1 ) {
     
     $posts = get_posts( array(
-        'post_type'      => $post_type,
-        'numberposts' => -1,
-        'post_status'    => 'publish',
-        'orderby'        => 'title',
-        'order'          => 'ASC'
+        'post_type'     => $post_type,
+        'numberposts'   => $limit,
+        'post_status'   => 'publish',
+        'orderby'       => 'title',
+        'order'         => 'ASC'
     ) );
     
    $posts_array = array( 'none' => __( 'None' ) );
@@ -90,14 +90,117 @@ function felix_block_names() {
         'products'  => __( 'Featured Products', 'felix-landing-page' ),
         'content'   => __( 'Content', 'felix-landing-page' ),
         'articles'  => __( 'Featured Articles', 'felix-landing-page' ),
-        'Footer'    => __( 'Footer' )
+        'footer'    => __( 'Footer' )
     );
     
     return $blocks;
     
 }
 
-function felix_customizer_scripts_enqueue() {
-    wp_enqueue_script( 'felix-customizer-js', FELIX_LANDING_PAGE_URL . 'inc/assets/scripts/customizer.js', array( 'jquery' ), false, true );
+function felix_create_template_defaults() {
+    
+    //If first run
+    if( !get_option( 'felix_landing_page_template' ) ) :
+        
+        $products = felix_get_posts_array( 'product' );
+        
+        // If posts are available fast forward to the first product
+        if( count( $products ) > 1 ) { 
+            next( $products ); 
+            $product = current( $products );
+        } 
+        
+        $product_id = array_search($product, $products);
+        
+        
+        $articles = felix_get_posts_array();
+      
+        // If posts are available fast forward to the first article
+        if( count( $articles ) > 1 ) {
+            next( $articles ); 
+            $article = current( $articles );
+        } 
+        
+        $article_id = array_search($article, $articles);
+
+        // Default template configuration for the plugin
+        $options = array(
+            
+            // General configuration
+            'social_icon_facebook_url' => '#',
+            'social_icon_google_url' => '#',
+            'social_icon_twitter_url' => '#',
+            
+            // Order that blocks appear
+            'blockorder' => array(
+                'header', 
+                'hero', 
+                'navbar', 
+                'products', 
+                'content', 
+                'articles', 
+                'footer' 
+            ),
+            
+            // Page header
+            'header_title_or_logo' => 'both',
+            'header_title' => 'Felix Landing Page',
+            'header_logo' => '',
+            'header_logo_size' => 50,
+            
+            // Jumbotron images and controls
+            'jumbotron_primary_toggle' => 'show',
+            'jumbotron_primary_image' => '',
+            'jumbotron_secondary_toggle' => 'show',
+            'jumbotron_secondary_image' => '',
+            'jumbotron_title' => 'Title',
+            'jumbotron_subtitle' => 'Subtitle',
+            'jumbotron_buttons' => array(
+                array( 'text' => 'Button 1', 'url' => '#' ),
+                array( 'text' => 'Button 2', 'url' => '#' )
+            ),
+            
+            // Navigation bar links
+            'navbar_links' => array(
+                array( 'text' => 'Link 1', 'url' => '#' ),
+                array( 'text' => 'Link 2', 'url' => '#' ),
+                array( 'text' => 'Link 3', 'url' => '#' ),
+                array( 'text' => 'Link 4', 'url' => '#' )
+            ),
+            
+            // Featured products
+            'products' => array(
+                $product_id,
+                $product_id,
+                $product_id,
+                $product_id,
+                $product_id,
+                $product_id
+            ), //6
+            
+            // Static content area
+            'content_title' => 'Title',
+            'content_subtitle' => 'Subtitle',
+            'content_content' => 'Content',
+            'content_buttons' => array(
+                array( 'text' => 'Button 1', 'url' => '#' ),
+                array( 'text' => 'Button 2', 'url' => '#' )
+            ),
+
+            // Featured articles
+            'articles' => array(
+                $article_id,
+                $article_id,
+                $article_id
+            ), //3
+            
+            // Page footer
+            'footer_copyright_text' => 'Copyright',
+            'footer_textboxes' => array( 'Text 1', 'Text 2' ),
+        );
+        
+        add_option( 'felix_landing_page_template', $options );
+        
+    endif;
 }
-add_action( 'customize_controls_enqueue_scripts', 'felix_customizer_scripts_enqueue');
+felix_create_template_defaults();

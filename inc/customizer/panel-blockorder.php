@@ -11,30 +11,29 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
 
 
     // Section 1
-    $wp_customize->add_setting( 'felix_blockorder[0]', array(
+    $wp_customize->add_setting( 'felix_landing_page_template[blockorder][0]', array(
         'type'              => 'option',
-        'default'           => 'disabled',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize'
         
     ) );
-    $wp_customize->add_control( 'felix_blockorder[0]', array(
+    $wp_customize->add_control( 'felix_landing_page_template[blockorder][0]', array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 1', 'felix-landing-page' ),
-        'choices'           => felix_block_names()
+        'choices'           => felix_block_names(),
+        'default'           => 'header'
     ) );
     
     
     // Section 2
-    $wp_customize->add_setting( 'felix_blockorder[1]', array(
+    $wp_customize->add_setting( 'felix_landing_page_template[blockorder][1]', array(
         'type'              => 'option',
-        'default'           => 'disabled',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize'
 
     ) );
-    $wp_customize->add_control( 'felix_blockorder[1]', array(
+    $wp_customize->add_control( 'felix_landing_page_template[blockorder][1]', array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 2', 'felix-landing-page' ),
@@ -43,14 +42,13 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
 
 
     // Section 3
-    $wp_customize->add_setting( 'felix_blockorder[2]', array(
+    $wp_customize->add_setting( 'felix_landing_page_template[blockorder][2]', array(
         'type'              => 'option',
-        'default'           => 'disabled',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize'
 
     ) );
-    $wp_customize->add_control( 'felix_blockorder[2]', array(
+    $wp_customize->add_control( 'felix_landing_page_template[blockorder][2]', array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 3', 'felix-landing-page' ),
@@ -59,14 +57,13 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
 
 
     // Section 4
-    $wp_customize->add_setting( 'felix_blockorder[3]', array(
+    $wp_customize->add_setting( 'felix_landing_page_template[blockorder][3]', array(
         'type'              => 'option',
-        'default'           => 'disabled',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize'
 
     ) );
-    $wp_customize->add_control( 'felix_blockorder[3]', array(
+    $wp_customize->add_control( 'felix_landing_page_template[blockorder][3]', array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 4', 'felix-landing-page' ),
@@ -75,13 +72,12 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
 
 
     // Section 5
-    $wp_customize->add_setting( 'felix_blockorder[4]', array(
+    $wp_customize->add_setting( 'felix_landing_page_template[blockorder][4]', array(
         'type'              => 'option',
-        'default'           => 'disabled',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize'
     ) );
-    $wp_customize->add_control( 'felix_blockorder[4]', array(
+    $wp_customize->add_control( 'felix_landing_page_template[blockorder][4]', array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 5', 'felix-landing-page' ),
@@ -90,13 +86,12 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
     
     
     // Section 6
-    $wp_customize->add_setting( 'felix_blockorder[5]', array(
+    $wp_customize->add_setting( 'felix_landing_page_template[blockorder][5]', array(
         'type'              => 'option',
-        'default'           => 'disabled',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize'
     ) );
-    $wp_customize->add_control( 'felix_blockorder[5]', array(
+    $wp_customize->add_control( 'felix_landing_page_template[blockorder][5]', array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 6', 'felix-landing-page' ),
@@ -105,13 +100,12 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
     
     
     // Section 7
-    $wp_customize->add_setting( 'felix_blockorder[6]', array(
+    $wp_customize->add_setting( 'felix_landing_page_template[blockorder][6]', array(
         'type'              => 'option',
-        'default'           => 'disabled',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize'
     ) );
-    $wp_customize->add_control( 'felix_blockorder[6]', array(
+    $wp_customize->add_control( 'felix_landing_page_template[blockorder][6]', array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 7', 'felix-landing-page' ),

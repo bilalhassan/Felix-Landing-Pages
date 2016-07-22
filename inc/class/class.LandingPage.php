@@ -1,7 +1,7 @@
 <?php
 
 class LandingPage {
-    const DEV_MODE = false;
+    const DEV_MODE = true;
     const VERSION = '0.0.1';
     
     const OPTIONS = 'felix_landing_page_options';
@@ -52,7 +52,14 @@ class LandingPage {
         
         if( self::DEV_MODE ) :
             
+            $options = get_option( self::OPTIONS );
+            
+            wp_delete_post( $options['landing_page_id'] );
+            
             delete_option( self::OPTIONS );
+            delete_option( 'felix_landing_page_template' );
+            
+            
         
         endif;
         
