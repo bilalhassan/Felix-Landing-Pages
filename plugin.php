@@ -34,9 +34,10 @@ foreach( glob( FELIX_LANDING_PAGE_PATH . 'inc/class/*.php' ) as $file ) {
     require_once $file;
 }
 
-LandingPage::instance();
+LandingPage::instance( new TemplateManager() );
 
 register_activation_hook( __FILE__, array( 'LandingPage', 'activate' ) );
+register_activation_hook( __FILE__, array( 'TemplateManager', 'create_page' ) );
 register_deactivation_hook( __FILE__, array( 'LandingPage', 'deactivate' ) );
 
 require( FELIX_LANDING_PAGE_PATH . 'inc/customizer.php' );
