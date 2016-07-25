@@ -17,30 +17,27 @@ class LandingPagePlugin {
     private $template_manager = null; 
     
     /**
-     * 
      * @param TemplateManager $template_manager
      * @since 0.0.1
      * 
      */
-    function __construct( $template_manager ) {
-        
-        $this->template_manager = $template_manager;
-        
-    }
-    
-    /**
-     * @param TemplateManager $template_manager
-     * @since 0.0.1
-     * 
-     */
-    public static function instance( $template_manager ) {
+    public static function instance() {
         
         if( self::$instance == null ) :
             
-            self::$instance = new self( $template_manager );
-            self::$instance->add_hooks();
+            self::$instance = new self();
             
         endif;
+        
+        return self::$instance;
+        
+    }
+    
+    public function configure( $template_manager ) {
+        
+        $this->template_manager = $template_manager;
+        
+        $this->add_hooks();
         
     }
     
@@ -50,7 +47,7 @@ class LandingPagePlugin {
      * @since 0.0.1
      * 
      */
-    public function add_hooks() {
+    private function add_hooks() {
         
         $this->template_manager->add_hooks();
         
@@ -62,7 +59,7 @@ class LandingPagePlugin {
      * @since 0.0.1
      * 
      */
-    public static function activate() {
+    public function activate() {
         
         $options = get_option( 'felix_landing_page_options' );
         
@@ -71,18 +68,20 @@ class LandingPagePlugin {
             $options = array(
                 'default_template' => FELIX_LANDING_PAGE_PATH . 'inc/templates/template-1.php'
             );
+        
+            $options['landing_page_id'] = $this->template_manager->create_page();
             
             add_option( 'felix_landing_page_options', $options );
             
         endif; 
- 
+        
     }
     
     /**
      * @since 0.0.1
      * 
      */
-    public static function deactivate() {
+    public function deactivate() {
         
         // Delete options if dev mode is enabled
         if( self::DEV_MODE ) :
@@ -90,6 +89,7 @@ class LandingPagePlugin {
             $options = get_option( 'felix_landing_page_options' );
             
             wp_delete_post( $options['landing_page_id'] );
+            $this->template_manager->delete_page();
             
             delete_option( 'felix_landing_page_options' );
             delete_option( 'felix_landing_page_template' );

@@ -53,13 +53,25 @@ foreach( glob( FELIX_LANDING_PAGE_PATH . 'inc/class/*.php' ) as $file ) :
 
 endforeach;
 
-// Instantiate the main plugin class
-LandingPagePlugin::instance( new TemplateManager() );
+
+$plugin = LandingPagePlugin::instance();
+$plugin->configure( new TemplateManager() );
+
 
 // Register activation and deactivation functions
-register_activation_hook( __FILE__, array( 'LandingPagePlugin', 'activate' ) );
-register_activation_hook( __FILE__, array( 'TemplateManager', 'create_page' ) );
-register_deactivation_hook( __FILE__, array( 'LandingPagePlugin', 'deactivate' ) );
+function felix_do_activation() {
+    
+    LandingPagePlugin::instance()->activate();
+    
+}
+register_activation_hook( __FILE__, 'felix_do_activation' );
+
+function felix_do_deactivation() {
+    
+    LandingPagePlugin::instance()->deactivate();
+    
+}
+register_deactivation_hook( __FILE__, 'felix_do_deactivation' );
 
 
 require( FELIX_LANDING_PAGE_PATH . 'inc/customizer.php' );

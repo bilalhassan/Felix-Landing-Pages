@@ -34,6 +34,7 @@ class TemplateManager {
         $options = get_option( 'felix_landing_page_options' );
         
         return get_the_ID() == is_page( $options['landing_page_id'] );
+        
     }
     
     /**
@@ -92,31 +93,25 @@ class TemplateManager {
      * @since 0.0.1
      * 
      */
-    public static function create_page() {
-        
-        $options = get_option( 'felix_landing_page_options' );
-        
-        //Create the landing page if it doesn't exist
-        if( !isset( $options['landing_page_id'] ) || get_post( $options['landing_page_id'] ) == null ) :
+    public function create_page() {
             
-            $id = wp_insert_post( 
-                 array(
-                    'post_title' => __( 'Felix Landing Page' ),
-                    'post_status' => 'publish',
-                    'post_type' => 'page'
-                )
-            );
-            
-            if ( $id ) :
-                
-                $options['landing_page_id'] = $id;
-                update_option( 'felix_landing_page_options', $options );
-            
-            endif;
-            
-        endif;
+        $id = wp_insert_post( 
+             array(
+                'post_title' => __( 'Felix Landing Page' ),
+                'post_status' => 'publish',
+                'post_type' => 'page'
+            )
+        );
+
+        return $id ? $id : null;
         
     } 
+    
+    public function delete_page() {
+        
+        return wp_delete_post( $this->page_id, true ) ? true : false;
+        
+    }
 }
 
 ?>
