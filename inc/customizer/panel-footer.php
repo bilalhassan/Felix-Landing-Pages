@@ -24,7 +24,7 @@ $wp_customize->add_section( 'felix_footer_section',  array(
     ) );
     
     
-    // Text 1
+    // Textbox 1
     $wp_customize->add_setting( 'felix_landing_page_template[footer_textboxes][0]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -38,7 +38,7 @@ $wp_customize->add_section( 'felix_footer_section',  array(
     ) );
     
     
-    // Text 2
+    // Textbox 2
     $wp_customize->add_setting( 'felix_landing_page_template[footer_textboxes][1]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -50,3 +50,4 @@ $wp_customize->add_section( 'felix_footer_section',  array(
         'section'           => 'felix_footer_section',
         'label'             => __( 'Text 2', 'felix-landing-page' )
     ) );
+    

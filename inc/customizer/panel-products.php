@@ -10,7 +10,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
 ) );
 
 
-    // Product 1
+    // Select for Product 1 
     $wp_customize->add_setting( 'felix_landing_page_template[products][0]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -25,7 +25,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
      ) );
     
     
-    // Product 2
+    // vProduct 2
     $wp_customize->add_setting( 'felix_landing_page_template[products][1]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -40,7 +40,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
      ) );
     
     
-    // Product 3
+    // Select for Product 3
     $wp_customize->add_setting( 'felix_landing_page_template[products][2]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -55,7 +55,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
      ) );
     
      
-    // Product 4
+    // Select for Product 4
     $wp_customize->add_setting( 'felix_landing_page_template[products][3]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -70,7 +70,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
      ) );
     
     
-    // Product 5
+    // Select for Product 5
     $wp_customize->add_setting( 'felix_landing_page_template[products][4]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -85,7 +85,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
      ) );
     
     
-    // Product 6
+    // Select for Product 6
     $wp_customize->add_setting( 'felix_landing_page_template[products][5]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -98,3 +98,4 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'label'             => __( 'Product 6', 'felix-landing-page' ),
         'choices'           => felix_get_posts_array( 'product' )
      ) );
+    

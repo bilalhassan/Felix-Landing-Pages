@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Register plugin with customizer.
+ * 
+ * @param WP_Customize_Manager $wp_customize
+ * @since 0.0.1
+ * 
+ */
 function felix_customize_register( $wp_customize ) {
     
     $wp_customize->add_panel( 'felix_landing_page', array(
@@ -20,6 +27,14 @@ function felix_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'felix_customize_register' );
 
+/**
+ * Ensure logo/title toggle is valid.
+ * 
+ * @param array $input
+ * @return bool
+ * @since 0.0.1
+ * 
+ */
 function felix_sanitize_logo_title_toggle( $input ) {
    
     $valid_keys = array(
@@ -31,6 +46,15 @@ function felix_sanitize_logo_title_toggle( $input ) {
     return array_key_exists( $input, $valid_keys ) ? $input : '';
 
 }
+
+/**
+ * Ensure hide or show toggle is valid.
+ * 
+ * @param type $input
+ * @return type
+ * @since 0.0.1
+ * 
+ */
 function felix_sanitize_hide_or_show( $input ) {
    
     $valid_keys = array(
@@ -42,18 +66,51 @@ function felix_sanitize_hide_or_show( $input ) {
 
 }
 
+/**
+ * Sanitize text input.
+ * 
+ * @param type $input
+ * @return type
+ * @since 0.0.1
+ * 
+ */
 function felix_sanitize_text( $input ) {
     return sanitize_text_field( $input );
 }
  
+/**
+ * Sanitize integer input.
+ * 
+ * @param type $input
+ * @return type
+ * @since 0.0.1
+ * 
+ */
 function felix_sanitize_integer( $input ) {
     return intval( $input );
 }
 
+/**
+ * Sanitize general inputs.
+ * 
+ * @param type $input
+ * @return type
+ * @since 0.0.1
+ * 
+ */
 function felix_sanitize( $input ) {
     return $input;
 }
 
+/**
+ * Get an array of a given type of posts.
+ * 
+ * @param string $post_type
+ * @param int $limit
+ * @return array
+ * @since 0.0.1
+ * 
+ */
 function felix_get_posts_array( $post_type = "post", $limit = -1 ) {
     
     $posts = get_posts( array(
@@ -80,6 +137,13 @@ function felix_get_posts_array( $post_type = "post", $limit = -1 ) {
    
 }
 
+/**
+ * Options for the block selection.
+ * 
+ * @return array
+ * @since 0.0.1
+ * 
+ */
 function felix_block_names() {
     
     $blocks = array(
@@ -97,6 +161,13 @@ function felix_block_names() {
     
 }
 
+
+/**
+ * Load customizer defaults.
+ * 
+ * @since 0.0.1
+ * 
+ */
 function felix_create_template_defaults() {
     
     //If first run

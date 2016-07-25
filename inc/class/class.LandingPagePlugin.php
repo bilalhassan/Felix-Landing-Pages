@@ -1,20 +1,39 @@
 <?php
 
-class LandingPage {
+/**
+ * Main Plugin class, configures and initializes plugin.
+ * 
+ * @author Eric Green <eric@smartcat.ca>
+ * @since 0.0.1
+ * 
+ */
+class LandingPagePlugin {
     
+    //Plugin constants
     const DEV_MODE = true;
     const VERSION = '0.0.1';
     
     private static $instance = null;
     
-    private $tempate_manager = null; 
+    private $template_manager = null; 
     
+    /**
+     * 
+     * @param TemplateManager $template_manager
+     * @since 0.0.1
+     * 
+     */
     function __construct( $template_manager ) {
         
         $this->template_manager = $template_manager;
         
     }
     
+    /**
+     * @param TemplateManager $template_manager
+     * @since 0.0.1
+     * 
+     */
     public static function instance( $template_manager ) {
         
         if( self::$instance == null ) :
@@ -26,12 +45,24 @@ class LandingPage {
         
     }
     
+    /**
+     * Configure WordPress hooks.
+     * 
+     * @since 0.0.1
+     * 
+     */
     public function add_hooks() {
         
         $this->template_manager->add_hooks();
         
     }
     
+    /**
+     * Load plugin default options on activate.
+     * 
+     * @since 0.0.1
+     * 
+     */
     public static function activate() {
         
         $options = get_option( 'felix_landing_page_options' );
@@ -48,8 +79,13 @@ class LandingPage {
  
     }
     
+    /**
+     * @since 0.0.1
+     * 
+     */
     public static function deactivate() {
         
+        // Delete options if dev mode is enabled
         if( self::DEV_MODE ) :
             
             $options = get_option( 'felix_landing_page_options' );

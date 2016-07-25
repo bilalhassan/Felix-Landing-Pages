@@ -47,3 +47,4 @@ $wp_customize->add_section( 'felix_general_section',  array(
         'section'           => 'felix_general_section',
         'label'             => __( 'Google+ URL', 'felix-landing-page' ),
     ) );
+    

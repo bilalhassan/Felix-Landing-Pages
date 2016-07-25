@@ -74,3 +74,4 @@ $wp_customize->add_section( 'felix_header_section',  array(
             'max'   => 50,
             'step'  => 2,
     ) ) );
+    

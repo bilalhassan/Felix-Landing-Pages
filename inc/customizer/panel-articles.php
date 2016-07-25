@@ -10,7 +10,7 @@ $wp_customize->add_section( 'felix_articles_section',  array(
 ) );
 
 
-    // Article 1
+    // Select for Article 1
     $wp_customize->add_setting( 'felix_landing_page_template[articles][0]', array(
         'type'              => 'option',
         'default'           => 'none',
@@ -26,7 +26,7 @@ $wp_customize->add_section( 'felix_articles_section',  array(
      ) );
     
     
-    // Article 2
+    // Select for Article 2
     $wp_customize->add_setting( 'felix_landing_page_template[articles][1]', array(
         'type'              => 'option',
         'default'           => 'none',
@@ -42,7 +42,7 @@ $wp_customize->add_section( 'felix_articles_section',  array(
      ) );
     
     
-    // Article 3
+    // Select for Article 3
     $wp_customize->add_setting( 'felix_landing_page_template[articles][2]', array(
         'type'              => 'option',
         'default'           => 'none',
@@ -56,3 +56,4 @@ $wp_customize->add_section( 'felix_articles_section',  array(
         'label'             => __( 'Article 3', 'felix-landing-page' ),
         'choices'           => felix_get_posts_array()
      ) );
+    

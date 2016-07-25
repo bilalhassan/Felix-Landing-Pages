@@ -10,7 +10,7 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
 ) );
 
 
-    // Section 1
+    // Select for block 1
     $wp_customize->add_setting( 'felix_landing_page_template[blockorder][0]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -26,7 +26,7 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
     ) );
     
     
-    // Section 2
+    // Select for block 2
     $wp_customize->add_setting( 'felix_landing_page_template[blockorder][1]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -41,7 +41,7 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
     ) );
 
 
-    // Section 3
+    // Select for block 3
     $wp_customize->add_setting( 'felix_landing_page_template[blockorder][2]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -56,7 +56,7 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
     ) );
 
 
-    // Section 4
+    // Select for block 4
     $wp_customize->add_setting( 'felix_landing_page_template[blockorder][3]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -71,7 +71,7 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
     ) );
 
 
-    // Section 5
+    // Select for block 5
     $wp_customize->add_setting( 'felix_landing_page_template[blockorder][4]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -85,7 +85,7 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
     ) );
     
     
-    // Section 6
+    // Select for block 6
     $wp_customize->add_setting( 'felix_landing_page_template[blockorder][5]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -99,7 +99,7 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
     ) );
     
     
-    // Section 7
+    // Select for block 7
     $wp_customize->add_setting( 'felix_landing_page_template[blockorder][6]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -111,3 +111,4 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
         'label'             => __( 'Block 7', 'felix-landing-page' ),
         'choices'           => felix_block_names()
     ) );
+    

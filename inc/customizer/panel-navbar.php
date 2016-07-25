@@ -10,7 +10,7 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
 ) );
 
 
-    // Link 1
+    // Link 1 text
     $wp_customize->add_setting( 'felix_landing_page_template[navbar_links][0][text]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -23,6 +23,8 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
         'label'             => __( 'Link 1', 'felix-landing-page' ),
         'description'       => __( 'Text', 'felix-landing-page' )
     ) );
+    
+    // Link 1 url
     $wp_customize->add_setting( 'felix_landing_page_template[navbar_links][0][url]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -36,7 +38,7 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
     ) );
     
     
-    // Link 2
+    // Link 2 text
     $wp_customize->add_setting( 'felix_landing_page_template[navbar_links][1][text]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -49,6 +51,8 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
         'label'             => __( 'Link 2', 'felix-landing-page' ),
         'description'       => __( 'Text', 'felix-landing-page' )
     ) );
+    
+    // Link 2 url
     $wp_customize->add_setting( 'felix_landing_page_template[navbar_links][1][url]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -62,7 +66,7 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
     ) );
     
     
-    // Link 3
+    // Link 3 text
     $wp_customize->add_setting( 'felix_landing_page_template[navbar_links][2][text]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -75,6 +79,8 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
         'label'             => __( 'Link 3', 'felix-landing-page' ),
         'description'       => __( 'Text', 'felix-landing-page' )
     ) );
+    
+    // Link 3 url
     $wp_customize->add_setting( 'felix_landing_page_template[navbar_links][2][url]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -88,7 +94,7 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
     ) );
     
     
-    // Link 4
+    // Link 4 text
     $wp_customize->add_setting( 'felix_landing_page_template[navbar_links][3][text]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -101,6 +107,8 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
         'label'             => __( 'Link 4', 'felix-landing-page' ),
         'description'       => __( 'Text', 'felix-landing-page' )
     ) );
+    
+    // Link 4 url
     $wp_customize->add_setting( 'felix_landing_page_template[navbar_links][3][url]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -112,3 +120,4 @@ $wp_customize->add_section( 'felix_navbar_section',  array(
         'section'           => 'felix_navbar_section',
         'description'       => __( 'URL', 'felix-landing-page' )
     ) );
+    
