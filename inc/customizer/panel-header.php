@@ -14,7 +14,6 @@ $wp_customize->add_section( 'felix_header_section',  array(
     // Jumbotron visibility toggle
     $wp_customize->add_setting( 'felix_landing_page_template[header_title_or_logo]', array(
         'type'              => 'option',
-        'default'           => 'both',
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_logo_title_toggle'
         
@@ -32,7 +31,6 @@ $wp_customize->add_section( 'felix_header_section',  array(
     // Value to use as title
     $wp_customize->add_setting( 'felix_landing_page_template[header_title]', array(
         'type'              => 'option',
-        'default'           => __( 'Felix Landing Page', 'felix-landing-page' ),
         'transport'         => __( 'refresh', 'felix-landing-page' ),
         'sanatize_callback' => 'felix_sanitize_text'
     ) );
@@ -46,7 +44,6 @@ $wp_customize->add_section( 'felix_header_section',  array(
     // Image to use as logo
     $wp_customize->add_setting( 'felix_landing_page_template[header_logo]', array(
         'type'              => 'option',
-        'default'           => '',
         'transport'         => 'refresh',
         'sanatize_callback' => 'esc_url_raw'
     ) );
@@ -61,7 +58,6 @@ $wp_customize->add_section( 'felix_header_section',  array(
     // Size of the logo image
     $wp_customize->add_setting( 'felix_landing_page_template[header_logo_size]', array(
         'type'              => 'option',
-        'default'           => 50,
         'transport'         => 'refresh',
         'sanatize_callback' => 'felix_sanitize_integer'
     ) );

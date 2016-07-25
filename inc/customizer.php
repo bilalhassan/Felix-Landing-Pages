@@ -161,6 +161,10 @@ function felix_block_names() {
     
 }
 
+function felix_fonts() {
+    return array('test' => 'Test');
+}
+
 
 /**
  * Load customizer defaults.
