@@ -18,7 +18,22 @@ class TemplateManager {
     public function add_hooks() {
         
         add_filter( 'template_include', array( $this, 'load_template' ) );
-
+        
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts') );
+    }
+    
+    /**
+     * Check to see if we're on the landing page.
+     * 
+     * @return bool
+     * @since 0.0.1
+     * 
+     */
+    private function is_page_template() {
+        
+        $options = get_option( 'felix_landing_page_options' );
+        
+        return get_the_ID() == is_page( $options['landing_page_id'] );
     }
     
     /**
@@ -35,7 +50,7 @@ class TemplateManager {
         
         $options = get_option( 'felix_landing_page_options' );
         
-        if( get_the_ID() == is_page( $options['landing_page_id'] ) ) :
+        if( $this->is_page_template() ) :
             
             $override_path = locate_template( array( 'Felix/template-1.php' ) );
             $template = $override_path != '' ? $override_path : $options['default_template'];
@@ -44,6 +59,31 @@ class TemplateManager {
 
         return $template;
         
+    }
+    
+    /**
+     * Enqueue scripts and styles if we're on the landing page.
+     * 
+     * @since 0.0.1
+     * 
+     */
+    public function enqueue_scripts() {
+    
+        if( $this->is_page_template() ) :
+            
+            $options = get_option( 'felix_landing_page_template' );
+            $fonts = felix_fonts();
+            
+            wp_enqueue_style('felix-font-primary', '//fonts.googleapis.com/css?family=' . $fonts[ $options['primary_font'] ], array(), FELIX_LAND_VER );
+            wp_enqueue_style('felix-font-secondary', '//fonts.googleapis.com/css?family=' . $fonts[ $options['secondary_font'] ], array(), FELIX_LAND_VER );
+            
+            wp_enqueue_style( 'bootstrap-theme', FELIX_LANDING_PAGE_URL . 'inc/assets/styles/bootstrap-theme.min.css', array(), FELIX_LAND_VER );
+            wp_enqueue_style( 'bootstrap', FELIX_LANDING_PAGE_URL . 'inc/assets/styles/bootstrap.min.css', array(), FELIX_LAND_VER );
+            
+            wp_enqueue_style( 'font-awesome', FELIX_LANDING_PAGE_URL . 'inc/assets/styles/font-awesome.min.css', array(), FELIX_LAND_VER );
+            
+        endif;
+ 
     }
     
     /**

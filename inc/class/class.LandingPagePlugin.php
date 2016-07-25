@@ -11,7 +11,6 @@ class LandingPagePlugin {
     
     //Plugin constants
     const DEV_MODE = true;
-    const VERSION = '0.0.1';
     
     private static $instance = null;
     

@@ -25,6 +25,13 @@ if( !defined( 'ABSPATH' ) ) :
 
 endif;
 
+// Define plugin version
+if( !defined( 'FELIX_LAND_VER' ) ) :
+    
+    define( 'FELIX_LAND_VER', '0.0.1' );
+
+endif;
+
 // Define the URL for the plugin
 if( !defined( 'FELIX_LANDING_PAGE_URL' ) ) :
     

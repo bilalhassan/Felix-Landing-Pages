@@ -162,7 +162,39 @@ function felix_block_names() {
 }
 
 function felix_fonts() {
-    return array('test' => 'Test');
+    
+        $font_family_array = array(
+            
+            'Lobster Two, cursive' => 'Lobster+Two',
+            'Impact, Charcoal, sans-serif' => 'Impact',
+            'Josefin Sans, sans-serif' => 'Josefin',
+            'Lucida Console, Monaco, monospace' => 'Lucida Console',
+            'Lucida Sans Unicode, Lucida Grande, sans-serif' => 'Lucida Sans Unicode',
+            'MS Sans Serif, Geneva, sans-serif' => 'MS Sans Serif',
+            'MS Serif, New York, serif' => 'MS Serif',
+            'Open Sans, sans-serif' => 'Open Sans',
+            'Palatino Linotype, Book Antiqua, Palatino, serif' => 'Palatino Linotype',
+            'Source Sans Pro, sans-serif' => 'Source Sans Pro',
+            'Lato, sans-serif' => 'Lato',
+            'Abel, sans-serif' => 'Abel',
+            'Bangers, cursive' => 'Bangers',
+            'Lobster Two, cursive' => 'Lobster+Two',
+            'Josefin Sans, sans-serif' => 'Josefin+Sans:300,400,600,700',
+            'Montserrat, sans-serif' => 'Montserrat:400,700',
+            'Poiret One, cursive' => 'Poiret+One',
+            'Source Sans Pro, sans-serif' => 'Source+Sans+Pro:200,400,600',
+            'Lato, sans-serif' => 'Lato:100,300,400,700,900,300italic,400italic',
+            'Raleway, sans-serif' => 'Raleway:400,300,500,700',
+            'Shadows Into Light, cursive' => 'Shadows+Into+Light',
+            'Orbitron, sans-serif' => 'Orbitron',
+            'PT Sans Narrow, sans-serif' => 'PT+Sans+Narrow',
+            'Lora, serif' => 'Lora',
+            'Oswald, sans-serif' => 'Oswald:300',
+            'Titillium Web, sans-serif' => 'Titillium+Web:400,200,300,600,700,200italic,300italic,400italic,600italic,700italic'
+    );
+    
+    return $font_family_array;
+    
 }
 
 
@@ -180,10 +212,12 @@ function felix_create_template_defaults() {
         $products = felix_get_posts_array( 'product' );
         
         // If posts are available fast forward to the first product
-        if( count( $products ) > 1 ) { 
+        if( count( $products ) > 1 ) :
+            
             next( $products ); 
             $product = current( $products );
-        } 
+            
+        endif;
         
         $product_id = array_search($product, $products);
         
@@ -191,10 +225,12 @@ function felix_create_template_defaults() {
         $articles = felix_get_posts_array();
       
         // If posts are available fast forward to the first article
-        if( count( $articles ) > 1 ) {
+        if( count( $articles ) > 1 ) :
+            
             next( $articles ); 
             $article = current( $articles );
-        } 
+        
+        endif;
         
         $article_id = array_search($article, $articles);
 
@@ -202,6 +238,15 @@ function felix_create_template_defaults() {
         $options = array(
             
             // General configuration
+            'primary_color' => '#cbef34',
+            'accent_color' => '#efae33',
+            
+            'primary_font'  => 'Raleway, sans-serif',
+            'secondary_font' => 'Raleway, sans-serif',
+            
+            'header_font_size' => 20,
+            'body_font_size' => 12,
+            
             'social_icon_facebook_url' => '#',
             'social_icon_google_url' => '#',
             'social_icon_twitter_url' => '#',
