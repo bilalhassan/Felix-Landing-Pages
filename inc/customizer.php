@@ -14,15 +14,15 @@ function felix_customize_register( $wp_customize ) {
         'priority' => 10
     ) );
     
-    require_once( 'customizer/panel-general.php' );
-    require_once( 'customizer/panel-blockorder.php' );
-    require_once( 'customizer/panel-header.php' );
-    require_once( 'customizer/panel-jumbotron.php' );
-    require_once( 'customizer/panel-navbar.php' );
-    require_once( 'customizer/panel-products.php' );
-    require_once( 'customizer/panel-content.php' );
-    require_once( 'customizer/panel-articles.php' );
-    require_once( 'customizer/panel-footer.php' );
+    require_once( 'customizer-panels/panel-general.php' );
+    require_once( 'customizer-panels/panel-blockorder.php' );
+    require_once( 'customizer-panels/panel-header.php' );
+    require_once( 'customizer-panels/panel-jumbotron.php' );
+    require_once( 'customizer-panels/panel-navbar.php' );
+    require_once( 'customizer-panels/panel-products.php' );
+    require_once( 'customizer-panels/panel-content.php' );
+    require_once( 'customizer-panels/panel-articles.php' );
+    require_once( 'customizer-panels/panel-footer.php' );
      
 }
 add_action( 'customize_register', 'felix_customize_register' );
@@ -149,7 +149,7 @@ function felix_block_names() {
     $blocks = array(
         'disabled'  => __( 'Disabled', 'felix-landing-page' ),
         'header'    => __( 'Header', 'felix-landing-page' ),
-        'jumbotron'      => __( 'Hero', 'felix-landing-page' ),
+        'jumbotron' => __( 'Hero', 'felix-landing-page' ),
         'navbar'    => __( 'Navigation Bar', 'felix-landing-page' ),
         'products'  => __( 'Featured Products', 'felix-landing-page' ),
         'content'   => __( 'Content', 'felix-landing-page' ),
@@ -164,33 +164,23 @@ function felix_block_names() {
 function felix_fonts() {
     
         $font_family_array = array(
-            
-            'Lobster Two, cursive' => 'Lobster+Two',
-            'Impact, Charcoal, sans-serif' => 'Impact',
-            'Josefin Sans, sans-serif' => 'Josefin',
-            'Lucida Console, Monaco, monospace' => 'Lucida Console',
-            'Lucida Sans Unicode, Lucida Grande, sans-serif' => 'Lucida Sans Unicode',
-            'MS Sans Serif, Geneva, sans-serif' => 'MS Sans Serif',
-            'MS Serif, New York, serif' => 'MS Serif',
+
             'Open Sans, sans-serif' => 'Open Sans',
-            'Palatino Linotype, Book Antiqua, Palatino, serif' => 'Palatino Linotype',
-            'Source Sans Pro, sans-serif' => 'Source Sans Pro',
-            'Lato, sans-serif' => 'Lato',
+            'Source Sans Pro, sans-serif' => 'Source Sans Pro: 200,400,600',
             'Abel, sans-serif' => 'Abel',
             'Bangers, cursive' => 'Bangers',
-            'Lobster Two, cursive' => 'Lobster+Two',
-            'Josefin Sans, sans-serif' => 'Josefin+Sans:300,400,600,700',
-            'Montserrat, sans-serif' => 'Montserrat:400,700',
-            'Poiret One, cursive' => 'Poiret+One',
-            'Source Sans Pro, sans-serif' => 'Source+Sans+Pro:200,400,600',
-            'Lato, sans-serif' => 'Lato:100,300,400,700,900,300italic,400italic',
-            'Raleway, sans-serif' => 'Raleway:400,300,500,700',
-            'Shadows Into Light, cursive' => 'Shadows+Into+Light',
+            'Lobster Two, cursive' => 'Lobster Two',
+            'Josefin Sans, sans-serif' => 'Josefin Sans: 300,400,600,700',
+            'Montserrat, sans-serif' => 'Montserrat: 400, 700',
+            'Poiret One, cursive' => 'Poiret One',
+            'Lato, sans-serif' => 'Lato: 300, 400,700,300Italic,400Italic',
+            'Raleway, sans-serif' => 'Raleway: 400,300,500,700',
+            'Shadows Into Light, cursive' => 'Shadows Into Light',
             'Orbitron, sans-serif' => 'Orbitron',
-            'PT Sans Narrow, sans-serif' => 'PT+Sans+Narrow',
+            'PT Sans Narrow, sans-serif' => 'PT Sans Narrow',
             'Lora, serif' => 'Lora',
-            'Oswald, sans-serif' => 'Oswald:300',
-            'Titillium Web, sans-serif' => 'Titillium+Web:400,200,300,600,700,200italic,300italic,400italic,600italic,700italic'
+            'Oswald, sans-serif' => 'Oswald: 300',
+            'Titillium Web, sans-serif' => 'Titillium Web: 300,400,600,200'
     );
     
     return $font_family_array;
