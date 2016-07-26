@@ -18,7 +18,9 @@ class LandingPagePlugin {
     
     
     /**
-     * @param TemplateManager $template_manager
+     * Get the static instance of the main plugin class.
+     * 
+     * @return LandingPagePlugin The main class' instance
      * @since 0.0.1
      * 
      */
@@ -34,6 +36,14 @@ class LandingPagePlugin {
         
     }
     
+    /**
+     * Run post-activation configuration of the plugin.
+     * 
+     * @param type $template_manager Template manager to manage the landing page
+     * @return void 
+     * @since 0.0.1
+     * 
+     */
     public function configure( $template_manager ) {
         
         $options = get_option( 'felix_landing_page_options' );
@@ -51,6 +61,7 @@ class LandingPagePlugin {
     /**
      * Configure WordPress hooks.
      * 
+     * @return void
      * @since 0.0.1
      * 
      */
@@ -63,6 +74,7 @@ class LandingPagePlugin {
     /**
      * Load plugin default options on activate.
      * 
+     * @return void
      * @since 0.0.1
      * 
      */
@@ -91,12 +103,15 @@ class LandingPagePlugin {
     }
     
     /**
+     * Run plugin deactivation routine. If developer mode is enabled, all options
+     * will be cleared,
+     * 
+     * @return void
      * @since 0.0.1
      * 
      */
     public function deactivate() {
         
-        // Delete options if dev mode is enabled
         if( self::DEV_MODE ) :
             
             error_log( __CLASS__ . "::deactivate() called" );
