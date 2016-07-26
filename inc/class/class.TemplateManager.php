@@ -4,7 +4,7 @@
  * Manages the creation and loading of the landing page.
  * 
  * @author Eric Green <eric@smartcat.ca>
- * @since 0.0.1
+ * @since 0.1.0
  * 
  */
 class TemplateManager {
@@ -17,7 +17,7 @@ class TemplateManager {
      * @param array $options Options for configuring the template
      * @param string $template_file The file for the template
      * @param int $page_id The ID of the page to be managed
-     * @since 0.0.1
+     * @since 0.1.0
      */
     public function __construct( $options = null, $template_file = null, $page_id = null ) {
         
@@ -32,7 +32,7 @@ class TemplateManager {
      * 
      * @param int $page_id The ID of the page to be managed
      * @return void
-     * @since 0.0.1
+     * @since 0.1.0
      * 
      */
     public function set_page_id( $page_id ) {
@@ -44,7 +44,7 @@ class TemplateManager {
      * 
      * @param string $template_file The file for the template
      * @return void
-     * @since 0.0.1
+     * @since 0.1.0
      * 
      */
     public function set_template_file( $template_file ) {
@@ -56,7 +56,7 @@ class TemplateManager {
      * 
      * @param array $options The configuration for the template
      * @return void
-     * @since 0.0.1
+     * @since 0.1.0
      * 
      */
     public function set_options( $options ) {
@@ -67,7 +67,7 @@ class TemplateManager {
      * Configure WordPress hooks.
      * 
      * @return void
-     * @since 0.0.1
+     * @since 0.1.0
      * 
      */
     public function add_hooks() {
@@ -80,7 +80,7 @@ class TemplateManager {
     /**
      * Enqueue scripts and styles if we're on the landing page.
      * 
-     * @since 0.0.1
+     * @since 0.1.0
      * @return void
      * 
      */
@@ -111,7 +111,7 @@ class TemplateManager {
      * Check to see if we're on the landing page.
      * 
      * @return bool Whether or not we're loading the page to apply the template.
-     * @since 0.0.1
+     * @since 0.1.0
      * 
      */
     private function is_page_template() {
@@ -127,7 +127,7 @@ class TemplateManager {
      * 
      * @param string $template
      * @return string
-     * @since 0.0.1
+     * @since 0.1.0
      * 
      */
     public function load_template( $template ) {
@@ -149,7 +149,7 @@ class TemplateManager {
      * returned instead.
      * 
      * @return int The ID of the page that TemplateManager is currently managing.
-     * @since 0.0.1
+     * @since 0.1.0
      * 
      */
     public function create_page() {
@@ -180,7 +180,7 @@ class TemplateManager {
      * Deletes the page currently being managed.
      * 
      * @return void
-     * @since 0.0.1
+     * @since 0.1.0
      * 
      */
     public function delete_page() { 

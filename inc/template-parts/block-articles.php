@@ -2,7 +2,7 @@
 /**
  * Output default Featured articles block.
  * 
- * @since 0.0.1
+ * @since 0.1.0
  * 
  */
 ?>

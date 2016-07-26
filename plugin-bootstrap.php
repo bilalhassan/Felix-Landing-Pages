@@ -3,7 +3,7 @@
  * Plugin Name: Felix Landing Pages
  * Plugin URI: http://#/
  * Description: 
- * Version: 0.0.1
+ * Version: 0.1.0
  * Author: Smartcat
  * Author URI: https://smartcatdesign.net
  * License: GPL v2
@@ -25,7 +25,7 @@ endif;
 
 // Define plugin version
 if( !defined( 'FELIX_LAND_VER' ) ) :
-    define( 'FELIX_LAND_VER', '0.0.1' );
+    define( 'FELIX_LAND_VER', '0.1.0' );
 endif;
 
 // Define the URL for the plugin

@@ -4,7 +4,7 @@
  * Main Plugin class, configures and initializes plugin.
  * 
  * @author Eric Green <eric@smartcat.ca>
- * @since 0.0.1
+ * @since 0.1.0
  * 
  */
 class LandingPagePlugin {
@@ -21,7 +21,7 @@ class LandingPagePlugin {
      * Get the static instance of the main plugin class.
      * 
      * @return LandingPagePlugin The main class' instance
-     * @since 0.0.1
+     * @since 0.1.0
      * 
      */
     public static function instance() {
@@ -41,7 +41,7 @@ class LandingPagePlugin {
      * 
      * @param type $template_manager Template manager to manage the landing page
      * @return void 
-     * @since 0.0.1
+     * @since 0.1.0
      * 
      */
     public function configure( $template_manager ) {
@@ -62,7 +62,7 @@ class LandingPagePlugin {
      * Configure WordPress hooks.
      * 
      * @return void
-     * @since 0.0.1
+     * @since 0.1.0
      * 
      */
     private function add_hooks() {
@@ -75,7 +75,7 @@ class LandingPagePlugin {
      * Load plugin default options on activate.
      * 
      * @return void
-     * @since 0.0.1
+     * @since 0.1.0
      * 
      */
     public function activate() {
@@ -107,7 +107,7 @@ class LandingPagePlugin {
      * will be cleared,
      * 
      * @return void
-     * @since 0.0.1
+     * @since 0.1.0
      * 
      */
     public function deactivate() {

@@ -4,7 +4,7 @@
  * Register plugin with customizer.
  * 
  * @param WP_Customize_Manager $wp_customize
- * @since 0.0.1
+ * @since 0.1.0
  * 
  */
 function felix_customize_register( $wp_customize ) {
@@ -32,7 +32,7 @@ add_action( 'customize_register', 'felix_customize_register' );
  * 
  * @param array $input
  * @return bool
- * @since 0.0.1
+ * @since 0.1.0
  * 
  */
 function felix_sanitize_logo_title_toggle( $input ) {
@@ -52,7 +52,7 @@ function felix_sanitize_logo_title_toggle( $input ) {
  * 
  * @param type $input
  * @return type
- * @since 0.0.1
+ * @since 0.1.0
  * 
  */
 function felix_sanitize_hide_or_show( $input ) {
@@ -71,7 +71,7 @@ function felix_sanitize_hide_or_show( $input ) {
  * 
  * @param type $input
  * @return type
- * @since 0.0.1
+ * @since 0.1.0
  * 
  */
 function felix_sanitize_text( $input ) {
@@ -83,7 +83,7 @@ function felix_sanitize_text( $input ) {
  * 
  * @param type $input
  * @return type
- * @since 0.0.1
+ * @since 0.1.0
  * 
  */
 function felix_sanitize_integer( $input ) {
@@ -95,7 +95,7 @@ function felix_sanitize_integer( $input ) {
  * 
  * @param type $input
  * @return type
- * @since 0.0.1
+ * @since 0.1.0
  * 
  */
 function felix_sanitize( $input ) {
@@ -108,7 +108,7 @@ function felix_sanitize( $input ) {
  * @param string $post_type
  * @param int $limit
  * @return array
- * @since 0.0.1
+ * @since 0.1.0
  * 
  */
 function felix_get_posts_array( $post_type = "post", $limit = -1 ) {
@@ -141,7 +141,7 @@ function felix_get_posts_array( $post_type = "post", $limit = -1 ) {
  * Options for the block selection.
  * 
  * @return array
- * @since 0.0.1
+ * @since 0.1.0
  * 
  */
 function felix_block_names() {
@@ -191,7 +191,7 @@ function felix_fonts() {
 /**
  * Load customizer defaults.
  * 
- * @since 0.0.1
+ * @since 0.1.0
  * 
  */
 function felix_create_template_defaults() {
