@@ -14,13 +14,12 @@ class TemplateManager {
     private $options;
     
     /**
-     * 
+     * @param array $options Options for configuring the template
      * @param string $template_file The file for the template
      * @param int $page_id The ID of the page to be managed
      * @since 0.0.1
-     * @todo set template options
      */
-    public function __construct( array $options = null, $template_file = null, $page_id = null ) {
+    public function __construct( $options = null, $template_file = null, $page_id = null ) {
         
         $this->options = $options;
         $this->template_file = $template_file;
@@ -60,7 +59,7 @@ class TemplateManager {
      * @since 0.0.1
      * 
      */
-    public function set_options( array $options ) {
+    public function set_options( $options ) {
         $this->options = $options;
     }
 

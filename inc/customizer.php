@@ -149,7 +149,7 @@ function felix_block_names() {
     $blocks = array(
         'disabled'  => __( 'Disabled', 'felix-landing-page' ),
         'header'    => __( 'Header', 'felix-landing-page' ),
-        'hero'      => __( 'Hero', 'felix-landing-page' ),
+        'jumbotron'      => __( 'Hero', 'felix-landing-page' ),
         'navbar'    => __( 'Navigation Bar', 'felix-landing-page' ),
         'products'  => __( 'Featured Products', 'felix-landing-page' ),
         'content'   => __( 'Content', 'felix-landing-page' ),
@@ -254,7 +254,7 @@ function felix_create_template_defaults() {
             // Order that blocks appear
             'blockorder' => array(
                 'header', 
-                'hero', 
+                'jumbotron', 
                 'navbar', 
                 'products', 
                 'content', 

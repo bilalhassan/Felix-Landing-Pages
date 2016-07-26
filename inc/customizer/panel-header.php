@@ -5,7 +5,7 @@
 // ---------------------------------------------
 $wp_customize->add_section( 'felix_header_section',  array(
     'title'         => __( 'Header', 'felix-landing-page', 'felix-landing-page' ),
-    'description'   => __( 'Page header confuration.', 'felix-landing-page' ),
+    'description'   => __( 'Page header configuration.', 'felix-landing-page' ),
     'panel'         => 'felix_landing_page'
 ) );
     
@@ -67,7 +67,7 @@ $wp_customize->add_section( 'felix_header_section',  array(
         'label'             =>  __( 'Logo size', 'felix-landing-page' ),
         'input_attrs'           => array(
             'min'   => 10,
-            'max'   => 50,
-            'step'  => 2,
+            'max'   => 100,
+            'step'  => 5,
     ) ) );
     
