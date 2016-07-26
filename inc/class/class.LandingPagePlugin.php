@@ -4,54 +4,70 @@
  * Main Plugin class, configures and initializes plugin.
  * 
  * @author Eric Green <eric@smartcat.ca>
- * @since 0.0.1
+ * @since 0.1.0
  * 
  */
 class LandingPagePlugin {
     
     //Plugin constants
     const DEV_MODE = true;
-    const VERSION = '0.0.1';
     
     private static $instance = null;
     
     private $template_manager = null; 
     
+    
     /**
+     * Get the static instance of the main plugin class.
      * 
-     * @param TemplateManager $template_manager
-     * @since 0.0.1
+     * @return LandingPagePlugin The main class' instance
+     * @since 0.1.0
      * 
      */
-    function __construct( $template_manager ) {
+    public static function instance() {
         
-        $this->template_manager = $template_manager;
+        if( self::$instance == null ) :
+            
+            self::$instance = new self();
+            
+        endif;
+        
+        return self::$instance;
         
     }
     
     /**
-     * @param TemplateManager $template_manager
-     * @since 0.0.1
+     * Run post-activation configuration of the plugin.
+     * 
+     * @param type $template_manager Template manager to manage the landing page
+     * @return void 
+     * @since 0.1.0
      * 
      */
-    public static function instance( $template_manager ) {
+    public function configure( $template_manager ) {
         
-        if( self::$instance == null ) :
-            
-            self::$instance = new self( $template_manager );
-            self::$instance->add_hooks();
-            
-        endif;
+        $options = get_option( 'felix_landing_page_options' );
+         
+        $template_manager->set_page_id( $options['landing_page_id'] );
+        $template_manager->set_template_file( 'template-1.php' );
+        $template_manager->set_options( get_option( 'felix_landing_page_template' ) );
+        
+        $this->template_manager = $template_manager;
+        
+        $this->add_hooks();
         
     }
     
     /**
      * Configure WordPress hooks.
      * 
-     * @since 0.0.1
+     * @return void
+     * @since 0.1.0
      * 
      */
-    public function add_hooks() {
+    private function add_hooks() {
+        
+        add_action( 'init', array( $this, 'localize' ) );
         
         $this->template_manager->add_hooks();
         
@@ -60,10 +76,17 @@ class LandingPagePlugin {
     /**
      * Load plugin default options on activate.
      * 
-     * @since 0.0.1
+     * @return void
+     * @since 0.1.0
      * 
      */
-    public static function activate() {
+    public function activate() {
+        
+        if( self::DEV_MODE ) :
+            
+            error_log( __CLASS__ . "::activate() called" );
+        
+        endif;
         
         $options = get_option( 'felix_landing_page_options' );
         
@@ -72,30 +95,49 @@ class LandingPagePlugin {
             $options = array(
                 'default_template' => FELIX_LANDING_PAGE_PATH . 'inc/templates/template-1.php'
             );
+        
+            $options['landing_page_id'] = $this->template_manager->create_page();
             
             add_option( 'felix_landing_page_options', $options );
             
         endif; 
- 
+        
     }
     
     /**
-     * @since 0.0.1
+     * Run plugin deactivation routine. If developer mode is enabled, all options
+     * will be cleared,
+     * 
+     * @return void
+     * @since 0.1.0
      * 
      */
-    public static function deactivate() {
+    public function deactivate() {
         
-        // Delete options if dev mode is enabled
         if( self::DEV_MODE ) :
+            
+            error_log( __CLASS__ . "::deactivate() called" );
             
             $options = get_option( 'felix_landing_page_options' );
             
-            wp_delete_post( $options['landing_page_id'] );
+            $result = $this->template_manager->delete_page();
             
             delete_option( 'felix_landing_page_options' );
             delete_option( 'felix_landing_page_template' );
             
         endif;
+        
+    }
+    
+    /**
+     * Localize strings.
+     * 
+     * @return void
+     * @since 0.1.0
+     */
+    public function localize() {
+        
+        load_plugin_textdomain( 'felix-landing-page', FALSE, FELIX_LANDING_PAGE_PATH . 'languages' );
         
     }
 
