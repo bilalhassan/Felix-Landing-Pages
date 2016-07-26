@@ -67,6 +67,8 @@ class LandingPagePlugin {
      */
     private function add_hooks() {
         
+        add_action( 'init', array( $this, 'localize' ) );
+        
         $this->template_manager->add_hooks();
         
     }
@@ -124,6 +126,18 @@ class LandingPagePlugin {
             delete_option( 'felix_landing_page_template' );
             
         endif;
+        
+    }
+    
+    /**
+     * Localize strings.
+     * 
+     * @return void
+     * @since 0.1.0
+     */
+    public function localize() {
+        
+        load_plugin_textdomain( 'felix-landing-page', FALSE, FELIX_LANDING_PAGE_PATH . 'languages' );
         
     }
 

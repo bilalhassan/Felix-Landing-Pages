@@ -70,10 +70,3 @@ register_deactivation_hook( __FILE__, 'felix_do_deactivation' );
 
 
 require( FELIX_LANDING_PAGE_PATH . 'inc/customizer.php' );
-
-
-//Localize text
-function felix_landing_page_localize() {
-    load_plugin_textdomain( 'felix-landing-page', FALSE, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-}
-add_action( 'init', 'felix_landing_page_localize' );
