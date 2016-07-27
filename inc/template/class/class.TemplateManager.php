@@ -9,7 +9,12 @@
  */
 class TemplateManager {
     
+    private $template_package;
     private $template_file;
+    private $templates_path;
+    private $template_override;
+    
+    
     private $page_id;
     private $options;
     
@@ -19,10 +24,14 @@ class TemplateManager {
      * @param int $page_id The ID of the page to be managed
      * @since 0.1.0
      */
-    public function __construct( $options = null, $template_file = null, $page_id = null ) {
+    public function __construct( $options = null, $template_package = null, $page_id = null ) {
+        
+        $this->templates_path = dirname( __DIR__ ) . '/';
+        $this->template_file = '/template/template.php';
+        $this->template_override = 'Felix/template/';
         
         $this->options = $options;
-        $this->template_file = $template_file;
+        $this->template_package = $template_package;
         $this->page_id = $page_id;
         
     }
@@ -47,8 +56,8 @@ class TemplateManager {
      * @since 0.1.0
      * 
      */
-    public function set_template_file( $template_file ) {
-        $this->template_file = $template_file;
+    public function set_template( $template_package ) {
+        $this->template_package = $template_package;
     }
     
     /**
@@ -88,7 +97,7 @@ class TemplateManager {
     
         if( $this->is_page_template() ) :
             
-            include( __DIR__ . './../configs/font_choices.php');
+            include( __DIR__ . './../../configs/font_choices.php');
             
             if( isset( $this->options['primary_font'] ) ) :
                 wp_enqueue_style('felix-font-primary', '//fonts.googleapis.com/css?family=' . $fonts[ $this->options['primary_font'] ], array(), FELIX_LAND_VER );
@@ -130,16 +139,17 @@ class TemplateManager {
      * @since 0.1.0
      * 
      */
-    public function load_template( $template ) {
+    public function load_template( $current_template ) {
         
         if( $this->is_page_template() ) :
             
-            $override_path = locate_template( array( 'Felix/templates/' . $this->template_file ) );
-            $template = $override_path != '' ? $override_path : FELIX_LANDING_PAGE_TEMPLATES . $this->template_file;
+            $override_path = locate_template( array( $this->template_override . $this->template_package . $this->template_file ) );
+        
+            $current_template = $override_path != '' ? $override_path : $this->templates_path . $this->template_package . $this->template_file;
             
         endif;
 
-        return $template;
+        return $current_template;
         
     }
     

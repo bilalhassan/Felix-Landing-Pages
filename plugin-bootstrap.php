@@ -43,12 +43,6 @@ if( !defined( 'FELIX_LANDING_PAGE_TEMPLATES' ) ) :
     define( 'FELIX_LANDING_PAGE_TEMPLATES',  plugin_dir_path( __FILE__ ) . 'inc/templates/' );
 endif;
 
-// Define default template-parts directory
-if( !defined( 'FELIX_LANDING_PAGE_TEMPLATE_PARTS' ) ) :
-    define( 'FELIX_LANDING_PAGE_TEMPLATE_PARTS',  plugin_dir_path( __FILE__ ) . 'inc/template-parts/' );
-endif;
-
-
 
 // Require all class files
 foreach( glob( FELIX_LANDING_PAGE_PATH . 'inc/class/*.php' ) as $file ) :
@@ -56,6 +50,10 @@ foreach( glob( FELIX_LANDING_PAGE_PATH . 'inc/class/*.php' ) as $file ) :
 endforeach;
 
 foreach( glob( FELIX_LANDING_PAGE_PATH . 'inc/customizer/class/*.php' ) as $file ) :
+    require_once $file;
+endforeach;
+
+foreach( glob( FELIX_LANDING_PAGE_PATH . 'inc/template/class/*.php' ) as $file ) :
     require_once $file;
 endforeach;
 

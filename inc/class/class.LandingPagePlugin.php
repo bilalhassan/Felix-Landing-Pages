@@ -50,7 +50,7 @@ class LandingPagePlugin {
         $options = get_option( 'felix_landing_page_options' );
          
         $template_manager->set_page_id( $options['landing_page_id'] );
-        $template_manager->set_template_file( 'template-1.php' );
+        $template_manager->set_template( 'landing_page' );
         $template_manager->set_options( get_option( 'felix_landing_page_template' ) );
         
         $this->template_manager = $template_manager;
