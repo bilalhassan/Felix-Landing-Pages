@@ -91,9 +91,8 @@ class LandingPagePlugin {
         
         endif;
         
-        $options = get_option( 'felix_landing_page_options' );
         
-        if( !$options ) :
+        if( !get_option( 'felix_landing_page_options' ) ) :
             
             $options = array(
                 'default_template' => FELIX_LANDING_PAGE_PATH . 'inc/templates/template-1.php'

@@ -48,14 +48,21 @@ if( !defined( 'FELIX_LANDING_PAGE_TEMPLATE_PARTS' ) ) :
     define( 'FELIX_LANDING_PAGE_TEMPLATE_PARTS',  plugin_dir_path( __FILE__ ) . 'inc/template-parts/' );
 endif;
 
+
+
 // Require all class files
 foreach( glob( FELIX_LANDING_PAGE_PATH . 'inc/class/*.php' ) as $file ) :
     require_once $file;
 endforeach;
 
+foreach( glob( FELIX_LANDING_PAGE_PATH . 'inc/customizer/class/*.php' ) as $file ) :
+    require_once $file;
+endforeach;
+
+
 
 $plugin = LandingPagePlugin::instance();
-$plugin->configure( new TemplateManager() );
+$plugin->configure( new TemplateManager(), new CustomizerConfig() );
 
 
 function felix_do_activation() {
@@ -69,4 +76,4 @@ function felix_do_deactivation() {
 register_deactivation_hook( __FILE__, 'felix_do_deactivation' );
 
 
-require( FELIX_LANDING_PAGE_PATH . 'inc/customizer.php' );
+//require( FELIX_LANDING_PAGE_PATH . 'inc/customizer.php' );

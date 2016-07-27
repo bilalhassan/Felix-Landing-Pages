@@ -15,7 +15,7 @@ $wp_customize->add_section( 'felix_header_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[header_title_or_logo]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize_logo_title_toggle'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[header_title_or_logo]', array(
@@ -32,7 +32,7 @@ $wp_customize->add_section( 'felix_header_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[header_title]', array(
         'type'              => 'option',
         'transport'         => __( 'refresh', 'felix-landing-page' ),
-        'sanatize_callback' => 'felix_sanitize_text'
+        'sanatize_callback' => ''
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[header_title]', array(
         'type'              => 'text',
@@ -45,7 +45,7 @@ $wp_customize->add_section( 'felix_header_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[header_logo]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'esc_url_raw'
+        'sanatize_callback' => ''
     ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'felix_header_logo', array(
         'mime_type'         => 'image',
@@ -59,7 +59,7 @@ $wp_customize->add_section( 'felix_header_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[header_logo_size]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize_integer'
+        'sanatize_callback' => ''
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[header_logo_size]', array(
         'type'              => 'number',
