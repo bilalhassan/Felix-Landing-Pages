@@ -15,6 +15,7 @@ class LandingPagePlugin {
     private static $instance = null;
     
     private $template_manager = null; 
+    private $customizer_config = null;
     
     
     /**
@@ -44,7 +45,7 @@ class LandingPagePlugin {
      * @since 0.1.0
      * 
      */
-    public function configure( $template_manager ) {
+    public function configure( $template_manager, $customizer_config ) {
         
         $options = get_option( 'felix_landing_page_options' );
          
@@ -53,6 +54,7 @@ class LandingPagePlugin {
         $template_manager->set_options( get_option( 'felix_landing_page_template' ) );
         
         $this->template_manager = $template_manager;
+        $this->customizer_config = $customizer_config;
         
         $this->add_hooks();
         
@@ -70,6 +72,7 @@ class LandingPagePlugin {
         add_action( 'init', array( $this, 'localize' ) );
         
         $this->template_manager->add_hooks();
+        $this->customizer_config->add_hooks();
         
     }
     
@@ -101,6 +104,15 @@ class LandingPagePlugin {
             add_option( 'felix_landing_page_options', $options );
             
         endif; 
+        
+        
+        if( !get_option( 'felix_landing_page_template' ) ) :
+            
+            include( __DIR__ . './../configs/template_defaults.php' );
+            
+            add_option( 'felix_landing_page_template', $template_defaults );
+            
+        endif;
         
     }
     

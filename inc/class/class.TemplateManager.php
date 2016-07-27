@@ -88,7 +88,7 @@ class TemplateManager {
     
         if( $this->is_page_template() ) :
             
-            $fonts = felix_fonts();
+            include( __DIR__ . './../configs/font_choices.php');
             
             if( isset( $this->options['primary_font'] ) ) :
                 wp_enqueue_style('felix-font-primary', '//fonts.googleapis.com/css?family=' . $fonts[ $this->options['primary_font'] ], array(), FELIX_LAND_VER );
