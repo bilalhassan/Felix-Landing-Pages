@@ -138,12 +138,12 @@ class TemplateManager {
 
             foreach( glob( $this->default_path  . '/scripts/*.js' ) as $file ) :
                 
-                $jquery = $this->parse_file( $file, array( 'jQuery' ) );
-
+                $jquery = $this->parse_file( $file, 'jQuery' );
+            
                 wp_enqueue_script( 
                     sanitize_title( basename( $file, '.js' ) ), 
-                    $this->resource_uri . '/scripts/' . basename( $file ),  
-                    array( $jquery ? 'jquery' : null ), 
+                    $this->resource_uri . '/scripts/' . basename( $file ), 
+                    ( $jquery ? array( 'jquery' ) : array() ), 
                     FELIX_LAND_VER 
                 );
 
@@ -153,21 +153,25 @@ class TemplateManager {
             
     }
     
-    private function parse_file( $file, $strings ) {
+    /**
+     * Parse a file for a string.
+     * 
+     * @param string $file
+     * @param type $strings
+     * @return boolean Whether the string was found.
+     * @since 0.1.0
+     */
+    private function parse_file( $file, $search ) {
         
         $lines = file( $file );
         $found = false;       
-        
-        foreach( $strings as $search ) :
-            
-            foreach( $lines as $line ) :
-            
-                if( strpos( $line, $search ) !== false ) :
-                     $found = true;       
-                endif;
-            
-            endforeach;
-            
+
+        foreach( $lines as $line ) :
+
+            if( strpos( $line, $search ) !== false ) :
+                 $found = true;       
+            endif;
+
         endforeach;
         
         return $found;
