@@ -39,8 +39,8 @@ if( !defined( 'FELIX_LANDING_PAGE_PATH' ) ) :
 endif;
 
 // Define default template directory
-if( !defined( 'FELIX_LANDING_PAGE_TEMPLATES' ) ) :
-    define( 'FELIX_LANDING_PAGE_TEMPLATES',  plugin_dir_path( __FILE__ ) . 'inc/templates/' );
+if( !defined( 'FELIX_DEFAULT_TEMPLATES' ) ) :
+    define( 'FELIX_DEFAULT_TEMPLATES',  plugin_dir_path( __FILE__ ) . 'inc/default_templates/' );
 endif;
 
 
@@ -50,10 +50,6 @@ foreach( glob( FELIX_LANDING_PAGE_PATH . 'inc/class/*.php' ) as $file ) :
 endforeach;
 
 foreach( glob( FELIX_LANDING_PAGE_PATH . 'inc/customizer/class/*.php' ) as $file ) :
-    require_once $file;
-endforeach;
-
-foreach( glob( FELIX_LANDING_PAGE_PATH . 'inc/template/class/*.php' ) as $file ) :
     require_once $file;
 endforeach;
 
@@ -72,6 +68,3 @@ function felix_do_deactivation() {
     LandingPagePlugin::instance()->deactivate();    
 }
 register_deactivation_hook( __FILE__, 'felix_do_deactivation' );
-
-
-//require( FELIX_LANDING_PAGE_PATH . 'inc/customizer.php' );

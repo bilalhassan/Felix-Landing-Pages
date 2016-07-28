@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @package landing_page
+ * 
+ */
+
 ?>
 <html>
     <head>
@@ -15,31 +20,31 @@
             switch( $block ) :
 
                 case 'header':
-                    require_once( __DIR__ . './../parts/part-header.php' );
+                    require_once( 'parts/part-header.php' );
                     break;
 
                 case 'hero': 
-                    require_once( __DIR__ . './../parts/part-jumbotron.php' );
+                    require_once( 'parts/part-jumbotron.php' );
                     break;
 
                 case 'navbar': 
-                    require_once( __DIR__ . './../parts/part-navbar.php' );
+                    require_once( 'parts/part-navbar.php' );
                     break;
 
                 case 'products':
-                    require_once( __DIR__ . './../parts/part-products.php' );
+                    require_once( 'parts/part-products.php' );
                     break;
 
                 case 'content':
-                    require_once( __DIR__ . './../parts/part-content.php' );
+                    require_once( 'parts/part-content.php' );
                     break;
 
                 case 'articles':
-                    require_once( __DIR__ . './../parts/part-articles.php' );
+                    require_once( 'parts/part-articles.php' );
                     break;
 
                 case 'footer':
-                    require_once( __DIR__ . './../parts/part-footer.php' );
+                    require_once( 'parts/part-footer.php' );
                     break;
 
             endswitch;

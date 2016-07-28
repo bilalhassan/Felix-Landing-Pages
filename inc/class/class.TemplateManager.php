@@ -9,12 +9,7 @@
  */
 class TemplateManager {
     
-    private $template_package;
-    private $template_file;
-    private $templates_path;
-    private $template_override;
-    
-    
+    private $template_package;   
     private $page_id;
     private $options;
     
@@ -25,10 +20,6 @@ class TemplateManager {
      * @since 0.1.0
      */
     public function __construct( $options = null, $template_package = null, $page_id = null ) {
-        
-        $this->templates_path = dirname( __DIR__ ) . '/';
-        $this->template_file = '/template/template.php';
-        $this->template_override = 'Felix/template/';
         
         $this->options = $options;
         $this->template_package = $template_package;
@@ -97,7 +88,7 @@ class TemplateManager {
     
         if( $this->is_page_template() ) :
             
-            include( __DIR__ . './../../configs/font_choices.php');
+            include( __DIR__ . './../configs/font_choices.php');
             
             if( isset( $this->options['primary_font'] ) ) :
                 wp_enqueue_style('felix-font-primary', '//fonts.googleapis.com/css?family=' . $fonts[ $this->options['primary_font'] ], array(), FELIX_LAND_VER );
@@ -143,9 +134,9 @@ class TemplateManager {
         
         if( $this->is_page_template() ) :
             
-            $override_path = locate_template( array( $this->template_override . $this->template_package . $this->template_file ) );
+            $override_path = locate_template( array( 'Felix/templates/' . $this->template_package . '/template.php' ) );
         
-            $current_template = $override_path != '' ? $override_path : $this->templates_path . $this->template_package . $this->template_file;
+            $current_template = $override_path != '' ? $override_path : FELIX_DEFAULT_TEMPLATES . $this->template_package . '/template.php';
             
         endif;
 
