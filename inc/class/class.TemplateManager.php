@@ -9,7 +9,11 @@
  */
 class TemplateManager {
     
-    private $template_package;   
+    private $template_package;
+    
+    private $default_path;
+    private $override_path;
+    
     private $page_id;
     private $options;
     
@@ -49,6 +53,9 @@ class TemplateManager {
      */
     public function set_template( $template_package ) {
         $this->template_package = $template_package;
+        
+        $this->default_path = FELIX_DEFAULT_TEMPLATES . $this->template_package;
+        $this->override_path = 'Felix/templates/' . $this->template_package;
     }
     
     /**
@@ -74,7 +81,8 @@ class TemplateManager {
         
         add_filter( 'template_include', array( $this, 'load_template' ) );
         
-        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts') );
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_default_scripts') );
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_template_scripts') );
     }
     
     /**
@@ -84,9 +92,9 @@ class TemplateManager {
      * @return void
      * 
      */
-    public function enqueue_scripts() {
+    public function enqueue_default_scripts() {
     
-        if( $this->is_page_template() ) :
+        if( $this->is_page() ) :
             
             include( __DIR__ . './../configs/font_choices.php');
             
@@ -98,13 +106,56 @@ class TemplateManager {
                 wp_enqueue_style('felix-font-secondary', '//fonts.googleapis.com/css?family=' . $fonts[ $this->options['secondary_font'] ], array(), FELIX_LAND_VER );
             endif;
             
-            wp_enqueue_style( 'bootstrap-theme', FELIX_LANDING_PAGE_URL . 'inc/assets/styles/bootstrap-theme.min.css', array(), FELIX_LAND_VER );
-            wp_enqueue_style( 'bootstrap', FELIX_LANDING_PAGE_URL . 'inc/assets/styles/bootstrap.min.css', array(), FELIX_LAND_VER );
-            
             wp_enqueue_style( 'font-awesome', FELIX_LANDING_PAGE_URL . 'inc/assets/styles/font-awesome.min.css', array(), FELIX_LAND_VER );
+            wp_enqueue_style( 'bootstrap-theme', FELIX_LANDING_PAGE_URL . 'inc/assets/styles/bootstrap-theme.min.css', array(), FELIX_LAND_VER );
+            wp_enqueue_style( 'bootstrap', FELIX_LANDING_PAGE_URL . 'inc/assets/styles/bootstrap.min.css', array(), FELIX_LAND_VER );          
             
         endif;
  
+    }
+    
+    public function enqueue_template_scripts() {
+        
+        if( $this->is_page() ) :
+            
+            $resource_path = file_exists( $this->override_path ) ? $this->override_path : $this->default_path;
+            
+            foreach( glob( $resource_path . '/styles/*.css' ) as $file ) :
+                
+                wp_enqueue_style( sanitize_title( basename( $file, '.css' ) ), $file, array(), FELIX_LAND_VER );
+            
+            endforeach;
+
+            foreach( glob( $resource_path . '/scripts/*.js' ) as $file ) :
+                
+                $jquery = $this->parse_file( $file, array( 'jQuery' ) );
+                
+                wp_enqueue_script( sanitize_title( basename( $file, '.js' ) ), $file,  array( $jquery ? 'jquery' : null ), FELIX_LAND_VER );
+            
+            endforeach;   
+                
+        endif;
+    }
+    
+    private function parse_file( $file, $strings ) {
+        
+        $lines = file( $file );
+        $found = false;       
+        
+        foreach( $strings as $search ) :
+            
+            foreach( $lines as $line ) :
+            
+                if( strpos( $line, $search ) !== false ) :
+                     $found = true;       
+                endif;
+            
+            endforeach;
+            
+        endforeach;
+        
+        return $found;
+        
     }
     
     /**
@@ -114,7 +165,7 @@ class TemplateManager {
      * @since 0.1.0
      * 
      */
-    private function is_page_template() {
+    private function is_page() {
         
         return get_the_ID() == is_page( $this->page_id );
         
@@ -132,11 +183,11 @@ class TemplateManager {
      */
     public function load_template( $current_template ) {
         
-        if( $this->is_page_template() ) :
+        if( $this->is_page() ) :
             
-            $override_path = locate_template( array( 'Felix/templates/' . $this->template_package . '/template.php' ) );
+            $theme_override = locate_template( array( $this->override_path . '/template.php' ) );
         
-            $current_template = $override_path != '' ? $override_path : FELIX_DEFAULT_TEMPLATES . $this->template_package . '/template.php';
+            $current_template = $theme_override != '' ? $theme_override : $this->default_path . '/template.php';
             
         endif;
 
