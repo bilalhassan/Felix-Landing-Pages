@@ -124,8 +124,8 @@ class TemplateManager {
         
         if( $this->is_page() ) :
             
-            if( file_exists( $this->override_path ) ) :            
-                $resource_path = $this->override_path;
+            if( file_exists( get_template_directory() . '/'. $this->override_path ) ) :            
+                $resource_path = get_template_directory() . '/'. $this->override_path;
                 $resource_uri = $this->override_resource_uri;         
             else :             
                 $resource_path = $this->default_path;
