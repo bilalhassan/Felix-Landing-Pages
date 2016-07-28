@@ -24,6 +24,7 @@ class TemplateManager {
      * @param string $template_file The file for the template
      * @param int $page_id The ID of the page to be managed
      * @since 0.1.0
+     * 
      */
     public function __construct( $options = null, $template_package = null, $page_id = null ) {
         
@@ -121,6 +122,13 @@ class TemplateManager {
  
     }
     
+    /**
+     * Enqueue scripts and styles from default template package.
+     * 
+     * @return void
+     * @since 0.1.0
+     *  
+     */
     public function enqueue_template_scripts() {
         
         if( $this->is_page() ) :          
@@ -160,6 +168,7 @@ class TemplateManager {
      * @param type $strings
      * @return boolean Whether the string was found.
      * @since 0.1.0
+     * 
      */
     private function parse_file( $file, $search ) {
         
