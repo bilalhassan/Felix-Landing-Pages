@@ -14,6 +14,9 @@ class TemplateManager {
     private $default_path;
     private $override_path;
     
+    private $default_resource_uri;
+    private $override_resource_uri;
+    
     private $page_id;
     private $options;
     
@@ -56,6 +59,9 @@ class TemplateManager {
         
         $this->default_path = FELIX_DEFAULT_TEMPLATES . $this->template_package;
         $this->override_path = 'Felix/templates/' . $this->template_package;
+        
+        $this->default_resource_uri = FELIX_LANDING_PAGE_URL . 'inc/default_templates/' . $this->template_package;
+        $this->override_resource_uri = get_template_directory_uri() . '/Felix/templates/' . $this->template_package;
     }
     
     /**
@@ -118,19 +124,35 @@ class TemplateManager {
         
         if( $this->is_page() ) :
             
-            $resource_path = file_exists( $this->override_path ) ? $this->override_path : $this->default_path;
+            if( file_exists( $this->override_path ) ) :            
+                $resource_path = $this->override_path;
+                $resource_uri = $this->override_resource_uri;         
+            else :             
+                $resource_path = $this->default_path;
+                $resource_uri = $this->default_resource_uri;          
+            endif;
+            
             
             foreach( glob( $resource_path . '/styles/*.css' ) as $file ) :
                 
-                wp_enqueue_style( sanitize_title( basename( $file, '.css' ) ), $file, array(), FELIX_LAND_VER );
+                wp_enqueue_style( 
+                    sanitize_title( basename( $file, '.css' ) ), 
+                    $resource_uri . '/styles/' . basename( $file ),
+                    array(), 
+                    FELIX_LAND_VER 
+                );
             
             endforeach;
 
-            foreach( glob( $resource_path . '/scripts/*.js' ) as $file ) :
-                
+            foreach( glob( $resource_path  . '/scripts/*.js' ) as $file ) :
                 $jquery = $this->parse_file( $file, array( 'jQuery' ) );
-                
-                wp_enqueue_script( sanitize_title( basename( $file, '.js' ) ), $file,  array( $jquery ? 'jquery' : null ), FELIX_LAND_VER );
+
+                wp_enqueue_script( 
+                    sanitize_title( basename( $file, '.js' ) ), 
+                    $resource_uri . '/scripts/' . basename( $file ),  
+                    array( $jquery ? 'jquery' : null ), 
+                    FELIX_LAND_VER 
+                );
             
             endforeach;   
                 
