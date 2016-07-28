@@ -14,8 +14,7 @@ class TemplateManager {
     private $default_path;
     private $override_path;
     
-    private $default_resource_uri;
-    private $override_resource_uri;
+    private $resource_uri;
     
     private $page_id;
     private $options;
@@ -55,13 +54,14 @@ class TemplateManager {
      * 
      */
     public function set_template( $template_package ) {
+        
         $this->template_package = $template_package;
         
         $this->default_path = FELIX_DEFAULT_TEMPLATES . $this->template_package;
         $this->override_path = 'Felix/templates/' . $this->template_package;
         
-        $this->default_resource_uri = FELIX_LANDING_PAGE_URL . 'inc/default_templates/' . $this->template_package;
-        $this->override_resource_uri = get_template_directory_uri() . '/Felix/templates/' . $this->template_package;
+        $this->resource_uri = FELIX_LANDING_PAGE_URL . 'inc/default_templates/' . $this->template_package;
+        
     }
     
     /**
@@ -87,8 +87,9 @@ class TemplateManager {
         
         add_filter( 'template_include', array( $this, 'load_template' ) );
         
-        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_default_scripts') );
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_plugin_scripts') );
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_template_scripts') );
+        
     }
     
     /**
@@ -98,7 +99,7 @@ class TemplateManager {
      * @return void
      * 
      */
-    public function enqueue_default_scripts() {
+    public function enqueue_plugin_scripts() {
     
         if( $this->is_page() ) :
             
@@ -122,41 +123,34 @@ class TemplateManager {
     
     public function enqueue_template_scripts() {
         
-        if( $this->is_page() ) :
-            
-            if( file_exists( get_template_directory() . '/'. $this->override_path ) ) :            
-                $resource_path = get_template_directory() . '/'. $this->override_path;
-                $resource_uri = $this->override_resource_uri;         
-            else :             
-                $resource_path = $this->default_path;
-                $resource_uri = $this->default_resource_uri;          
-            endif;
-            
-            
-            foreach( glob( $resource_path . '/styles/*.css' ) as $file ) :
-                
+        if( $this->is_page() ) :          
+
+            foreach( glob( $this->default_path . '/styles/*.css' ) as $file ) :
+
                 wp_enqueue_style( 
                     sanitize_title( basename( $file, '.css' ) ), 
-                    $resource_uri . '/styles/' . basename( $file ),
+                    $this->resource_uri . '/styles/' . basename( $file ),
                     array(), 
                     FELIX_LAND_VER 
                 );
-            
+
             endforeach;
 
-            foreach( glob( $resource_path  . '/scripts/*.js' ) as $file ) :
+            foreach( glob( $this->default_path  . '/scripts/*.js' ) as $file ) :
+                
                 $jquery = $this->parse_file( $file, array( 'jQuery' ) );
 
                 wp_enqueue_script( 
                     sanitize_title( basename( $file, '.js' ) ), 
-                    $resource_uri . '/scripts/' . basename( $file ),  
+                    $this->resource_uri . '/scripts/' . basename( $file ),  
                     array( $jquery ? 'jquery' : null ), 
                     FELIX_LAND_VER 
                 );
-            
+
             endforeach;   
                 
         endif;
+            
     }
     
     private function parse_file( $file, $strings ) {
