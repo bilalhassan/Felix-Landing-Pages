@@ -68,6 +68,7 @@ class LandingPagePlugin {
     private function add_hooks() {
         
         add_action( 'init', array( $this, 'localize' ) );
+        add_action( 'admin_init', array( $this, 'first_run_redirect' ) );
         
         $this->template_manager->add_hooks();
         
@@ -93,7 +94,7 @@ class LandingPagePlugin {
         if( !$options ) :
             
             $options = array(
-                'default_template' => FELIX_LANDING_PAGE_PATH . 'inc/templates/template-1.php'
+                'default_template' => FELIX_LANDING_PAGE_PATH . 'inc/templates/template-1.php',
             );
         
             $options['landing_page_id'] = $this->template_manager->create_page();
@@ -102,8 +103,23 @@ class LandingPagePlugin {
             
         endif; 
         
+        add_option( 'felix_template_redirect', true );
+        
     }
     
+    public function first_run_redirect() {
+        
+        if( get_option( 'felix_template_redirect', false ) ) :
+            
+            delete_option( 'felix_template_redirect' );
+        
+            wp_redirect( admin_url( 'options-general.php?page=landing-page-options' ) ); 
+     
+        endif;
+        
+    }
+
+
     /**
      * Run plugin deactivation routine. If developer mode is enabled, all options
      * will be cleared,

@@ -70,3 +70,5 @@ register_deactivation_hook( __FILE__, 'felix_do_deactivation' );
 
 
 require( FELIX_LANDING_PAGE_PATH . 'inc/customizer.php' );
+
+require( FELIX_LANDING_PAGE_PATH . 'admin/admin.php' );
