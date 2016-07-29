@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Handles creation and deletion of pages.
+ * 
+ * @author Eric Green <eric@smartcat.ca>
+ * @since 0.1.0
+ * 
+ */
 class PageCreator {
     
     /**

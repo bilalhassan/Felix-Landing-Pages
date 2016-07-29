@@ -10,14 +10,13 @@
 class TemplateManager {
     
     private $template_package;
-    
-    private $default_path;
-    private $override_path;
-
     private $template_config;
     private $options;
     private $page_id;
     
+    private $default_path;
+    private $override_path;
+
     /**
      * @param int $page_id ID of page to manage.
      * @param array $options Options to use.
@@ -35,8 +34,40 @@ class TemplateManager {
         
     }
     
+    /**
+     * Set the ID for the page to manage.
+     * 
+     * @param string $page_id
+     * @return void
+     * @since 0.1.0
+     * 
+     */
     public function set_page_id( $page_id ) {
         $this->page_id = $page_id;
+    }
+    
+    /**
+     * Plugin-wide options for the template.
+     * 
+     * @param array $options
+     * @return void
+     * @since 0.1.0
+     * 
+     */
+    public function set_options( $options ) {
+        $this->options = $options;
+    }
+    
+    /**
+     * Parameters for configuring the template.
+     * 
+     * @param array $template_config
+     * @return void
+     * @since 0.1.0
+     * 
+     */
+    public function set_template_config( $template_config ) {
+        $this->template_config = $template_config;
     }
     
     /**
@@ -54,22 +85,6 @@ class TemplateManager {
         $this->default_path = $this->options['templates_dir'] . $this->template_package;
         $this->override_path = $this->options['theme_templates_dir'] . $this->template_package;
         
-    }
-    
-    /**
-     * Set the configuration for the template.
-     * 
-     * @param array $options The configuration for the template
-     * @return void
-     * @since 0.1.0
-     * 
-     */
-    public function set_options( $options ) {
-        $this->options = $options;
-    }
-    
-    public function set_template_config( $template_config ) {
-        $this->template_config = $template_config;
     }
 
     /**

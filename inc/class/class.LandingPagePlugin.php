@@ -9,7 +9,6 @@
  */
 class LandingPagePlugin {
     
-    //Plugin constants
     const DEV_MODE = true;
     
     private static $instance;
@@ -38,14 +37,38 @@ class LandingPagePlugin {
         
     }
     
+    /**
+     * Set the TemplateManager.
+     * 
+     * @param TemplateManager $template_manager
+     * @return void
+     * @since 0.1.0
+     * 
+     */
     public function set_template_manager( $template_manager ) {  
         $this->template_manager = $template_manager; 
     }
     
+    /**
+     * Set the CustomizerConfig.
+     * 
+     * @param CustomizerConfig $customizer_config
+     * @return void
+     * @since 0.1.0
+     * 
+     */
     public function set_customizer_config( $customizer_config ) {
         $this->customizer_config = $customizer_config;
     }
     
+    /**
+     * Set the PageCreator.
+     * 
+     * @param PageCreator $page_creator
+     * @return void
+     * @since 0.1.0
+     * 
+     */
     public function set_page_creator( $page_creator ) {
         $this->page_creator = $page_creator;
     }
@@ -59,7 +82,6 @@ class LandingPagePlugin {
      * 
      */
     public function run() {
-        
         
         $options = get_option( 'felix_landing_page_options' );
         $template_config = get_option( 'felix_landing_page_template' );  
@@ -112,7 +134,6 @@ class LandingPagePlugin {
             add_option( 'felix_landing_page_options', $options );
             
         endif; 
-        
         
         if( !get_option( 'felix_landing_page_template' ) ) :
             
