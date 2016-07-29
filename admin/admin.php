@@ -1,6 +1,8 @@
 <?php
 
 add_action( 'admin_menu', 'admin_page');
+        
+add_filter( 'plugin_action_links_' . FELIX_LAND, 'add_settings_link' );
 
 function admin_page() {
     
@@ -13,6 +15,17 @@ function admin_page() {
     add_options_page( $page_title, $menu_title, $capability, $menu_slug, $callback );
     
 }
+
+function add_settings_link( $links ) { 
+        
+        $url = get_admin_url() .'options-general.php?page=landing-page-options';
+        
+        $settings_link = '<a href="' . $url . '">' . __( 'Settings', 'felix-landing-page' ) .'</a>'; 
+        
+        array_push( $links, $settings_link ); 
+
+        return $links; 
+    }
 
 function do_options() { ?>
 

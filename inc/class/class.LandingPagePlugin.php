@@ -70,23 +70,9 @@ class LandingPagePlugin {
         add_action( 'init', array( $this, 'localize' ) );
         add_action( 'admin_init', array( $this, 'first_run_redirect' ) );
         
-        add_filter( 'plugin_action_links_' . FELIX_LAND, array( $this, 'add_settings_link' ) );
-        
         $this->template_manager->add_hooks();
     }   
     
-        
-    public function add_settings_link( $links ) { 
-        
-        $url = get_admin_url() .'options-general.php?page=landing-page-options';
-        
-        $settings_link = '<a href="' . $url . '">' . __( 'Settings', 'felix-landing-page' ) .'</a>'; 
-        
-        array_unshift( $links, $settings_link ); 
-
-        return $links; 
-    }
-
     /**
      * Load plugin default options on activate.
      * 
