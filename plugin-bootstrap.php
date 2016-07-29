@@ -50,7 +50,7 @@ foreach( glob( FELIX_LAND_PATH . 'inc/customizer/class/*.php' ) as $file ) :
 endforeach;
 
 
-LandingPagePlugin::instance()->configure();
+LandingPagePlugin::instance()->run();
 
 
 function felix_do_activation() {

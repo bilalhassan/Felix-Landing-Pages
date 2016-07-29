@@ -12,10 +12,11 @@ class LandingPagePlugin {
     //Plugin constants
     const DEV_MODE = true;
     
-    private static $instance = null;
+    private static $instance;
     
-    private $template_manager = null; 
-    private $customizer_config = null;
+    private $page_creator;
+    private $template_manager;
+    private $customizer_config;
     
     
     /**
@@ -28,13 +29,25 @@ class LandingPagePlugin {
     public static function instance() {
         
         if( self::$instance == null ) :
-            
+
             self::$instance = new self();
-            
+          
         endif;
         
         return self::$instance;
         
+    }
+    
+    public function set_template_manager( $template_manager ) {  
+        $this->template_manager = $template_manager; 
+    }
+    
+    public function set_customizer_config( $customizer_config ) {
+        $this->customizer_config = $customizer_config;
+    }
+    
+    public function set_page_creator( $page_creator ) {
+        $this->page_creator = $page_creator;
     }
     
     /**
@@ -45,13 +58,15 @@ class LandingPagePlugin {
      * @since 0.1.0
      * 
      */
-    public function configure() {
+    public function run() {
+        
         
         $options = get_option( 'felix_landing_page_options' );
-        $template_config =  get_option( 'felix_landing_page_template' );
+        $template_config = get_option( 'felix_landing_page_template' );  
         
-        $this->customizer_config = new CustomizerConfig();
-        $this->template_manager = new TemplateManager( $options['landing_page_id'], $options, $template_config, 'landing_page' );
+        $this->set_customizer_config( new CustomizerConfig() );
+        $this->set_page_creator( new PageCreator() );
+        $this->set_template_manager( new TemplateManager( $options['landing_page_id'], $options, $template_config, 'landing_page' ) );
         
         $this->add_hooks();
         
@@ -88,10 +103,11 @@ class LandingPagePlugin {
                 'templates_dir'         => FELIX_LAND_PATH . 'inc/templates/',
                 'templates_dir_url'     => FELIX_LAND_URL . 'inc/templates/',
                 'global_res_url'        => FELIX_LAND_URL . 'inc/assets/',
-                'theme_templates_dir'    => 'Felix/templates/'
+                'theme_templates_dir'   => 'Felix/templates/'
             );
         
-            $options['landing_page_id'] = $this->template_manager->create_page();
+            $page_creator = new PageCreator();
+            $options['landing_page_id'] = $this->page_creator->create_page();
             
             add_option( 'felix_landing_page_options', $options );
             
@@ -122,7 +138,7 @@ class LandingPagePlugin {
             
             $options = get_option( 'felix_landing_page_options' );
             
-            $result = $this->template_manager->delete_page();
+            $this->page_creator->delete_page( $options['landing_page_id'] );
             
             delete_option( 'felix_landing_page_options' );
             delete_option( 'felix_landing_page_template' );

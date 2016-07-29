@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Manages the creation and loading of the landing page.
+ * Manages the loading and configuration of the landing page.
  * 
  * @author Eric Green <eric@smartcat.ca>
  * @since 0.1.0
@@ -28,12 +28,15 @@ class TemplateManager {
      */
     public function __construct( $page_id, $options, $template_config, $template_package ) {
         
-        $this->page_id = $page_id;
-        $this->options = $options;
-        $this->template_config = $template_config;
-        
+        $this->set_page_id( $page_id );
+        $this->set_options( $options );
+        $this->set_template_config( $template_config );
         $this->set_template( $template_package );
         
+    }
+    
+    public function set_page_id( $page_id ) {
+        $this->page_id = $page_id;
     }
     
     /**
@@ -63,6 +66,10 @@ class TemplateManager {
      */
     public function set_options( $options ) {
         $this->options = $options;
+    }
+    
+    public function set_template_config( $template_config ) {
+        $this->template_config = $template_config;
     }
 
     /**
@@ -211,56 +218,7 @@ class TemplateManager {
         return $current_template;
         
     }
-    
-    /**
-     * Adds a new post that will supply the ID to reference when the template 
-     * should be loaded. If a page already exists, the ID for that page is
-     * returned instead.
-     * 
-     * @return int The ID of the page that TemplateManager is currently managing.
-     * @since 0.1.0
-     * 
-     */
-    public function create_page() {
-        
-        if( $this->page_id == null ) :
 
-            $id = wp_insert_post( 
-                 array(
-                    'post_title' => __( 'Felix Landing Page' ),
-                    'post_status' => 'publish',
-                    'post_type' => 'page'
-                )
-            );
-
-            if( $id ) :
-
-                $this->page_id = $id;
-
-            endif;
-            
-        endif;
-
-        return $this->page_id;
-        
-    } 
-    
-    /**
-     * Deletes the page currently being managed.
-     * 
-     * @return void
-     * @since 0.1.0
-     * 
-     */
-    public function delete_page() { 
-        
-        if( wp_delete_post( $this->page_id, true ) ) :
-            
-            $this->page_id = null;
-        
-        endif;
-        
-    }
 }
 
 ?>
