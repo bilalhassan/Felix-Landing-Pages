@@ -13,37 +13,27 @@ class TemplateManager {
     
     private $default_path;
     private $override_path;
-    
-    private $resource_uri;
-    
-    private $page_id;
+
+    private $template_config;
     private $options;
+    private $page_id;
     
     /**
-     * @param array $options Options for configuring the template
-     * @param string $template_file The file for the template
-     * @param int $page_id The ID of the page to be managed
+     * @param int $page_id ID of page to manage.
+     * @param array $options Options to use.
+     * @param array $template_config Configuration for the template.
+     * @param string $template_package The package name for the template.
      * @since 0.1.0
      * 
      */
-    public function __construct( $options = null, $template_package = null, $page_id = null ) {
+    public function __construct( $page_id, $options, $template_config, $template_package ) {
         
+        $this->page_id = $page_id;
         $this->options = $options;
-        $this->template_package = $template_package;
-        $this->page_id = $page_id;
+        $this->template_config = $template_config;
         
-    }
-    
-    /**
-     * Set the ID of the page to be managed.
-     * 
-     * @param int $page_id The ID of the page to be managed
-     * @return void
-     * @since 0.1.0
-     * 
-     */
-    public function set_page_id( $page_id ) {
-        $this->page_id = $page_id;
+        $this->set_template( $template_package );
+        
     }
     
     /**
@@ -55,13 +45,11 @@ class TemplateManager {
      * 
      */
     public function set_template( $template_package ) {
-        
+     
         $this->template_package = $template_package;
         
-        $this->default_path = FELIX_DEFAULT_TEMPLATES . $this->template_package;
-        $this->override_path = 'Felix/templates/' . $this->template_package;
-        
-        $this->resource_uri = FELIX_LANDING_PAGE_URL . 'inc/default_templates/' . $this->template_package;
+        $this->default_path = $this->options['templates_dir'] . $this->template_package;
+        $this->override_path = $this->options['theme_templates_dir'] . $this->template_package;
         
     }
     
@@ -107,16 +95,16 @@ class TemplateManager {
             include( __DIR__ . './../configs/font_choices.php');
             
             if( isset( $this->options['primary_font'] ) ) :
-                wp_enqueue_style('felix-font-primary', '//fonts.googleapis.com/css?family=' . $fonts[ $this->options['primary_font'] ], array(), FELIX_LAND_VER );
+                wp_enqueue_style('felix-font-primary', '//fonts.googleapis.com/css?family=' . $fonts[ $this->template_config['primary_font'] ], array(), FELIX_LAND_VER );
             endif;
             
             if( isset( $this->options['secondary_font'] ) ) :
-                wp_enqueue_style('felix-font-secondary', '//fonts.googleapis.com/css?family=' . $fonts[ $this->options['secondary_font'] ], array(), FELIX_LAND_VER );
+                wp_enqueue_style('felix-font-secondary', '//fonts.googleapis.com/css?family=' . $fonts[ $this->template_config['secondary_font'] ], array(), FELIX_LAND_VER );
             endif;
             
-            wp_enqueue_style( 'font-awesome', FELIX_LANDING_PAGE_URL . 'inc/assets/styles/font-awesome.min.css', array(), FELIX_LAND_VER );
-            wp_enqueue_style( 'bootstrap-theme', FELIX_LANDING_PAGE_URL . 'inc/assets/styles/bootstrap-theme.min.css', array(), FELIX_LAND_VER );
-            wp_enqueue_style( 'bootstrap', FELIX_LANDING_PAGE_URL . 'inc/assets/styles/bootstrap.min.css', array(), FELIX_LAND_VER );          
+            wp_enqueue_style( 'font-awesome', $this->options['global_res_url'] .'styles/font-awesome.min.css', array(), FELIX_LAND_VER );
+            wp_enqueue_style( 'bootstrap-theme', $this->options['global_res_url'] . 'styles/bootstrap-theme.min.css', array(), FELIX_LAND_VER );
+            wp_enqueue_style( 'bootstrap', $this->options['global_res_url'] . 'styles/bootstrap.min.css', array(), FELIX_LAND_VER );          
             
         endif;
  
@@ -137,7 +125,7 @@ class TemplateManager {
 
                 wp_enqueue_style( 
                     sanitize_title( basename( $file, '.css' ) ), 
-                    $this->resource_uri . '/styles/' . basename( $file ),
+                    $this->options['templates_dir_url'] . $this->template_package . '/styles/' . basename( $file ),
                     array(), 
                     FELIX_LAND_VER 
                 );
@@ -150,7 +138,7 @@ class TemplateManager {
             
                 wp_enqueue_script( 
                     sanitize_title( basename( $file, '.js' ) ), 
-                    $this->resource_uri . '/scripts/' . basename( $file ), 
+                    $this->options['templates_dir_url'] . $this->template_package . '/scripts/' . basename( $file ), 
                     ( $jquery ? array( 'jquery' ) : array() ), 
                     FELIX_LAND_VER 
                 );

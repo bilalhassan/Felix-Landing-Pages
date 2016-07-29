@@ -29,34 +29,28 @@ if( !defined( 'FELIX_LAND_VER' ) ) :
 endif;
 
 // Define the URL for the plugin
-if( !defined( 'FELIX_LANDING_PAGE_URL' ) ) :
-    define( 'FELIX_LANDING_PAGE_URL', plugin_dir_url( __FILE__ ) );
+if( !defined( 'FELIX_LAND_URL' ) ) :
+    define( 'FELIX_LAND_URL', plugin_dir_url( __FILE__ ) );
 endif;
 
 // Define the path for the plugin
-if( !defined( 'FELIX_LANDING_PAGE_PATH' ) ) :
-    define( 'FELIX_LANDING_PAGE_PATH',  plugin_dir_path( __FILE__ ) );
+if( !defined( 'FELIX_LAND_PATH' ) ) :
+    define( 'FELIX_LAND_PATH',  plugin_dir_path( __FILE__ ) );
 endif;
 
-// Define default template directory
-if( !defined( 'FELIX_DEFAULT_TEMPLATES' ) ) :
-    define( 'FELIX_DEFAULT_TEMPLATES',  plugin_dir_path( __FILE__ ) . 'inc/default_templates/' );
-endif;
 
 
 // Require all class files
-foreach( glob( FELIX_LANDING_PAGE_PATH . 'inc/class/*.php' ) as $file ) :
+foreach( glob( FELIX_LAND_PATH . 'inc/class/*.php' ) as $file ) :
     require_once $file;
 endforeach;
 
-foreach( glob( FELIX_LANDING_PAGE_PATH . 'inc/customizer/class/*.php' ) as $file ) :
+foreach( glob( FELIX_LAND_PATH . 'inc/customizer/class/*.php' ) as $file ) :
     require_once $file;
 endforeach;
 
 
-
-$plugin = LandingPagePlugin::instance();
-$plugin->configure( new TemplateManager(), new CustomizerConfig() );
+LandingPagePlugin::instance()->configure();
 
 
 function felix_do_activation() {
