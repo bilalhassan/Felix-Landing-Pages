@@ -15,7 +15,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_primary_toggle]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize_hide_or_show'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[jumbotron_primary_toggle]', array(
@@ -33,7 +33,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
         'type'              => 'option',
         'default'           => '',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'esc_url_raw'
+        'sanatize_callback' => ''
     ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'felix_landing_page_template[jumbotron_primary_image]', array(
         'mime_type'         => 'image',
@@ -47,7 +47,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_secondary_toggle]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize_hide_or_show'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[jumbotron_secondary_toggle]', array(
@@ -64,7 +64,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_secondary_image]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'esc_url_raw'
+        'sanatize_callback' => ''
     ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'felix_landing_page_template[jumbotron_secondary_image]', array(
         'mime_type'         => 'image',
@@ -78,7 +78,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_title]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize_text'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[jumbotron_title]', array(
@@ -92,7 +92,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_subtitle]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize_text'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[jumbotron_subtitle]', array(
@@ -106,7 +106,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_buttons][0][text]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize_text'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[jumbotron_buttons][0][text]', array(
@@ -120,7 +120,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_buttons][0][url]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'get_url_raw'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[jumbotron_buttons][0][url]', array(
@@ -134,7 +134,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_buttons][1][text]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize_text'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[jumbotron_buttons][1][text]', array(
@@ -148,7 +148,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_buttons][1][url]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'get_url_raw'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[jumbotron_buttons][1][url]', array(
