@@ -10,9 +10,17 @@ class CustomizerConfig {
     public function add_hooks() {
         
         add_action( 'customize_register', array( $this, 'register_config') );
+        add_action( 'customize_controls_enqueue_scripts', array( $this, 'register_script') );
          
     }
-
+    
+    
+    public function register_script() {
+        
+        wp_enqueue_script( 'felix-customizer-js', FELIX_LAND_URL. 'inc/customizer/scripts/customizer.js', array( 'jquery', 'customize-controls' ), FELIX_LAND_VER, true );
+        
+    }
+    
     public function register_config( $wp_customize ) {
 
         $wp_customize->add_panel( 'felix_landing_page', array(
