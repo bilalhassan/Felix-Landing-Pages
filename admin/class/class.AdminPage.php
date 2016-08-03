@@ -19,6 +19,11 @@ class AdminPage {
         
     }
     
+    public function get_menu_slug() {
+        return $this->menu_slug;
+    }
+
+
     public function add_hooks() {
         
         add_action( 'admin_menu', array( $this, 'register' ) );
@@ -28,7 +33,7 @@ class AdminPage {
     }
     
     public function enqueue_scripts() {
-        wp_enqueue_script( 'admin', FELIX_LANDING_PAGE_URL . 'admin/assets/admin.js', array(), FELIX_LAND_VER );
+        wp_enqueue_script( 'admin', FELIX_LAND_URL . 'admin/assets/admin.js', array(), FELIX_LAND_VER );
     }
     
     public function register() {
@@ -45,7 +50,7 @@ class AdminPage {
     
     public function add_settings_link( $links ) { 
         
-        $url = get_admin_url() .'options-general.php?page=landing-page-options';
+        $url = get_admin_url() .'options-general.php?page=' . $this->menu_slug;
 
         $settings_link = '<a href="' . $url . '">' . __( 'Settings', 'felix-landing-page' ) .'</a>'; 
 

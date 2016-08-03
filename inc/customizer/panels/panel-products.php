@@ -14,14 +14,14 @@ $wp_customize->add_section( 'felix_products_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[products][0]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[products][0]', array(
         'type'              => 'select',
         'section'           => 'felix_products_section',
         'label'             => __( 'Product 1', 'felix-landing-page' ),
-        'choices'           => felix_get_posts_array( 'product' )
+        'choices'           => $this->get_post_choices( 'product' )
      ) );
     
     
@@ -29,14 +29,14 @@ $wp_customize->add_section( 'felix_products_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[products][1]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[products][1]', array(
         'type'              => 'select',
         'section'           => 'felix_products_section',
         'label'             => __( 'Product 2', 'felix-landing-page' ),
-        'choices'           => felix_get_posts_array( 'product' )
+        'choices'           => $this->get_post_choices( 'product' )
      ) );
     
     
@@ -44,14 +44,14 @@ $wp_customize->add_section( 'felix_products_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[products][2]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[products][2]', array(
         'type'              => 'select',
         'section'           => 'felix_products_section',
         'label'             => __( 'Product 3', 'felix-landing-page' ),
-        'choices'           => felix_get_posts_array( 'product' )
+        'choices'           => $this->get_post_choices( 'product' )
      ) );
     
      
@@ -59,14 +59,14 @@ $wp_customize->add_section( 'felix_products_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[products][3]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[products][3]', array(
         'type'              => 'select',
         'section'           => 'felix_products_section',
         'label'             => __( 'Product 4', 'felix-landing-page' ),
-        'choices'           => felix_get_posts_array( 'product' )
+        'choices'           => $this->get_post_choices( 'product' )
      ) );
     
     
@@ -74,14 +74,14 @@ $wp_customize->add_section( 'felix_products_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[products][4]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[products][4]', array(
         'type'              => 'select',
         'section'           => 'felix_products_section',
         'label'             => __( 'Product 5', 'felix-landing-page' ),
-        'choices'           => felix_get_posts_array( 'product' )
+        'choices'           => $this->get_post_choices( 'product' )
      ) );
     
     
@@ -89,13 +89,13 @@ $wp_customize->add_section( 'felix_products_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[products][5]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => 'felix_sanitize'
+        'sanatize_callback' => ''
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[products][5]', array(
         'type'              => 'select',
         'section'           => 'felix_products_section',
         'label'             => __( 'Product 6', 'felix-landing-page' ),
-        'choices'           => felix_get_posts_array( 'product' )
+        'choices'           => $this->get_post_choices( 'product' )
      ) );
     

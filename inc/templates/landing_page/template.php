@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @package landing_page
+ * 
+ */
+
 ?>
 <html>
     <head>
@@ -15,31 +20,31 @@
             switch( $block ) :
 
                 case 'header':
-                    require_once( FELIX_LANDING_PAGE_TEMPLATE_PARTS . 'block-header.php' );
+                    require_once( 'parts/part-header.php' );
                     break;
 
                 case 'hero': 
-                    require_once( FELIX_LANDING_PAGE_TEMPLATE_PARTS . 'block-jumbotron.php' );
+                    require_once( 'parts/part-jumbotron.php' );
                     break;
 
                 case 'navbar': 
-                    require_once( FELIX_LANDING_PAGE_TEMPLATE_PARTS . 'block-navbar.php' );
+                    require_once( 'parts/part-navbar.php' );
                     break;
 
                 case 'products':
-                    require_once( FELIX_LANDING_PAGE_TEMPLATE_PARTS . 'block-products.php' );
+                    require_once( 'parts/part-products.php' );
                     break;
 
                 case 'content':
-                    require_once( FELIX_LANDING_PAGE_TEMPLATE_PARTS . 'block-content.php' );
+                    require_once( 'parts/part-content.php' );
                     break;
 
                 case 'articles':
-                    require_once( FELIX_LANDING_PAGE_TEMPLATE_PARTS . 'block-articles.php' );
+                    require_once( 'parts/part-articles.php' );
                     break;
 
                 case 'footer':
-                    require_once( FELIX_LANDING_PAGE_TEMPLATE_PARTS . 'block-footer.php' );
+                    require_once( 'parts/part-footer.php' );
                     break;
 
             endswitch;
