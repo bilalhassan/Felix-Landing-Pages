@@ -93,7 +93,7 @@ class LandingPagePlugin {
         
         $this->set_customizer_config( new CustomizerConfig() );
         $this->set_page_creator( new PageCreator() );
-        $this->set_admin_page( new AdminPage( 'Landing Page Options', 'Landing Page', 'landing-page-admin', $options ) );
+        $this->set_admin_page( new Admin( 'Landing Page Options', 'Landing Page', 'landing-page-admin', $options ) );
         $this->set_template_manager( new TemplateManager( $options['landing_page_id'], $options, $template_config, 'landing_page' ) );
         
         $this->add_hooks();
