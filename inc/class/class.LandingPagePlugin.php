@@ -16,6 +16,7 @@ class LandingPagePlugin {
     private $page_creator;
     private $template_manager;
     private $customizer_config;
+    private $admin_page;
     
     
     /**
@@ -73,6 +74,10 @@ class LandingPagePlugin {
         $this->page_creator = $page_creator;
     }
     
+    public function set_admin_page( $admin_page ) {
+        $this->admin_page = $admin_page;
+    }
+    
     /**
      * Configure the runnable state of the plugin class.
      * 
@@ -88,6 +93,7 @@ class LandingPagePlugin {
         
         $this->set_customizer_config( new CustomizerConfig() );
         $this->set_page_creator( new PageCreator() );
+        $this->set_admin_page( new AdminPage( 'Landing Page Options', 'Landing Page', 'landing-page-admin', $options ) );
         $this->set_template_manager( new TemplateManager( $options['landing_page_id'], $options, $template_config, 'landing_page' ) );
         
         $this->add_hooks();
@@ -104,7 +110,10 @@ class LandingPagePlugin {
     private function add_hooks() {
         
         add_action( 'init', array( $this, 'localize' ) );
-
+        add_action( 'admin_init', array( $this, 'first_run_redirect' ) );
+        
+        $this->admin_page->add_hooks();
+        $this->template_manager->add_hooks();
         $this->template_manager->add_hooks();
         $this->customizer_config->add_hooks();
         
@@ -122,6 +131,7 @@ class LandingPagePlugin {
         if( !get_option( 'felix_landing_page_options' ) ) :
             
             $options = array(
+                'default_template' => FELIX_LANDING_PAGE_PATH . 'inc/templates/template-1.php',
                 'templates_dir'         => FELIX_LAND_PATH . 'inc/templates/',
                 'templates_dir_url'     => FELIX_LAND_URL . 'inc/templates/',
                 'global_res_url'        => FELIX_LAND_URL . 'inc/assets/',
@@ -135,6 +145,8 @@ class LandingPagePlugin {
             
         endif; 
         
+        add_option( 'felix_template_redirect', true );
+
         if( !get_option( 'felix_landing_page_template' ) ) :
             
             include( __DIR__ . './../configs/template_defaults.php' );
@@ -145,6 +157,19 @@ class LandingPagePlugin {
         
     }
     
+    public function first_run_redirect() {
+        
+        if( get_option( 'felix_template_redirect', false ) ) :
+            
+            delete_option( 'felix_template_redirect' );
+        
+            wp_redirect( admin_url( 'options-general.php?page=' . $this->admin_page->get_menu_slug() ) ); 
+     
+        endif;
+        
+    }
+
+
     /**
      * Run plugin deactivation routine. If developer mode is enabled, all options
      * will be cleared,
