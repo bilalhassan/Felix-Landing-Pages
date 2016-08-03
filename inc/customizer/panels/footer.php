@@ -14,7 +14,7 @@ $wp_customize->add_section( 'felix_footer_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[footer_copyright_text]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'sanitize_text_field'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[footer_copyright_text]', array(
@@ -28,7 +28,7 @@ $wp_customize->add_section( 'felix_footer_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[footer_textboxes][0]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'sanitize_text_field'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[footer_textboxes][0]', array(
@@ -42,7 +42,7 @@ $wp_customize->add_section( 'felix_footer_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[footer_textboxes][1]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'sanitize_text_field'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[footer_textboxes][1]', array(

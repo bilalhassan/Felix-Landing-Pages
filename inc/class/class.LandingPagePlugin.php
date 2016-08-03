@@ -4,10 +4,13 @@
  * Main Plugin class, configures and initializes plugin.
  * 
  * @author Eric Green <eric@smartcat.ca>
- * @since 0.1.0
+ * @since 0.9.0
  * 
  */
-class LandingPagePlugin {
+
+if( !class_exists( 'LandingPagePlugin' ) ) :
+
+class Felix_LandPlugin {
     
     const DEV_MODE = true;
     
@@ -16,13 +19,14 @@ class LandingPagePlugin {
     private $page_creator;
     private $template_manager;
     private $customizer_config;
+    private $admin;
     
     
     /**
      * Get the static instance of the main plugin class.
      * 
-     * @return LandingPagePlugin The main class' instance
-     * @since 0.1.0
+     * @return Felix_LandPlugin The main class' instance
+     * @since 0.9.0
      * 
      */
     public static function instance() {
@@ -42,7 +46,7 @@ class LandingPagePlugin {
      * 
      * @param TemplateManager $template_manager
      * @return void
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function set_template_manager( $template_manager ) {  
@@ -52,9 +56,9 @@ class LandingPagePlugin {
     /**
      * Set the CustomizerConfig.
      * 
-     * @param CustomizerConfig $customizer_config
+     * @param Felix_CustomizerConfig $customizer_config
      * @return void
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function set_customizer_config( $customizer_config ) {
@@ -66,11 +70,15 @@ class LandingPagePlugin {
      * 
      * @param PageCreator $page_creator
      * @return void
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function set_page_creator( $page_creator ) {
         $this->page_creator = $page_creator;
+    }
+    
+    public function set_admin( $admin_page ) {
+        $this->admin = $admin_page;
     }
     
     /**
@@ -78,7 +86,7 @@ class LandingPagePlugin {
      * 
      * @param type $template_manager Template manager to manage the landing page
      * @return void 
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function run() {
@@ -86,8 +94,9 @@ class LandingPagePlugin {
         $options = get_option( 'felix_landing_page_options' );
         $template_config = get_option( 'felix_landing_page_template' );  
         
-        $this->set_customizer_config( new CustomizerConfig() );
+        $this->set_customizer_config( new Felix_CustomizerConfig() );
         $this->set_page_creator( new PageCreator() );
+        $this->set_admin( new Felix_Admin( 'Landing Page Options', 'Landing Page', 'landing-page-admin', $options ) );
         $this->set_template_manager( new TemplateManager( $options['landing_page_id'], $options, $template_config, 'landing_page' ) );
         
         $this->add_hooks();
@@ -98,13 +107,15 @@ class LandingPagePlugin {
      * Configure WordPress hooks.
      * 
      * @return void
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     private function add_hooks() {
         
         add_action( 'init', array( $this, 'localize' ) );
-
+        add_action( 'admin_init', array( $this, 'first_run_redirect' ) );
+        
+        $this->admin->add_hooks();
         $this->template_manager->add_hooks();
         $this->customizer_config->add_hooks();
         
@@ -114,7 +125,7 @@ class LandingPagePlugin {
      * Load plugin default options on activate.
      * 
      * @return void
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function activate() {  
@@ -145,12 +156,24 @@ class LandingPagePlugin {
         
     }
     
+    public function first_run_redirect() {
+        
+        if( get_option( 'felix_template_redirect', false ) ) :
+            
+            delete_option( 'felix_template_redirect' );
+        
+            wp_redirect( admin_url( 'options-general.php?page=' . $this->admin->get_menu_slug() ) ); 
+     
+        endif;
+        
+    }
+
     /**
      * Run plugin deactivation routine. If developer mode is enabled, all options
      * will be cleared,
      * 
      * @return void
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function deactivate() {
@@ -172,7 +195,7 @@ class LandingPagePlugin {
      * Localize strings.
      * 
      * @return void
-     * @since 0.1.0
+     * @since 0.9.0
      */
     public function localize() {
         
@@ -181,5 +204,7 @@ class LandingPagePlugin {
     }
 
 }
+
+endif;
 
 ?>

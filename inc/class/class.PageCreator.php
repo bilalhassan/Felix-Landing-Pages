@@ -4,9 +4,12 @@
  * Handles creation and deletion of pages.
  * 
  * @author Eric Green <eric@smartcat.ca>
- * @since 0.1.0
+ * @since 0.9.0
  * 
  */
+
+if( !class_exists( 'PageCreator' ) ) :
+
 class PageCreator {
     
     /**
@@ -14,7 +17,7 @@ class PageCreator {
      * should be loaded.
      * 
      * @return int The ID of the page that was created, false on failure.
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function create_page() {
@@ -35,7 +38,7 @@ class PageCreator {
      * Deletes the page with the ID passed in.
      * 
      * @return Whether or not the page was deleted.
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function delete_page( $page_id ) { 
@@ -44,3 +47,7 @@ class PageCreator {
         
     }
 }
+
+endif;
+
+?>

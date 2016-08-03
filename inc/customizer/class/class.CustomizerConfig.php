@@ -5,7 +5,12 @@
  *
  * @author eric
  */
-class CustomizerConfig {
+
+require_once( __DIR__ . './../callbacks/sanitize.php' );
+
+if( !class_exists( 'CustomizerConfig' ) ) :
+
+class Felix_CustomizerConfig {
     
     public function add_hooks() {
         
@@ -20,16 +25,20 @@ class CustomizerConfig {
             'priority' => 10
         ) );
 
-        require( __DIR__ . './../panels/panel-general.php' );
-        require( __DIR__ . './../panels/panel-blockorder.php' );
-        require( __DIR__ . './../panels/panel-header.php' );
-        require( __DIR__ . './../panels/panel-jumbotron.php' );
-        require( __DIR__ . './../panels/panel-navbar.php' );
-        require( __DIR__ . './../panels/panel-products.php' );
-        require( __DIR__ . './../panels/panel-content.php' );
-        require( __DIR__ . './../panels/panel-articles.php' );
-        require( __DIR__ . './../panels/panel-footer.php' );
-        
+        require( __DIR__ . './../panels/general.php' );
+        require( __DIR__ . './../panels/blockorder.php' );
+        require( __DIR__ . './../panels/header.php' );
+        require( __DIR__ . './../panels/jumbotron.php' );
+        require( __DIR__ . './../panels/navbar.php' );
+        require( __DIR__ . './../panels/products.php' );
+        require( __DIR__ . './../panels/content.php' );
+        require( __DIR__ . './../panels/articles.php' );
+        require( __DIR__ . './../panels/footer.php' );
+
+    }
+    
+    public function enqueue_scripts() {
+         wp_enqueue_script( 'customizer', FELIX_LAND_URL . 'inc/customizer/assets/customize.js', array( 'jquery'), FELIX_LAND_VER );
     }
 
     /**
@@ -38,10 +47,10 @@ class CustomizerConfig {
      * @param string $post_type
      * @param int $limit
      * @return array
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
-    private function get_post_choices( $post_type = "post", $limit = -1 ) {
+    private static function get_post_choices( $post_type = "post", $limit = -1 ) {
 
         $posts = get_posts( array(
             'post_type'     => $post_type,
@@ -71,10 +80,10 @@ class CustomizerConfig {
      * Options for the block selection.
      * 
      * @return array
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
-    private function get_block_choices() {
+    private static function get_block_choices() {
 
         $blocks = array(
             'disabled'  => __( 'Disabled', 'felix-landing-page' ),
@@ -91,7 +100,7 @@ class CustomizerConfig {
 
     }
 
-    private function get_font_choices() {
+    private static function get_font_choices() {
 
         include( __DIR__ . './../../configs/font_choices.php');
 
@@ -100,5 +109,7 @@ class CustomizerConfig {
     }
     
 }
+
+endif;
 
 ?>
