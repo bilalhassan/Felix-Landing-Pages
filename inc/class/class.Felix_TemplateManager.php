@@ -8,9 +8,9 @@
  * 
  */
 
-if( !class_exists( 'TemplateManager') ) :
+if( !class_exists( 'Felix_TemplateManager') ) :
 
-class TemplateManager {
+class Felix_TemplateManager {
     
     private $template_package;
     private $template_config;

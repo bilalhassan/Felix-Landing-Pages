@@ -8,7 +8,7 @@
  * 
  */
 
-if( !class_exists( 'LandingPagePlugin' ) ) :
+if( !class_exists( 'Felix_LandingPagePlugin' ) ) :
 
 class Felix_LandPlugin {
     
@@ -95,9 +95,9 @@ class Felix_LandPlugin {
         $template_config = get_option( 'felix_landing_page_template' );  
         
         $this->set_customizer_config( new Felix_CustomizerConfig() );
-        $this->set_page_creator( new PageCreator() );
+        $this->set_page_creator( new Felix_PageCreator() );
         $this->set_admin( new Felix_Admin( 'Landing Page Options', 'Landing Page', 'landing-page-admin', $options ) );
-        $this->set_template_manager( new TemplateManager( $options['landing_page_id'], $options, $template_config, 'landing_page' ) );
+        $this->set_template_manager( new Felix_TemplateManager( $options['landing_page_id'], $options, $template_config, 'landing_page' ) );
         
         $this->add_hooks();
         

@@ -6,7 +6,7 @@
  * @author eric
  */
 
-if( !class_exists( 'CustomizerConfig' ) ) :
+if( !class_exists( 'Felix_CustomizerConfig' ) ) :
 
 class Felix_CustomizerConfig {
     

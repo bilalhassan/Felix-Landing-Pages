@@ -8,9 +8,9 @@
  * 
  */
 
-if( !class_exists( 'PageCreator' ) ) :
+if( !class_exists( 'Felix_PageCreator' ) ) :
 
-class PageCreator {
+class Felix_PageCreator {
     
     /**
      * Adds a new post that will supply the ID to reference when the template 

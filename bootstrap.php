@@ -45,18 +45,19 @@ endif;
 
 
 // Require all class files
-foreach( glob( FELIX_LAND_PATH . 'inc/class/*.php' ) as $file ) :
-    require_once $file;
-endforeach;
+//foreach( glob( FELIX_LAND_PATH . 'inc/class/*.php' ) as $file ) :
+//    require_once $file;
+//endforeach;
+//
+//foreach( glob( FELIX_LAND_PATH . 'inc/customizer/class/*.php' ) as $file ) :
+//    require_once $file;
+//endforeach;
+//
+//foreach( glob( FELIX_LAND_PATH . 'admin/class/*.php' ) as $file ) :
+//    require_once $file;
+//endforeach;
 
-foreach( glob( FELIX_LAND_PATH . 'inc/customizer/class/*.php' ) as $file ) :
-    require_once $file;
-endforeach;
-
-foreach( glob( FELIX_LAND_PATH . 'admin/class/*.php' ) as $file ) :
-    require_once $file;
-endforeach;
-
+require_once( FELIX_LAND_PATH . 'inc/functions/autoload.php' );
 
 
 Felix_LandPlugin::instance()->run();

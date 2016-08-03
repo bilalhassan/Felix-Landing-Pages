@@ -7,7 +7,7 @@
  * @since 0.9.0
  */
 
-if( !class_exists( 'Admin' ) ) :
+if( !class_exists( 'Felix_Admin' ) ) :
 
 class Felix_Admin {
     
