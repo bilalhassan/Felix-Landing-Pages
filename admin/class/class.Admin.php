@@ -1,6 +1,6 @@
 <?php
 
-class AdminPage {
+class Admin {
     
     private $admin_title;
     private $menu_title;
