@@ -66,7 +66,7 @@ class Felix_Admin {
      * 
      */
     public function enqueue_scripts() {
-        wp_enqueue_script( 'admin', FELIX_LAND_URL . 'admin/assets/scripts/admin.js', array(), FELIX_LAND_VER );
+        wp_enqueue_script( 'felix-land-admin', FELIX_LAND_URL . 'admin/assets/scripts/admin.js', array(), FELIX_LAND_VER );
     }
     
     /**

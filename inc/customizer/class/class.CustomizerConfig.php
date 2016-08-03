@@ -6,8 +6,6 @@
  * @author eric
  */
 
-require_once( __DIR__ . './../callbacks/sanitize.php' );
-
 if( !class_exists( 'CustomizerConfig' ) ) :
 
 class Felix_CustomizerConfig {
@@ -35,10 +33,11 @@ class Felix_CustomizerConfig {
         require( __DIR__ . './../panels/articles.php' );
         require( __DIR__ . './../panels/footer.php' );
 
+        $this->enqueue_scripts();
     }
     
     public function enqueue_scripts() {
-         wp_enqueue_script( 'customizer', FELIX_LAND_URL . 'inc/customizer/assets/customize.js', array( 'jquery'), FELIX_LAND_VER );
+         wp_enqueue_script( 'felix-land-customizer', FELIX_LAND_URL . 'inc/customizer/assets/scripts/customize.js', array( 'jquery'), FELIX_LAND_VER );
     }
 
     /**
@@ -50,7 +49,7 @@ class Felix_CustomizerConfig {
      * @since 0.9.0
      * 
      */
-    private static function get_post_choices( $post_type = "post", $limit = -1 ) {
+    private function get_post_choices( $post_type = "post", $limit = -1 ) {
 
         $posts = get_posts( array(
             'post_type'     => $post_type,
@@ -83,7 +82,7 @@ class Felix_CustomizerConfig {
      * @since 0.9.0
      * 
      */
-    private static function get_block_choices() {
+    private function get_block_choices() {
 
         $blocks = array(
             'disabled'  => __( 'Disabled', 'felix-landing-page' ),
@@ -100,7 +99,7 @@ class Felix_CustomizerConfig {
 
     }
 
-    private static function get_font_choices() {
+    private function get_font_choices() {
 
         include( __DIR__ . './../../configs/font_choices.php');
 

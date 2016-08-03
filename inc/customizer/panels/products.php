@@ -22,7 +22,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'type'              => 'select',
         'section'           => 'felix_products_section',
         'label'             => __( 'Product 1', 'felix-landing-page' ),
-        'choices'           => self::get_post_choices( 'product' )
+        'choices'           => $this->get_post_choices( 'product' )
      ) );
     
     
@@ -38,7 +38,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'type'              => 'select',
         'section'           => 'felix_products_section',
         'label'             => __( 'Product 2', 'felix-landing-page' ),
-        'choices'           => self::get_post_choices( 'product' )
+        'choices'           => $this->get_post_choices( 'product' )
      ) );
     
     
@@ -54,7 +54,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'type'              => 'select',
         'section'           => 'felix_products_section',
         'label'             => __( 'Product 3', 'felix-landing-page' ),
-        'choices'           => self::get_post_choices( 'product' )
+        'choices'           => $this->get_post_choices( 'product' )
      ) );
     
      
@@ -70,7 +70,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'type'              => 'select',
         'section'           => 'felix_products_section',
         'label'             => __( 'Product 4', 'felix-landing-page' ),
-        'choices'           => self::get_post_choices( 'product' )
+        'choices'           => $this->get_post_choices( 'product' )
      ) );
     
     
@@ -86,7 +86,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'type'              => 'select',
         'section'           => 'felix_products_section',
         'label'             => __( 'Product 5', 'felix-landing-page' ),
-        'choices'           => self::get_post_choices( 'product' )
+        'choices'           => $this->get_post_choices( 'product' )
      ) );
     
     
@@ -102,6 +102,6 @@ $wp_customize->add_section( 'felix_products_section',  array(
         'type'              => 'select',
         'section'           => 'felix_products_section',
         'label'             => __( 'Product 6', 'felix-landing-page' ),
-        'choices'           => self::get_post_choices( 'product' )
+        'choices'           => $this->get_post_choices( 'product' )
      ) );
     

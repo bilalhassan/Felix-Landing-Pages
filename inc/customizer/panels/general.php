@@ -59,7 +59,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
         'type'              => 'select',
         'section'           => 'felix_general_section',
         'label'             => __( 'Primary font', 'felix-landing-page' ),
-        'choices'           => self::get_font_choices()
+        'choices'           => $this->get_font_choices()
      ) );
     
     // Select for secondary font
@@ -74,7 +74,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
         'type'              => 'select',
         'section'           => 'felix_general_section',
         'label'             => __( 'Secondary Font', 'felix-landing-page' ),
-        'choices'           => self::get_font_choices()
+        'choices'           => $this->get_font_choices()
      ) );
 
     

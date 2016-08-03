@@ -22,7 +22,7 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 1', 'felix-landing-page' ),
-        'choices'           => self::get_block_choices()
+        'choices'           => $this->get_block_choices()
     ) );
     
     
@@ -38,7 +38,7 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 2', 'felix-landing-page' ),
-        'choices'           => self::get_block_choices()
+        'choices'           => $this->get_block_choices()
     ) );
 
 
@@ -54,7 +54,7 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 3', 'felix-landing-page' ),
-        'choices'           => self::get_block_choices()
+        'choices'           => $this->get_block_choices()
     ) );
 
 
@@ -70,7 +70,7 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 4', 'felix-landing-page' ),
-        'choices'           => self::get_block_choices()
+        'choices'           => $this->get_block_choices()
     ) );
 
 
@@ -85,7 +85,7 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 5', 'felix-landing-page' ),
-        'choices'           => self::get_block_choices()
+        'choices'           => $this->get_block_choices()
     ) );
     
     
@@ -100,7 +100,7 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 6', 'felix-landing-page' ),
-        'choices'           => self::get_block_choices()
+        'choices'           => $this->get_block_choices()
     ) );
     
     
@@ -115,6 +115,6 @@ $wp_customize->add_section( 'felix_blockorder_section',  array(
         'type'              => 'select',
         'section'           => 'felix_blockorder_section',
         'label'             => __( 'Block 7', 'felix-landing-page' ),
-        'choices'           => self::get_block_choices()
+        'choices'           => $this->get_block_choices()
     ) );
     
