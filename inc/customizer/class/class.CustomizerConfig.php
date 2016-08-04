@@ -10,11 +10,11 @@ class CustomizerConfig {
     public function add_hooks() {
         
         add_action( 'customize_register', array( $this, 'register_config') );
-        add_action( 'customize_controls_enqueue_scripts', array( $this, 'register_script') );
+        add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_scripts') );
         
     }
     
-    public function register_script() {
+    public function enqueue_scripts() {
         
         $options = get_option( 'felix_landing_page_options' );
         
@@ -23,8 +23,9 @@ class CustomizerConfig {
             'ajax_url'  => admin_url( 'admin-ajax.php' )
         );
         
-        wp_enqueue_script( 'felix-customizer-js', FELIX_LAND_URL. 'inc/customizer/scripts/customizer.js', array( 'jquery', 'customize-controls' ), FELIX_LAND_VER, true );
+        wp_enqueue_script( 'felix-customizer-js', FELIX_LAND_URL. 'inc/customizer/assets/scripts/customizer.js', array( 'jquery', 'customize-controls' ), FELIX_LAND_VER, true );
         wp_localize_script( 'felix-customizer-js', 'FelixCustomizer', $localize );
+        
     }
     
     public function register_config( $wp_customize ) {
@@ -43,8 +44,6 @@ class CustomizerConfig {
         require( __DIR__ . './../panels/panel-content.php' );
         require( __DIR__ . './../panels/panel-articles.php' );
         require( __DIR__ . './../panels/panel-footer.php' );
-        
-        wp_enqueue_script( 'customizer', FELIX_LAND_URL . 'inc/customizer/assets/customize.js', array( 'jquery'), FELIX_LAND_VER );
         
     }
 
