@@ -18,13 +18,13 @@ class CustomizerConfig {
         
         $options = get_option( 'felix_landing_page_options' );
         
-        $translation = array(
+        $localize = array(
             'page_url'  => get_permalink( $options['landing_page_id'] ),
             'ajax_url'  => admin_url( 'admin-ajax.php' )
         );
         
         wp_enqueue_script( 'felix-customizer-js', FELIX_LAND_URL. 'inc/customizer/scripts/customizer.js', array( 'jquery', 'customize-controls' ), FELIX_LAND_VER, true );
-        wp_localize_script( 'felix-customizer-js', 'FelixCustomizer', $translation );
+        wp_localize_script( 'felix-customizer-js', 'FelixCustomizer', $localize );
     }
     
     public function register_config( $wp_customize ) {
