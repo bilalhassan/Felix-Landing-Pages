@@ -8,6 +8,19 @@ and open the template in the editor.
     Author     : eric
 */
 
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body:not(.custom-background-image):before, body:not(.custom-background-image):after {
+    display: none !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
 /*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     HEADER
 //////////////////////////////////////////////////*/
@@ -39,7 +52,7 @@ and open the template in the editor.
 
 #branding-block {
     background-color: #07142b;
-    padding: 30px 0;
+    padding: 50px 0;
     color: #fff;
     text-align: center;
     display: table-cell;
@@ -71,4 +84,210 @@ and open the template in the editor.
     padding: 5px 15px;
     border-radius: 2px;
     margin-left: 2px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.accent-button:hover {
+    color: #fff;
+}
+
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    NAV BAR
+//////////////////////////////////////////////////*/
+
+section#nav-bar-block {
+    background-color: #0099e5;
+    height: 50px;
+    text-align: center;
+}
+
+section#nav-bar-block nav a {
+    line-height: 50px;
+    color: #fff;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    margin: 0 20px;    
+}
+
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    JUMBOTRON
+//////////////////////////////////////////////////*/
+
+div#jumbotron-container {
+    height: 600px;
+    background-size: cover;
+    background-position: 50%;
+    position: relative;
+    background-color: #fff;
+}
+
+
+div#jumbotron-container .wrapper {
+    height: 600px;
+    width: 100%;
+    display: table;
+}
+
+div#jumbotron-container .wrapper .inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+}
+
+#jumbotron-cta {
+    background-color: rgba(255,255,255,.90);
+    width: 300px;
+    min-height: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: table;
+}
+
+#jumbotron-cta .inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#jumbotron-cta img {
+    margin: 30px auto 15px auto;
+    height: 50px;
+    display: block;
+}
+
+#jumbotron-cta h2 {
+    font-size: 18px;
+    padding: 0 10px;
+    letter-spacing: .5em;
+    font-family: 'Montserrat';
+    line-height: 22px;
+    text-transform: uppercase;
+}
+
+#jumbotron-cta p {
+    font-family: 'Raleway';
+    font-size: 10px;
+    font-weight: 600;
+    margin: 10px 0 0 0;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+#jumbotron-cta .accent-button {
+    padding: 15px 20px;
+    margin-top: 30px;
+}
+
+#jumbotron-footer-wrapper {
+    width: 100%;
+}
+
+#jumbotron-footer {
+    margin-top: -100px;
+    background-color: #07142b;
+    text-align: center;
+    color: #fff;
+    line-height: 100px;
+    border-radius: 10px 10px 0 0;
+}
+
+#jumbotron-footer a {
+    color: #fff;
+    letter-spacing: .2em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+
+#products-container {
+    background-color: #fff;
+}
+
+#products-header {
+    background-color: #0099e5;
+    padding: 0 40px;
+    border-radius: 0 0 10px 10px;
+}
+
+#products-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    margin: 50px 0 0px 0;
+    font-size: 20px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+#products-header hr {
+    margin-bottom: 40px;
+    border-color: #fff;
+}
+
+#products {
+    padding: 30px 15px;
+}
+
+#products img {
+    width: 100%;
+    border-bottom: 10px solid #0099e5;
+}
+
+.prod-body {
+    padding: 30px 20px;
+    background-color: #f9f9f9;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 15px
+}
+
+.prod-body h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin: 0 0 5px 0;
+}
+
+.prod-body h4 a {
+    color: #0099e5;
+}
+
+.prod-body h3 {
+    font-family: 'Abel', sans-serif;
+    font-size: 16px;
+    margin: 0 0 20px 0;
+}
+
+.prod-body p {
+    font-family: 'Abel', sans-serif;
+    font-size: 16px;
+}
+
+.product-roll-cta {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height: 400px;
+    background-color: #07142b;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.product-roll-cta h4 {
+    margin: 0;
+    color: #fff;
+    font-family: 'Abel';
+    margin-bottom: 15px;
+}
+
+.product-roll-cta i.fa {
+    color: #fff;
+    border: 2px solid #fff;    
+    border-radius: 50%;
+    font-size: 40px;
+    line-height: 60px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
 }

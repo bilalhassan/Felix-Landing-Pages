@@ -9,6 +9,18 @@ $wp_customize->add_section( 'felix_products_section',  array(
     'panel'         => 'felix_landing_page'
 ) );
 
+    // 
+    $wp_customize->add_setting( 'felix_landing_page_template[products_header]', array(
+        'type'              => 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default'           => __( 'Store', 'felix-landing-page' )
+    ) );
+    $wp_customize->add_control( 'felix_landing_page_template[products_header]', array(
+        'type'              => 'text',
+        'section'           => 'felix_jumbotron_section',
+        'label'             => __( 'Products Section Heading', 'felix-landing-page' ),
+    ) );
 
     // Select for Product 1 
     $wp_customize->add_setting( 'felix_landing_page_template[products][0]', array(
@@ -26,7 +38,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
      ) );
     
     
-    // vProduct 2
+    // Product 2
     $wp_customize->add_setting( 'felix_landing_page_template[products][1]', array(
         'type'              => 'option',
         'transport'         => 'refresh',

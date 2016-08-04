@@ -5,6 +5,8 @@
  * 
  */
 
+$options = get_option( 'felix_landing_page_template' );
+
 ?>
 <html>
     <head>
@@ -13,8 +15,6 @@
     <body>
         <?php 
         
-        $options = get_option( 'felix_landing_page_template' );
-
         foreach( $options['blockorder'] as $block) :
 
             switch( $block ) :
@@ -23,12 +23,12 @@
                     require_once( 'parts/part-header.php' );
                     break;
 
-                case 'hero': 
-                    require_once( 'parts/part-jumbotron.php' );
-                    break;
-
                 case 'navbar': 
                     require_once( 'parts/part-navbar.php' );
+                    break;
+                
+                case 'jumbotron': 
+                    require_once( 'parts/part-jumbotron.php' );
                     break;
 
                 case 'products':
@@ -52,6 +52,7 @@
         endforeach;
         
         wp_footer();
+        
         ?>
     </body>      
 </html>

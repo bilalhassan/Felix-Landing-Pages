@@ -32,6 +32,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     // Primary image
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_primary_image]', array(
         'type'              => 'option',
+        'default'           => FELIX_LAND_URL . 'inc/templates/landing_page/images/jumboat.',
         'transport'         => 'refresh',
         'sanitize_callback' => 'esc_url_raw'
     ) );
@@ -64,12 +65,13 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     // Secondary image
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_secondary_image]', array(
         'type'              => 'option',
+        'default'           => FELIX_LAND_URL . 'inc/templates/landing_page/images/jumbotron-logo.png',
         'transport'         => 'refresh',
         'sanitize_callback' => 'esc_url_raw'
     ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'felix_landing_page_template[jumbotron_secondary_image]', array(
         'mime_type'         => 'image',
-        'settings'          => 'felix_landing_page_template[jumbotron_secondary_toggle]',
+        'settings'          => 'felix_landing_page_template[jumbotron_secondary_image]',
         'section'           => 'felix_jumbotron_section',
         'label'             => __( 'Hero secondary image', 'felix-landing-page' ),
     ) ) );
@@ -158,3 +160,101 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
         'description'       => __( 'URL', 'felix-landing-pages' )
     ) );
     
+    
+    // Toggle Jumbotron Footer Area
+    $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_footer_toggle]', array(
+        'type'              => 'option',
+        'default'           => 'show',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'felix_sanitize_select'
+        
+    ) );
+    $wp_customize->add_control( 'felix_landing_page_template[jumbotron_secondary_toggle]', array(
+        'type'              => 'radio',
+        'section'           => 'felix_jumbotron_section',
+        'label'             => __( 'Include the Jumbotron Footer sections?', 'felix-landing-page' ),
+        'choices'           => array(
+            'show'             => __( 'Show', 'felix-landing-page' ),
+            'hide'             => __( 'Hide', 'felix-landing-page' )       
+    ) ) );
+    
+    // Jumbotron Footer CTA 1 Text
+    $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_footer_ctas][0][text]', array(
+        'type'              => 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+        
+    ) );
+    $wp_customize->add_control( 'felix_landing_page_template[jumbotron_footer_ctas][0][text]', array(
+        'type'              => 'text',
+        'section'           => 'felix_jumbotron_section',
+        'label'             => __( 'CTA 1', 'felix-landing-page' ),
+        'description'       => __( 'Text', 'felix-landing-page' )
+    ) );
+    
+    // Jumbotron Footer CTA 1 URL
+    $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_footer_ctas][0][url]', array(
+        'type'              => 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_url_raw'
+        
+    ) );
+    $wp_customize->add_control( 'felix_landing_page_template[jumbotron_footer_ctas][0][url]', array(
+        'type'              => 'text',
+        'section'           => 'felix_jumbotron_section',
+        'description'       => __( 'URL', 'felix-landing-page' )
+    ) );
+ 
+    // Jumbotron Footer CTA 2 Text
+    $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_footer_ctas][1][text]', array(
+        'type'              => 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+        
+    ) );
+    $wp_customize->add_control( 'felix_landing_page_template[jumbotron_footer_ctas][1][text]', array(
+        'type'              => 'text',
+        'section'           => 'felix_jumbotron_section',
+        'label'             => __( 'CTA 2', 'felix-landing-page' ),
+        'description'       => __( 'Text', 'felix-landing-page' )
+    ) );
+    
+    // Jumbotron Footer CTA 2 URL
+    $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_footer_ctas][1][url]', array(
+        'type'              => 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_url_raw'
+        
+    ) );
+    $wp_customize->add_control( 'felix_landing_page_template[jumbotron_footer_ctas][1][url]', array(
+        'type'              => 'text',
+        'section'           => 'felix_jumbotron_section',
+        'description'       => __( 'URL', 'felix-landing-page' )
+    ) );
+
+    // Jumbotron Footer CTA 3 Text
+    $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_footer_ctas][2][text]', array(
+        'type'              => 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+        
+    ) );
+    $wp_customize->add_control( 'felix_landing_page_template[jumbotron_footer_ctas][2][text]', array(
+        'type'              => 'text',
+        'section'           => 'felix_jumbotron_section',
+        'label'             => __( 'CTA 3', 'felix-landing-page' ),
+        'description'       => __( 'Text', 'felix-landing-page' )
+    ) );
+    
+    // Jumbotron Footer CTA 3 URL
+    $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_footer_ctas][2][url]', array(
+        'type'              => 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_url_raw'
+        
+    ) );
+    $wp_customize->add_control( 'felix_landing_page_template[jumbotron_footer_ctas][2][url]', array(
+        'type'              => 'text',
+        'section'           => 'felix_jumbotron_section',
+        'description'       => __( 'URL', 'felix-landing-page' )
+    ) );

@@ -15,30 +15,30 @@
             
             <div class="col-sm-12">
                 
-                <div id="pre-header">
+                <!-- <div id="pre-header">
         
-                    <span><?php echo $options['header_title_or_logo']; ?></span>
+                    <span>HELLO, DAVID</span>
                     <a href="#" class="accent-button">CART</a>
                     <a href="#" class="accent-button">ACCOUNT</a>
 
-                </div>
+                </div>-->
 
                 <div id="header-block">
                     
                     <div id="branding-block">
 
-                        <?php if ( get_option( 'header_title_or_logo', 'both' ) == 'both' ) : ?>
+                        <?php if ( $options[ 'header_title_or_logo' ] == 'both' ) : ?>
                         
-                            <img src="<?php echo get_option( 'header_logo', FELIX_LAND_URL . 'inc/templates/landing_page/images/header-logo.png' ); ?>" alt="<?php echo get_option( 'header_title', __( 'Felix Landing Page', 'felix-landing-page' ) ); ?>" />
-                            <h1><?php echo get_option( 'header_title', __( 'Felix Landing Page', 'felix-landing-page' ) ); ?></h1>
+                            <img src="<?php echo esc_url( $options[ 'header_logo' ] ); ?>" alt="<?php echo esc_attr( $options[ 'header_title' ] ); ?>" />
+                            <h1><?php echo esc_html( $options[ 'header_title' ] ); ?></h1>
                             
-                        <?php elseif ( get_option( 'header_title_or_logo', 'both' ) == 'logo' ) : ?>
+                        <?php elseif ( $options[ 'header_title_or_logo' ] == 'logo' ) : ?>
                             
-                            <img src="<?php echo get_option( 'header_logo', FELIX_LAND_URL . 'inc/templates/landing_page/images/header-logo.png' ); ?>" alt="<?php echo get_option( 'header_title', __( 'Felix Landing Page', 'felix-landing-page' ) ); ?>" />
+                            <img src="<?php echo esc_url( $options[ 'header_logo' ] ); ?>" alt="<?php echo esc_attr( $options[ 'header_title' ] ); ?>" />
                             
                         <?php else : ?>
                             
-                            <h1><?php echo get_option( 'header_title', __( 'Felix Landing Page', 'felix-landing-page' ) ); ?></h1>
+                            <h1><?php echo esc_html( $options[ 'header_title' ] ); ?></h1>
                             
                         <?php endif; ?>
 

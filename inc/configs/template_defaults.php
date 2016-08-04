@@ -25,8 +25,8 @@ $template_defaults = array(
     // Order that blocks appear
     'blockorder' => array(
         'header', 
-        'jumbotron', 
         'navbar', 
+        'jumbotron', 
         'products', 
         'content', 
         'articles', 
@@ -41,25 +41,32 @@ $template_defaults = array(
 
     // Jumbotron images and controls
     'jumbotron_primary_toggle' => 'show',
-    'jumbotron_primary_image' => '',
+    'jumbotron_primary_image' => FELIX_LAND_URL . 'inc/templates/landing_page/images/jumboat.jpg',
     'jumbotron_secondary_toggle' => 'show',
-    'jumbotron_secondary_image' => '',
-    'jumbotron_title' => 'Title',
-    'jumbotron_subtitle' => 'Subtitle',
+    'jumbotron_secondary_image' => FELIX_LAND_URL . 'inc/templates/landing_page/images/jumbotron-logo.png',
+    'jumbotron_title' => __( 'Title', 'felix-landing-page' ),
+    'jumbotron_subtitle' => __( 'Subtitle', 'felix-landing-page' ),
     'jumbotron_buttons' => array(
-        array( 'text' => 'Button 1', 'url' => '#' ),
-        array( 'text' => 'Button 2', 'url' => '#' )
+        array( 'text' => __( 'Button 1', 'felix-landing-page' ), 'url' => '#' ),
+        array( 'text' => __( 'Button 2', 'felix-landing-page' ), 'url' => '#' )
+    ),
+    'jumbotron_footer_toggle' => 'show',
+    'jumbotron_footer_ctas' => array(
+        array( 'text' => __( 'CTA 1', 'felix-landing-page' ), 'url' => '#' ),
+        array( 'text' => __( 'CTA 2', 'felix-landing-page' ), 'url' => '#' ),
+        array( 'text' => __( 'CTA 3', 'felix-landing-page' ), 'url' => '#' )
     ),
 
     // Navigation bar links
     'navbar_links' => array(
-        array( 'text' => 'Link 1', 'url' => '#' ),
-        array( 'text' => 'Link 2', 'url' => '#' ),
-        array( 'text' => 'Link 3', 'url' => '#' ),
-        array( 'text' => 'Link 4', 'url' => '#' )
+        array( 'text' => __( 'Link 1', 'felix-landing-page' ), 'url' => '#' ),
+        array( 'text' => __( 'Link 2', 'felix-landing-page' ), 'url' => '#' ),
+        array( 'text' => __( 'Link 3', 'felix-landing-page' ), 'url' => '#' ),
+        array( 'text' => __( 'Link 4', 'felix-landing-page' ), 'url' => '#' )
     ),
 
     // Featured products
+    'products_header' => __( 'Store', 'felix-landing-page' ),
     'products' => array(
         '',
         '',
