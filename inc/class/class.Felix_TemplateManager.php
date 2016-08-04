@@ -4,10 +4,13 @@
  * Manages the loading and configuration of the landing page.
  * 
  * @author Eric Green <eric@smartcat.ca>
- * @since 0.1.0
+ * @since 0.9.0
  * 
  */
-class TemplateManager {
+
+if( !class_exists( 'Felix_TemplateManager') ) :
+
+class Felix_TemplateManager {
     
     private $template_package;
     private $template_config;
@@ -22,7 +25,7 @@ class TemplateManager {
      * @param array $options Options to use.
      * @param array $template_config Configuration for the template.
      * @param string $template_package The package name for the template.
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function __construct( $page_id, $options, $template_config, $template_package ) {
@@ -39,7 +42,7 @@ class TemplateManager {
      * 
      * @param string $page_id
      * @return void
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function set_page_id( $page_id ) {
@@ -51,7 +54,7 @@ class TemplateManager {
      * 
      * @param array $options
      * @return void
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function set_options( $options ) {
@@ -63,7 +66,7 @@ class TemplateManager {
      * 
      * @param array $template_config
      * @return void
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function set_template_config( $template_config ) {
@@ -75,7 +78,7 @@ class TemplateManager {
      * 
      * @param string $template_file The file for the template
      * @return void
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function set_template( $template_package ) {
@@ -91,7 +94,7 @@ class TemplateManager {
      * Configure WordPress hooks.
      * 
      * @return void
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function add_hooks() {
@@ -106,7 +109,7 @@ class TemplateManager {
     /**
      * Enqueue scripts and styles if we're on the landing page.
      * 
-     * @since 0.1.0
+     * @since 0.9.0
      * @return void
      * 
      */
@@ -136,7 +139,7 @@ class TemplateManager {
      * Enqueue scripts and styles from default template package.
      * 
      * @return void
-     * @since 0.1.0
+     * @since 0.9.0
      *  
      */
     public function enqueue_template_scripts() {
@@ -177,7 +180,7 @@ class TemplateManager {
      * @param string $file
      * @param type $strings
      * @return boolean Whether the string was found.
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     private function parse_file( $file, $search ) {
@@ -201,7 +204,7 @@ class TemplateManager {
      * Check to see if we're on the landing page.
      * 
      * @return bool Whether or not we're loading the page to apply the template.
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     private function is_page() {
@@ -217,7 +220,7 @@ class TemplateManager {
      * 
      * @param string $template
      * @return string
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     public function load_template( $current_template ) {
@@ -235,5 +238,7 @@ class TemplateManager {
     }
 
 }
+
+endif;
 
 ?>

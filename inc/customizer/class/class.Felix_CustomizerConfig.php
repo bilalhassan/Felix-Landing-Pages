@@ -5,7 +5,10 @@
  *
  * @author eric
  */
-class CustomizerConfig {
+
+if( !class_exists( 'Felix_CustomizerConfig' ) ) :
+
+class Felix_CustomizerConfig {
     
     public function add_hooks() {
         
@@ -35,16 +38,17 @@ class CustomizerConfig {
             'priority' => 10
         ) );
 
-        require( __DIR__ . './../panels/panel-general.php' );
-        require( __DIR__ . './../panels/panel-blockorder.php' );
-        require( __DIR__ . './../panels/panel-header.php' );
-        require( __DIR__ . './../panels/panel-jumbotron.php' );
-        require( __DIR__ . './../panels/panel-navbar.php' );
-        require( __DIR__ . './../panels/panel-products.php' );
-        require( __DIR__ . './../panels/panel-content.php' );
-        require( __DIR__ . './../panels/panel-articles.php' );
-        require( __DIR__ . './../panels/panel-footer.php' );
-        
+        require( __DIR__ . './../panels/general.php' );
+        require( __DIR__ . './../panels/blockorder.php' );
+        require( __DIR__ . './../panels/header.php' );
+        require( __DIR__ . './../panels/jumbotron.php' );
+        require( __DIR__ . './../panels/navbar.php' );
+        require( __DIR__ . './../panels/products.php' );
+        require( __DIR__ . './../panels/content.php' );
+        require( __DIR__ . './../panels/articles.php' );
+        require( __DIR__ . './../panels/footer.php' );
+
+        $this->enqueue_scripts();
     }
 
     /**
@@ -53,7 +57,7 @@ class CustomizerConfig {
      * @param string $post_type
      * @param int $limit
      * @return array
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     private function get_post_choices( $post_type = "post", $limit = -1 ) {
@@ -86,7 +90,7 @@ class CustomizerConfig {
      * Options for the block selection.
      * 
      * @return array
-     * @since 0.1.0
+     * @since 0.9.0
      * 
      */
     private function get_block_choices() {
@@ -115,5 +119,7 @@ class CustomizerConfig {
     }
     
 }
+
+endif;
 
 ?>

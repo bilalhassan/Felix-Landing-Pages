@@ -1,4 +1,10 @@
 <?php
+/**
+ * View for main admin page
+ * 
+ * @since 0.9.0
+ * 
+ */
 
 ?>
 

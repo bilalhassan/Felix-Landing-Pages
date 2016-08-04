@@ -14,8 +14,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
     $wp_customize->add_setting('felix_landing_page_template[primary_color]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => '',
-        'default' => '#eab3fc'
+        'sanitize_callback' => 'sanitize_hex_color',
     ));
     $wp_customize->add_control( 
         new WP_Customize_Color_Control( 
@@ -33,7 +32,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
     $wp_customize->add_setting('felix_landing_page_template[accent_color]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => ''
+        'sanitize_callback' => 'sanitize_hex_color'
     ));
     $wp_customize->add_control( 
         new WP_Customize_Color_Control( 
@@ -51,9 +50,9 @@ $wp_customize->add_section( 'felix_general_section',  array(
     // Select for primary font
     $wp_customize->add_setting( 'felix_landing_page_template[primary_font]', array(
         'type'              => 'option',
-        'default'           => 'none',
+        'default'           => 'None',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'felix_sanitize_select'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[primary_font]', array(
@@ -66,9 +65,9 @@ $wp_customize->add_section( 'felix_general_section',  array(
     // Select for secondary font
     $wp_customize->add_setting( 'felix_landing_page_template[secondary_font]', array(
         'type'              => 'option',
-        'default'           => 'none',
+        'default'           => 'None',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'felix_sanitize_select'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[secondary_font]', array(
@@ -84,7 +83,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[header_font_size]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'felix_sanitize_num'
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[header_font_size]', array(
         'type'              => 'number',
@@ -100,7 +99,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[body_font_size]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'felix_sanitize_num'
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[body_font_size]', array(
         'type'              => 'number',
@@ -117,7 +116,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[social_icon_facebook_url]', array (
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => '',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[social_icon_facebook_url]', array(
         'type'              => 'text',
@@ -129,7 +128,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[social_icon_twitter_url]', array (
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => '',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[social_icon_twitter_url]', array(
         'type'              => 'text',
@@ -141,7 +140,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[social_icon_google_url]', array (
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => '',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[social_icon_google_url]', array(
         'type'              => 'text',
