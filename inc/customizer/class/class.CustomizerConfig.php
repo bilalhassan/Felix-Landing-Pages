@@ -56,6 +56,8 @@ class CustomizerConfig {
         require( __DIR__ . './../panels/panel-articles.php' );
         require( __DIR__ . './../panels/panel-footer.php' );
         
+        wp_enqueue_script( 'customizer', FELIX_LAND_URL . 'inc/customizer/assets/customize.js', array( 'jquery'), FELIX_LAND_VER );
+        
     }
 
     /**

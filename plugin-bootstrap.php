@@ -23,6 +23,10 @@ if( !defined( 'ABSPATH' ) ) :
     die( "Error: Unable to access URL directly." );
 endif;
 
+if( !defined( 'FELIX_LAND' ) ) :
+    define( 'FELIX_LAND', plugin_basename( __FILE__ ) );
+endif;
+
 // Define plugin version
 if( !defined( 'FELIX_LAND_VER' ) ) :
     define( 'FELIX_LAND_VER', '0.1.0' );
@@ -49,9 +53,12 @@ foreach( glob( FELIX_LAND_PATH . 'inc/customizer/class/*.php' ) as $file ) :
     require_once $file;
 endforeach;
 
+foreach( glob( FELIX_LAND_PATH . 'admin/class/*.php' ) as $file ) :
+    require_once $file;
+endforeach;
+
 
 LandingPagePlugin::instance()->run();
-
 
 function felix_do_activation() {
     LandingPagePlugin::instance()->activate();
