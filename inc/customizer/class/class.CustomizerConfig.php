@@ -11,14 +11,27 @@ class CustomizerConfig {
         
         add_action( 'customize_register', array( $this, 'register_config') );
         add_action( 'customize_controls_enqueue_scripts', array( $this, 'register_script') );
-         
+        add_action( 'wp_ajax_reload_customizer', array( $this, 'reload_customizer' ) );
     }
     
     
+    public function reload_customizer() {
+        
+        echo 'im here';
+        exit();
+    }
+    
     public function register_script() {
         
-        wp_enqueue_script( 'felix-customizer-js', FELIX_LAND_URL. 'inc/customizer/scripts/customizer.js', array( 'jquery', 'customize-controls' ), FELIX_LAND_VER, true );
+        $options = get_option( 'felix_landing_page_options' );
         
+        $translation = array(
+            'page_url'  => admin_url('customize.php?url=' . get_permalink( $options['landing_page_id'] ) ),
+            'ajax_url'  => admin_url( 'admin-ajax.php' )
+        );
+        
+        wp_enqueue_script( 'felix-customizer-js', FELIX_LAND_URL. 'inc/customizer/scripts/customizer.js', array( 'jquery', 'customize-controls' ), FELIX_LAND_VER, true );
+        wp_localize_script( 'felix-customizer-js', 'FelixCustomizer', $translation );
     }
     
     public function register_config( $wp_customize ) {
