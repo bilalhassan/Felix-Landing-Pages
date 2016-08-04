@@ -77,12 +77,19 @@ class Felix_LandPlugin {
         $this->page_creator = $page_creator;
     }
     
+    /**
+     * Set the admin page.
+     * 
+     * @param type $admin_page
+     * @return void
+     * @since 0.9.0
+     */
     public function set_admin( $admin_page ) {
         $this->admin = $admin_page;
     }
     
     /**
-     * Configure the runnable state of the plugin class.
+     * Configure the runnable state of the plugin.
      * 
      * @param type $template_manager Template manager to manage the landing page
      * @return void 
@@ -133,7 +140,6 @@ class Felix_LandPlugin {
         if( !get_option( 'felix_landing_page_options' ) ) :
             
             $options = array(
-                'default_template'      => FELIX_LAND_PATH . 'inc/templates/template-1.php',
                 'templates_dir'         => FELIX_LAND_PATH . 'inc/templates/',
                 'templates_dir_url'     => FELIX_LAND_URL . 'inc/templates/',
                 'global_res_url'        => FELIX_LAND_URL . 'inc/assets/',
@@ -151,7 +157,7 @@ class Felix_LandPlugin {
 
         if( !get_option( 'felix_landing_page_template' ) ) :
             
-            include( __DIR__ . './../configs/template_defaults.php' );
+            include( FELIX_LAND_CONF . 'template_defaults.php' );
             
             add_option( 'felix_landing_page_template', $template_defaults );
             

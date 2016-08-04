@@ -36,9 +36,14 @@ if( !defined( 'FELIX_LAND_PATH' ) ) :
     define( 'FELIX_LAND_PATH',  plugin_dir_path( __FILE__ ) );
 endif;
 
+if( !defined( 'FELIX_LAND_CONF' ) ) :
+    define( 'FELIX_LAND_CONF',  FELIX_LAND_PATH . 'inc/config/' );
+endif;
+
 
 // Bootstrap the plugin
-require_once( FELIX_LAND_PATH . 'inc/functions/autoload.php' );
+require 'autoload.php';
+require 'inc/functions.php';
 Felix_LandPlugin::instance()->run();
 
 
