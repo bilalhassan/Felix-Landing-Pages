@@ -35,8 +35,8 @@ $template_defaults = array(
 
     // Page header
     'header_title_or_logo' => 'both',
-    'header_title' => 'Felix Landing Page',
-    'header_logo' => '',
+    'header_title' => __( 'Felix Landing Page', 'felix-landing-page' ),
+    'header_logo' => FELIX_LAND_URL . 'inc/templates/landing_page/images/header-logo.png',
     'header_logo_size' => 50,
 
     // Jumbotron images and controls
