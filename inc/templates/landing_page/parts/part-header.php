@@ -17,7 +17,7 @@
                 
                 <div id="pre-header">
         
-                    <span><?php echo get_option( 'header_title_or_logo', 'both' ); ?></span>
+                    <span><?php echo $options['header_title_or_logo']; ?></span>
                     <a href="#" class="accent-button">CART</a>
                     <a href="#" class="accent-button">ACCOUNT</a>
 
