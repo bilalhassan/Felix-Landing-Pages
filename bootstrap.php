@@ -23,27 +23,24 @@ if( !defined( 'ABSPATH' ) ) :
     die( "Error: Unable to access URL directly." );
 endif;
 
-
-// Define plugin version
+// Plugin defines
 if( !defined( 'FELIX_LAND_VER' ) ) :
     define( 'FELIX_LAND_VER', '0.9.0' );
 endif;
 
-// Define the URL for the plugin
 if( !defined( 'FELIX_LAND_URL' ) ) :
     define( 'FELIX_LAND_URL', plugin_dir_url( __FILE__ ) );
 endif;
 
-// Define the path for the plugin
 if( !defined( 'FELIX_LAND_PATH' ) ) :
     define( 'FELIX_LAND_PATH',  plugin_dir_path( __FILE__ ) );
 endif;
 
 
+// Bootstrap the plugin
 require_once( FELIX_LAND_PATH . 'inc/functions/autoload.php' );
-
-
 Felix_LandPlugin::instance()->run();
+
 
 function felix_do_activation() {
     Felix_LandPlugin::instance()->activate();
