@@ -23,9 +23,6 @@ if( !defined( 'ABSPATH' ) ) :
     die( "Error: Unable to access URL directly." );
 endif;
 
-if( !defined( 'FELIX_LAND' ) ) :
-    define( 'FELIX_LAND', plugin_basename( __FILE__ ) );
-endif;
 
 // Define plugin version
 if( !defined( 'FELIX_LAND_VER' ) ) :
@@ -57,3 +54,5 @@ function felix_do_deactivation() {
     Felix_LandPlugin::instance()->deactivate();    
 }
 register_deactivation_hook( __FILE__, 'felix_do_deactivation' );
+
+

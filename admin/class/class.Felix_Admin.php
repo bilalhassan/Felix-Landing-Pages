@@ -54,7 +54,7 @@ class Felix_Admin {
     public function add_hooks() {
         add_action( 'admin_menu', array( $this, 'register' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-        add_filter( 'plugin_action_links_' . FELIX_LAND, array( $this, 'add_settings_link' ) );
+        add_filter( 'plugin_action_links_' . dirname( FELIX_LAND_PATH ), array( $this, 'add_settings_link' ) );
         
     }
     

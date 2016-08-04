@@ -8,7 +8,7 @@
  * 
  */
 
-if( !class_exists( 'Felix_LandingPagePlugin' ) ) :
+if( !class_exists( 'Felix_LandPlugin' ) ) :
 
 class Felix_LandPlugin {
     
@@ -133,19 +133,22 @@ class Felix_LandPlugin {
         if( !get_option( 'felix_landing_page_options' ) ) :
             
             $options = array(
+                'default_template'      => FELIX_LAND_PATH . 'inc/templates/template-1.php',
                 'templates_dir'         => FELIX_LAND_PATH . 'inc/templates/',
                 'templates_dir_url'     => FELIX_LAND_URL . 'inc/templates/',
                 'global_res_url'        => FELIX_LAND_URL . 'inc/assets/',
                 'theme_templates_dir'   => 'Felix/templates/'
             );
         
-            $page_creator = new PageCreator();
+            $page_creator = new Felix_PageCreator();
             $options['landing_page_id'] = $this->page_creator->create_page();
             
             add_option( 'felix_landing_page_options', $options );
             
         endif; 
         
+        add_option( 'felix_template_redirect', true );
+
         if( !get_option( 'felix_landing_page_template' ) ) :
             
             include( __DIR__ . './../configs/template_defaults.php' );

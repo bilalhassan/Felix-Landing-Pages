@@ -1,6 +1,6 @@
 <?php
 
-function __autoload( $class ) {
+function felix_land_autloader( $class ) {
 
     $root = FELIX_LAND_PATH;
 
@@ -33,3 +33,4 @@ function __autoload( $class ) {
     endforeach;
     
 }
+spl_autoload_register( 'felix_land_autloader' );
