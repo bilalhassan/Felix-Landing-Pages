@@ -11,14 +11,7 @@ class CustomizerConfig {
         
         add_action( 'customize_register', array( $this, 'register_config') );
         add_action( 'customize_controls_enqueue_scripts', array( $this, 'register_script') );
-        add_action( 'wp_ajax_reload_customizer', array( $this, 'reload_customizer' ) );
-    }
-    
-    
-    public function reload_customizer() {
         
-        echo 'im here';
-        exit();
     }
     
     public function register_script() {
