@@ -1,5 +1,6 @@
 jQuery( document ).ready( function( $ ) {
     
+    // Setup the admin page
     function init() { 
         
         $( '#plugin-details' ).hide();  
@@ -9,6 +10,7 @@ jQuery( document ).ready( function( $ ) {
     
     var hide = true;
     
+    // Hide or show extra details
     $( '#details-toggle' ).click( function( e ) {
         
         e.preventDefault();

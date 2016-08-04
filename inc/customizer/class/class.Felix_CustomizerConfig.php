@@ -1,15 +1,24 @@
 <?php
 
 /**
- * Description of CustomizerConfig
- *
- * @author eric
+ * Configure $wp_customize.
+ * 
+ * @author Eric Green <eric@smartcat.ca>
+ * @since 0.9.0
+ * 
  */
 
 if( !class_exists( 'Felix_CustomizerConfig' ) ) :
 
 class Felix_CustomizerConfig {
     
+    /**
+     * Register WordPress hooks.
+     * 
+     * @return void
+     * @since 0.9.0
+     * 
+     */
     public function add_hooks() {
         
         add_action( 'customize_register', array( $this, 'register_config') );
@@ -17,6 +26,13 @@ class Felix_CustomizerConfig {
         
     }
     
+    /**
+     * Enqueue scripts and styles.
+     * 
+     * @return void
+     * @since 0.9.0
+     * 
+     */
     public function enqueue_scripts() {
         
         $options = get_option( 'felix_landing_page_options' );
@@ -31,6 +47,14 @@ class Felix_CustomizerConfig {
         
     }
     
+    /**
+     * Setup the customizer.
+     * 
+     * @param WP_Customize_Manager $wp_customize
+     * @return void
+     * @since 0.9.0
+     * 
+     */
     public function register_config( $wp_customize ) {
 
         $wp_customize->add_panel( 'felix_landing_page', array(
@@ -47,8 +71,7 @@ class Felix_CustomizerConfig {
         require( __DIR__ . './../panels/content.php' );
         require( __DIR__ . './../panels/articles.php' );
         require( __DIR__ . './../panels/footer.php' );
-
-        $this->enqueue_scripts();
+        
     }
 
     /**
@@ -103,16 +126,23 @@ class Felix_CustomizerConfig {
             'products'  => __( 'Featured Products', 'felix-landing-page' ),
             'content'   => __( 'Content', 'felix-landing-page' ),
             'articles'  => __( 'Featured Articles', 'felix-landing-page' ),
-            'footer'    => __( 'Footer' )
+            'footer'    => __( 'Footer', 'felix-landing-page' )
         );
 
         return $blocks;
 
     }
 
+    /**
+     * Get the available font choices.
+     * 
+     * @return array
+     * @since 0.9.0
+     * 
+     */
     private function get_font_choices() {
 
-        include( __DIR__ . './../../configs/font_choices.php');
+        include( FELIX_LAND_CONF . 'font_choices.php');
 
         return $fonts;
 

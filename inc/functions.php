@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Sanitize options that require the user to make a selection.
+ * 
+ * @global WP_Customize_Manager $wp_customize
+ * @param mixed $value
+ * @param object $setting
+ * @return mixed
+ * @since 0.9.0
+ * 
+ */
 function felix_sanitize_select( $value, $setting ) {
     global $wp_customize;
  
@@ -12,6 +22,14 @@ function felix_sanitize_select( $value, $setting ) {
     return $value;
 }
 
+/**
+ * Sanitize numerical inputs.
+ * 
+ * @param mixed $value
+ * @return mixed
+ * @since 0.9.0
+ * 
+ */
 function felix_sanitize_num( $value ) {
     
     if( is_int( $value ) ) :
