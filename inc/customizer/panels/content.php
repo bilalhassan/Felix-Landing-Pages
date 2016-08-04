@@ -14,7 +14,7 @@ $wp_customize->add_section( 'felix_content_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[content_title]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'sanitize_text_field'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[content_title]', array(
@@ -28,7 +28,7 @@ $wp_customize->add_section( 'felix_content_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[content_subtitle]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'sanitize_text_field'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[content_subtitle]', array(
@@ -42,7 +42,7 @@ $wp_customize->add_section( 'felix_content_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[content_content]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'sanitize_text_field'
         
     ) );
     $wp_customize->add_control( 'felix_content_content', array(
@@ -56,7 +56,7 @@ $wp_customize->add_section( 'felix_content_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[content_buttons][0][text]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'sanitize_text_field'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[content_buttons][0][text]', array(
@@ -70,7 +70,7 @@ $wp_customize->add_section( 'felix_content_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[content_buttons][0][url]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'esc_url_raw'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[content_buttons][0][url]', array(
@@ -85,7 +85,7 @@ $wp_customize->add_section( 'felix_content_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[content_buttons][1][text]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'sanitize_text_field'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[content_buttons][1][text]', array(
@@ -99,7 +99,7 @@ $wp_customize->add_section( 'felix_content_section',  array(
     $wp_customize->add_setting( 'felix_landing_page_template[content_buttons][1][url]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'esc_url_raw'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[content_buttons][1][url]', array(

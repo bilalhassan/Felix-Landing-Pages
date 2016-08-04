@@ -15,7 +15,7 @@ $wp_customize->add_section( 'felix_articles_section',  array(
         'type'              => 'option',
         'default'           => 'none',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'felix_sanitize_select'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[articles][0]', array(
@@ -31,7 +31,7 @@ $wp_customize->add_section( 'felix_articles_section',  array(
         'type'              => 'option',
         'default'           => 'none',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'felix_sanitize_select'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[articles][1]', array(
@@ -47,7 +47,7 @@ $wp_customize->add_section( 'felix_articles_section',  array(
         'type'              => 'option',
         'default'           => 'none',
         'transport'         => 'refresh',
-        'sanatize_callback' => ''
+        'sanitize_callback' => 'felix_sanitize_select'
         
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[articles][2]', array(

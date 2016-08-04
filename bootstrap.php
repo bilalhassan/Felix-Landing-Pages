@@ -3,7 +3,7 @@
  * Plugin Name: Felix Landing Pages
  * Plugin URI: http://#/
  * Description: 
- * Version: 0.1.0
+ * Version: 0.9.0
  * Author: Smartcat
  * Author URI: https://smartcatdesign.net
  * License: GPL v2
@@ -23,49 +23,33 @@ if( !defined( 'ABSPATH' ) ) :
     die( "Error: Unable to access URL directly." );
 endif;
 
-if( !defined( 'FELIX_LAND' ) ) :
-    define( 'FELIX_LAND', plugin_basename( __FILE__ ) );
-endif;
-
-// Define plugin version
+// Plugin defines
 if( !defined( 'FELIX_LAND_VER' ) ) :
-    define( 'FELIX_LAND_VER', '0.1.0' );
+    define( 'FELIX_LAND_VER', '0.9.0' );
 endif;
 
-// Define the URL for the plugin
 if( !defined( 'FELIX_LAND_URL' ) ) :
     define( 'FELIX_LAND_URL', plugin_dir_url( __FILE__ ) );
 endif;
 
-// Define the path for the plugin
 if( !defined( 'FELIX_LAND_PATH' ) ) :
     define( 'FELIX_LAND_PATH',  plugin_dir_path( __FILE__ ) );
 endif;
 
 
+// Bootstrap the plugin
+require_once( FELIX_LAND_PATH . 'inc/functions/autoload.php' );
+Felix_LandPlugin::instance()->run();
 
-// Require all class files
-foreach( glob( FELIX_LAND_PATH . 'inc/class/*.php' ) as $file ) :
-    require_once $file;
-endforeach;
-
-foreach( glob( FELIX_LAND_PATH . 'inc/customizer/class/*.php' ) as $file ) :
-    require_once $file;
-endforeach;
-
-foreach( glob( FELIX_LAND_PATH . 'admin/class/*.php' ) as $file ) :
-    require_once $file;
-endforeach;
-
-
-LandingPagePlugin::instance()->run();
 
 function felix_do_activation() {
-    LandingPagePlugin::instance()->activate();
+    Felix_LandPlugin::instance()->activate();
 }
 register_activation_hook( __FILE__, 'felix_do_activation' );
 
 function felix_do_deactivation() {
-    LandingPagePlugin::instance()->deactivate();    
+    Felix_LandPlugin::instance()->deactivate();    
 }
 register_deactivation_hook( __FILE__, 'felix_do_deactivation' );
+
+
