@@ -36,14 +36,14 @@ $template_defaults = array(
     // Page header
     'header_title_or_logo' => 'both',
     'header_title' => __( 'Felix Landing Page', 'felix-landing-page' ),
-    'header_logo' => FELIX_LAND_URL . 'inc/templates/landing_page/images/header-logo.png',
+    'header_logo' => '',
     'header_logo_size' => 50,
 
     // Jumbotron images and controls
     'jumbotron_primary_toggle' => 'show',
-    'jumbotron_primary_image' => FELIX_LAND_URL . 'inc/templates/landing_page/images/jumboat.jpg',
+    'jumbotron_primary_image' => FELIX_LAND_URL . 'inc/templates/landing_page/images/jumbotron.jpg',
     'jumbotron_secondary_toggle' => 'show',
-    'jumbotron_secondary_image' => FELIX_LAND_URL . 'inc/templates/landing_page/images/jumbotron-logo.png',
+    'jumbotron_secondary_image' => '',
     'jumbotron_title' => __( 'Title', 'felix-landing-page' ),
     'jumbotron_subtitle' => __( 'Subtitle', 'felix-landing-page' ),
     'jumbotron_buttons' => array(
@@ -78,7 +78,7 @@ $template_defaults = array(
 
     // Static content area
     'content_title' => __( 'Sign up now for our mailing list!', 'felix-landing-page' ),
-    'content_subtitle' => __( 'We promise to only send important updates and promotional offers', 'felix-landing-page' ),
+    'content_subtitle' => __( 'We will only send important updates and promotional offers', 'felix-landing-page' ),
     'content_content' => '',
     'content_buttons' => array(
         array( 'text' => 'Button 1', 'url' => '#' ),

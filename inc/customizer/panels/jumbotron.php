@@ -31,9 +31,9 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     // Primary image
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_primary_image]', array(
         'type'              => 'option',
-        'default'           => FELIX_LAND_URL . 'inc/templates/landing_page/images/jumboat.jpg',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'esc_url_raw'
+        'sanitize_callback' => 'esc_url_raw',
+        'default'           => FELIX_LAND_URL . 'inc/templates/landing_page/images/jumbotron.jpg',
     ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'felix_landing_page_template[jumbotron_primary_image]', array(
         'mime_type'         => 'image',
@@ -62,7 +62,6 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     // Secondary image
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_secondary_image]', array(
         'type'              => 'option',
-        'default'           => FELIX_LAND_URL . 'inc/templates/landing_page/images/jumbotron-logo.png',
         'transport'         => 'refresh',
         'sanitize_callback' => 'esc_url_raw'
     ) );

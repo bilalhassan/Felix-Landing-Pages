@@ -46,7 +46,6 @@ $wp_customize->add_section( 'felix_header_section',  array(
         'type'              => 'option',
         'transport'         => 'refresh',
         'sanitize_callback' => 'esc_url_raw',
-        'default'           => FELIX_LAND_URL . 'inc/templates/landing_page/images/header-logo.png'    
     ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'felix_header_logo', array(
         'mime_type'         => 'image',
