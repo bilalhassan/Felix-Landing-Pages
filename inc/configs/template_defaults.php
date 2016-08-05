@@ -93,8 +93,8 @@ $template_defaults = array(
     ), //3
 
     // Page footer
-    'footer_copyright_text' => 'Copyright',
-    'footer_textboxes' => array( 'Text 1', 'Text 2' ),
+    'footer_copyright_text' => __( 'Company Name', 'felix-landing-page'),
+    'footer_textboxes' => array( __( 'Footer Text One', 'felix-landing-page'), __( 'Footer Text Two', 'felix-landing-page') ),
 );
         
 

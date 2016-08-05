@@ -5,7 +5,7 @@
 // ---------------------------------------------
 $wp_customize->add_section( 'felix_general_section',  array(
     'title'         => __( 'General', 'felix-landing-page' ),
-    'description'   => __( 'General configuration options.' ),
+    'description'   => __( 'Customize the fonts and colors in use on your landing page' ),
     'panel'         => 'felix_landing_page'
 ) );
 
@@ -23,7 +23,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
             array(
                 'setting'   => 'felix_landing_page_template[primary_color]',
                 'section'   => __( 'felix_general_section', 'felix-landing-page' ),
-                'label'     => __( 'Primary color', 'felix-landing-page' )
+                'label'     => __( 'Primary Color', 'felix-landing-page' )
             )
         )
     );
@@ -41,7 +41,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
             array(
                 'setting'   => 'felix_landing_page_template[accent_color]',
                 'section'   => __( 'felix_general_section', 'felix-landing-page' ),
-                'label'     => __( 'Accent color', 'felix-landing-page' )
+                'label'     => __( 'Accent Color', 'felix-landing-page' )
             )
         )
     );
@@ -58,7 +58,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
     $wp_customize->add_control( 'felix_landing_page_template[primary_font]', array(
         'type'              => 'select',
         'section'           => 'felix_general_section',
-        'label'             => __( 'Primary font', 'felix-landing-page' ),
+        'label'             => __( 'Primary Font', 'felix-landing-page' ),
         'choices'           => $this->get_font_choices()
      ) );
     
@@ -88,7 +88,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
     $wp_customize->add_control( 'felix_landing_page_template[header_font_size]', array(
         'type'              => 'number',
         'section'           => 'felix_general_section',
-        'label'             =>  __( 'Header font size', 'felix-landing-page' ),
+        'label'             =>  __( 'Header Font Size', 'felix-landing-page' ),
         'input_attrs'       => array(
             'min'   => 10,
             'max'   => 50,
@@ -104,7 +104,7 @@ $wp_customize->add_section( 'felix_general_section',  array(
     $wp_customize->add_control( 'felix_landing_page_template[body_font_size]', array(
         'type'              => 'number',
         'section'           => 'felix_general_section',
-        'label'             =>  __( 'Body font size', 'felix-landing-page' ),
+        'label'             =>  __( 'Body Font Size', 'felix-landing-page' ),
         'input_attrs'       => array(
             'min'   => 10,
             'max'   => 50,

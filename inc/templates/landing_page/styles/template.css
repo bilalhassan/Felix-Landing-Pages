@@ -284,7 +284,6 @@ section#action-call-block {
 }
 
 section#action-call-block .title {
-    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     letter-spacing: .2em;
     margin: 0;
@@ -293,7 +292,6 @@ section#action-call-block .title {
 }
 
 section#action-call-block .subtitle {
-    font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: .2em;
@@ -312,7 +310,6 @@ section#action-call-block .cta-button {
     border-radius: 2px;
     height: 40px;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
     letter-spacing: .2em;
     font-size: 10px;
     padding: 5px 30px;
@@ -322,7 +319,6 @@ section#action-call-block .cta-button {
 
 section#action-call-block #cta-content {
     margin-top: 15px;
-    font-family: 'Abel', sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -334,4 +330,59 @@ section#action-call-block #cta-content {
         text-align: center;
     }
     
+}
+
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    ARTICLES
+//////////////////////////////////////////////////*/
+
+#articles-container {
+    background-color: #fff;
+}
+
+div#articles {
+    padding: 100px 15px;
+}
+
+.article-body {
+    padding: 30px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 15px
+}
+
+.article-body h4 {
+    font-size: 14px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.article-body p {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+#no-articles {
+    text-align: center;
+    padding: 50px 0;
+}
+
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    FOOTER
+//////////////////////////////////////////////////*/
+
+#footer-container {
+    color: #fff;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+#footer-container .footer-text {
+    padding: 15px 0;
+}
+
+#footer-copyright {
+    padding: 15px 0;
 }

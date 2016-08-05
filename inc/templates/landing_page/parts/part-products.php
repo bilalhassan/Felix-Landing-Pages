@@ -7,7 +7,6 @@
  */
 ?>
 
-
 <section id="products-block">
    
     <div id="products-container" class="container-fluid">

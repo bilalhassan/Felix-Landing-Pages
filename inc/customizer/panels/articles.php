@@ -5,7 +5,7 @@
 // ---------------------------------------------
 $wp_customize->add_section( 'felix_articles_section',  array(
     'title'         => __( 'Featured Articles', 'felix-landing-page' ),
-    'description'   => __( 'Select up to 3 articles can be selected to be featured.', 'felix-landing-page' ),
+    'description'   => __( 'Select up to three articles to be featured.', 'felix-landing-page' ),
     'panel'         => 'felix_landing_page'
 ) );
 

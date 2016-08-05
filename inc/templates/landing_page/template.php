@@ -16,6 +16,7 @@ $options = get_option( 'felix_landing_page_template' );
             
             /* PRIMARY COLOR */
             #header-container,
+            #footer-container,
             #pre-header,
             #branding-block,
             #jumbotron-footer,
@@ -35,6 +36,7 @@ $options = get_option( 'felix_landing_page_template' );
                 background-color: <?php echo $options[ 'accent_color' ]; ?>;
             }
             
+            .article-body h4 a,
             .prod-body h4 a {
                 color: <?php echo $options[ 'accent_color' ]; ?>;
             }
@@ -52,15 +54,22 @@ $options = get_option( 'felix_landing_page_template' );
             #jumbotron-cta h2,
             #jumbotron-footer a,
             #products-header h2,
-            .prod-body h4 {
+            .prod-body h4,
+            section#action-call-block .title,
+            section#action-call-block .subtitle,
+            section#action-call-block .cta-button {
                 font-family: <?php echo $options[ 'primary_font' ]; ?>;
             }
             
             .prod-body h3,
             .prod-body p,
+            .article-body p,
             .product-roll-cta h4,
             #no-products,
-            #jumbotron-cta p {
+            #no-articles,
+            #jumbotron-cta p,
+            section#action-call-block #cta-content,
+            #footer-container {
                 font-family: <?php echo $options[ 'secondary_font' ]; ?>;
             }
             

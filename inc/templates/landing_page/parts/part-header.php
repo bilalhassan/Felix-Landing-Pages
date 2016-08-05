@@ -29,12 +29,16 @@
 
                         <?php if ( $options[ 'header_title_or_logo' ] == 'both' ) : ?>
                         
-                            <img src="<?php echo esc_url( $options[ 'header_logo' ] ); ?>" alt="<?php echo esc_attr( $options[ 'header_title' ] ); ?>" />
+                            <?php if ( $options[ 'header_logo' ] ) : ?>
+                                <img src="<?php echo esc_url( $options[ 'header_logo' ] ); ?>" alt="<?php echo esc_attr( $options[ 'header_title' ] ); ?>" />
+                            <?php endif; ?>
                             <h1><?php echo esc_html( $options[ 'header_title' ] ); ?></h1>
                             
                         <?php elseif ( $options[ 'header_title_or_logo' ] == 'logo' ) : ?>
                             
-                            <img src="<?php echo esc_url( $options[ 'header_logo' ] ); ?>" alt="<?php echo esc_attr( $options[ 'header_title' ] ); ?>" />
+                            <?php if ( $options[ 'header_logo' ] ) : ?>
+                                <img src="<?php echo esc_url( $options[ 'header_logo' ] ); ?>" alt="<?php echo esc_attr( $options[ 'header_title' ] ); ?>" />
+                            <?php endif; ?>
                             
                         <?php else : ?>
                             

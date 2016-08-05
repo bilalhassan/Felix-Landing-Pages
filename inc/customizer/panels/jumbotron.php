@@ -4,9 +4,8 @@
 // Jumbotron Section
 // ---------------------------------------------
 $wp_customize->add_section( 'felix_jumbotron_section',  array(
-    'title'         => __( 'Hero Image', 'felix-landing-page' ),
-    'description'   => __( 'The Hero image section can have both a primary background image and a secondary ' .
-                           'foreground image. Optionally, up to 2 buttons and titles can be configured.', 'felix-landing-page' ),
+    'title'         => __( 'Jumbotron', 'felix-landing-page' ),
+    'description'   => __( 'Customize the Jumbotron block.', 'felix-landing-page' ),
     'panel'         => 'felix_landing_page'
 ) );
 
@@ -22,7 +21,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     $wp_customize->add_control( 'felix_landing_page_template[jumbotron_primary_toggle]', array(
         'type'              => 'radio',
         'section'           => 'felix_jumbotron_section',
-        'label'             => __( 'Display the primary Hero Image', 'felix-landing-page' ),
+        'label'             => __( 'Use a background image for the Jumbotron?', 'felix-landing-page' ),
         'choices'           => array(
             'show'             => __( 'Show', 'felix-landing-page' ),
             'hide'             => __( 'Hide', 'felix-landing-page' )       
@@ -40,9 +39,8 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
         'mime_type'         => 'image',
         'settings'          => 'felix_landing_page_template[jumbotron_primary_image]',
         'section'           => 'felix_jumbotron_section',
-        'label'             => __( 'Hero primary image', 'felix-landing-page' ),
+        'label'             => __( 'Jumbotron Background Image', 'felix-landing-page' ),
     ) ) );
-    
     
     // Toggle secondary Jumbotron image
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_secondary_toggle]', array(
@@ -55,12 +53,11 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     $wp_customize->add_control( 'felix_landing_page_template[jumbotron_secondary_toggle]', array(
         'type'              => 'radio',
         'section'           => 'felix_jumbotron_section',
-        'label'             => __( 'Display the secondary Hero Image', 'felix-landing-page' ),
+        'label'             => __( 'Use a Secondary Jumbotron Image?', 'felix-landing-page' ),
         'choices'           => array(
             'show'             => __( 'Show', 'felix-landing-page' ),
             'hide'             => __( 'Hide', 'felix-landing-page' )       
     ) ) );
-    
     
     // Secondary image
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_secondary_image]', array(
@@ -73,7 +70,8 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
         'mime_type'         => 'image',
         'settings'          => 'felix_landing_page_template[jumbotron_secondary_image]',
         'section'           => 'felix_jumbotron_section',
-        'label'             => __( 'Hero secondary image', 'felix-landing-page' ),
+        'label'             => __( 'Jumbotron Secondary Image', 'felix-landing-page' ),
+        'description'       => __( 'Appears within the centered Jumbotron overlay container', 'felix-landing-page' ),
     ) ) );
     
     
@@ -87,7 +85,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     $wp_customize->add_control( 'felix_landing_page_template[jumbotron_title]', array(
         'type'              => 'text',
         'section'           => 'felix_jumbotron_section',
-        'label'             => __( 'Title', 'felix-landing-page' ),
+        'label'             => __( 'Overlay Title', 'felix-landing-page' ),
     ) );
 
     
@@ -101,7 +99,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     $wp_customize->add_control( 'felix_landing_page_template[jumbotron_subtitle]', array(
         'type'              => 'text',
         'section'           => 'felix_jumbotron_section',
-        'label'             => __( 'Subtitle', 'felix-landing-page' ),
+        'label'             => __( 'Overlay Subtitle', 'felix-landing-page' ),
     ) );
     
     
@@ -169,7 +167,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
         'sanitize_callback' => 'felix_sanitize_select'
         
     ) );
-    $wp_customize->add_control( 'felix_landing_page_template[jumbotron_secondary_toggle]', array(
+    $wp_customize->add_control( 'felix_landing_page_template[jumbotron_footer_toggle]', array(
         'type'              => 'radio',
         'section'           => 'felix_jumbotron_section',
         'label'             => __( 'Include the Jumbotron Footer sections?', 'felix-landing-page' ),
