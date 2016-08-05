@@ -5,16 +5,94 @@
  * 
  */
 
+$options = get_option( 'felix_landing_page_template' );
+
 ?>
 <html>
     <head>
         <?php wp_head(); ?>
+        
+        <style type="text/css">
+            
+            /* PRIMARY COLOR */
+            #header-container,
+            #footer-container,
+            #pre-header,
+            #branding-block,
+            #jumbotron-footer,
+            .product-roll-cta {
+                background-color: <?php echo $options[ 'primary_color' ]; ?>;
+            }
+        
+            #jumbotron-cta h2 {
+                color: <?php echo $options[ 'primary_color' ]; ?>;
+            }
+            
+            /* SECONDARY COLOR */
+            .accent-button,
+            section#nav-bar-block,
+            #products-header,
+            section#action-call-block {
+                background-color: <?php echo $options[ 'accent_color' ]; ?>;
+            }
+            
+            .article-body h4 a,
+            .prod-body h4 a {
+                color: <?php echo $options[ 'accent_color' ]; ?>;
+            }
+            
+            #products img {
+                border-bottom: 10px solid <?php echo $options[ 'accent_color' ]; ?>;
+            }
+            
+            /* FONTS */
+            body,
+            #pre-header,
+            #branding-block h1,
+            .accent-button,
+            section#nav-bar-block nav a,
+            #jumbotron-cta h2,
+            #jumbotron-footer a,
+            #products-header h2,
+            .prod-body h4,
+            section#action-call-block .title,
+            section#action-call-block .subtitle,
+            section#action-call-block .cta-button {
+                font-family: <?php echo $options[ 'primary_font' ]; ?>;
+            }
+            
+            .prod-body h3,
+            .prod-body p,
+            .article-body p,
+            .product-roll-cta h4,
+            #no-products,
+            #no-articles,
+            #jumbotron-cta p,
+            section#action-call-block #cta-content,
+            #footer-container {
+                font-family: <?php echo $options[ 'secondary_font' ]; ?>;
+            }
+            
+            #branding-block h1 {
+                font-size: <?php echo $options[ 'header_font_size' ]; ?>px;
+            }
+        
+            body {
+                font-size: <?php echo $options[ 'body_font_size' ]; ?>px;
+            }
+            
+            /* DIMENSIONS */
+            #branding-block img {
+                height: <?php echo $options[ 'header_logo_size' ]; ?>px;
+                width: auto;
+            }
+            
+        </style> 
+        
     </head>
     <body>
         <?php 
         
-        $options = get_option( 'felix_landing_page_template' );
-
         foreach( $options['blockorder'] as $block) :
 
             switch( $block ) :
@@ -23,12 +101,12 @@
                     require_once( 'parts/part-header.php' );
                     break;
 
-                case 'hero': 
-                    require_once( 'parts/part-jumbotron.php' );
-                    break;
-
                 case 'navbar': 
                     require_once( 'parts/part-navbar.php' );
+                    break;
+                
+                case 'jumbotron': 
+                    require_once( 'parts/part-jumbotron.php' );
                     break;
 
                 case 'products':
@@ -52,6 +130,7 @@
         endforeach;
         
         wp_footer();
+        
         ?>
     </body>      
 </html>

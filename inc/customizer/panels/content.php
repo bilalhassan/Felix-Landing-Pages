@@ -34,7 +34,7 @@ $wp_customize->add_section( 'felix_content_section',  array(
     $wp_customize->add_control( 'felix_landing_page_template[content_subtitle]', array(
         'type'              => 'text',
         'section'           => 'felix_content_section',
-        'label'             => __( 'Subitle', 'felix-landing-page' ),
+        'label'             => __( 'Subtitle', 'felix-landing-page' ),
     ) );
     
     
@@ -45,7 +45,7 @@ $wp_customize->add_section( 'felix_content_section',  array(
         'sanitize_callback' => 'sanitize_text_field'
         
     ) );
-    $wp_customize->add_control( 'felix_content_content', array(
+    $wp_customize->add_control( 'felix_landing_page_template[content_content]', array(
         'type'              => 'textarea',
         'section'           => 'felix_content_section',
         'label'             => __( 'Content', 'felix-landing-page' ),
@@ -76,7 +76,6 @@ $wp_customize->add_section( 'felix_content_section',  array(
     $wp_customize->add_control( 'felix_landing_page_template[content_buttons][0][url]', array(
         'type'              => 'text',
         'section'           => 'felix_content_section',
-        'label'             => __( 'Content', 'felix-landing-page' ),
         'description'       => __( 'URL', 'felix-landing-page' )
     ) );
     

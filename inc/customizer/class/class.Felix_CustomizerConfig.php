@@ -9,7 +9,7 @@
  */
 
 if( !class_exists( 'Felix_CustomizerConfig' ) ) :
-
+    
 class Felix_CustomizerConfig {
     
     /**

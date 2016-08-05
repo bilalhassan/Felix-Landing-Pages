@@ -5,7 +5,7 @@
 // ---------------------------------------------
 $wp_customize->add_section( 'felix_blockorder_section',  array(
     'title'         => __( 'Block Order', 'felix-landing-page' ),
-    'description'   => __( 'The 7 blocks that make up the landing page are able to be rearranged. ', 'felix-landing-page' ),
+    'description'   => __( 'Customize the stacking order of the modular content blocks that make up your landing page.', 'felix-landing-page' ),
     'panel'         => 'felix_landing_page'
 ) );
 

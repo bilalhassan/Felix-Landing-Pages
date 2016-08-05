@@ -8,21 +8,49 @@
 ?>
 
 <footer>
+
+    <div id="footer-container" class="container-fluid">
+        
+        <div class="row">
+            
+            <div class="col-sm-12">
+                
+                <div class="container">
+                    
+                    <div class="row">
+                       
+                        <?php foreach( $options[ 'footer_textboxes' ] as $textbox ) : ?>
+
+                            <?php if( $textbox != '' ) : ?>
+ 
+                                <div class="footer-text col-sm-6">
+                                    <?php echo esc_html( $textbox ); ?>
+                                </div>
+
+                            <?php endif; ?>
+
+                        <?php endforeach; ?>
                         
-    <?php if( $options['footer_copyright_text'] != '' ) : ?>
+                        <div class="col-sm-12">
+                            
+                            <?php if( $options[ 'footer_copyright_text' ] != '' ) : ?>
 
-        <div><?php echo esc_html( $options['footer_copyright_text'] ) ?></div>
+                                <div id="footer-copyright">
+                                    <?php echo esc_html( 'Copyright © ' . $options[ 'footer_copyright_text' ] ); ?>
+                                </div>
 
-    <?php endif;
+                            <?php endif; ?>
 
-    foreach( $options['footer_textboxes'] as $textbox ) :
-
-        if( $textbox != '' ) : ?>
-
-            <div><?php echo esc_html( $textbox ) ?></div>
-
-        <?php endif;
-
-    endforeach; ?>
-
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+    
+            </div>
+            
+        </div>
+        
+    </div>
+                        
 </footer>

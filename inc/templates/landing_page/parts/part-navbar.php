@@ -7,18 +7,32 @@
  */
 ?>
 
-<section>
-    <nav>
+<section id="nav-bar-block">
+    
+    <div class="container">
 
-       <?php foreach( $options['navbar_links'] as $link) : 
+        <div class="row">
+            
+            <div class="col-sm-12">
+        
+                <nav>
 
-           if( $link['text'] != '' && $link['url'] != '' ) : ?>
+                   <?php foreach( $options['navbar_links'] as $link) : 
 
-               <a href="<?php echo esc_url( $link['url'] ); ?>"><?php echo esc_html( $link['text'] ); ?></a>
+                       if( $link['text'] != '' && $link['url'] != '' ) : ?>
 
-           <?php endif;
+                           <a href="<?php echo esc_url( $link['url'] ); ?>"><?php echo esc_html( $link['text'] ); ?></a>
 
-        endforeach; ?>
+                       <?php endif;
 
-    </nav>
+                    endforeach; ?>
+
+                </nav>
+
+            </div>
+            
+        </div>
+        
+    </div>
+    
 </section>

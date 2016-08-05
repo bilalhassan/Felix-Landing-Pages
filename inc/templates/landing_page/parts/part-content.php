@@ -7,37 +7,54 @@
  */
 ?>
 
-<section>
+<section id="action-call-block">
+    
+    <div class="container">
+
+        <div class="row">
+            
+            <div id="call-outs" class="col-sm-7">
                         
-    <?php if( $options['content_title'] != '' ) : ?>
+                <?php if( $options[ 'content_title' ] != '' ) : ?>
 
-        <h1><?php echo esc_html( $options['content_title'] ); ?></h1>
+                    <h3 class="title"><?php echo esc_html( $options[ 'content_title' ] ); ?></h3>
 
-    <?php endif;
+                <?php endif; ?>
 
-    
-    if( $options['content_subtitle'] != '' ) : ?>
+                <?php if( $options[ 'content_subtitle' ] != '' ) : ?>
 
-        <h2><?php echo esc_html( $options['content_subtitle'] ); ?></h2>
+                    <h5 class="subtitle"><?php echo esc_html( $options[ 'content_subtitle' ] ); ?></h5>
 
-    <?php endif; 
+                <?php endif; ?>
 
-    
-    if( $options['content_content'] != '' ) : ?>
+                <?php if( $options['content_content'] != '' ) : ?>
 
-        <p><?php echo esc_html( $options['content_content'] ); ?></p>
+                    <div id="cta-content">
 
-    <?php endif;
+                        <p><?php echo esc_html( $options['content_content'] ); ?></p>
 
-    
-    foreach( $options['content_buttons'] as $button ) : 
+                    </div>
 
-        if( $button['text'] != '' && $button['url'] ) : ?>
+                <?php endif; ?>
 
-            <button href="<?php echo esc_url( $button['url'] ); ?>"><?php echo esc_html( $button['text'] );  ?></button>
+            </div>
 
-        <?php endif;
+            <div id="buttons" class="col-sm-5">
+            
+                <?php foreach( $options[ 'content_buttons' ] as $button ) : ?>
 
-    endforeach; ?>
+                    <?php if( $button[ 'text' ] != '' && $button[ 'url' ] ) : ?>
 
+                        <a class="cta-button" href="<?php echo esc_url( $button[ 'url' ] ); ?>"><?php echo esc_html( $button[ 'text' ] );  ?></a>
+
+                    <?php endif; ?>
+
+                <?php endforeach; ?>
+
+            </div>
+            
+        </div>
+        
+    </div>
+                        
 </section>
