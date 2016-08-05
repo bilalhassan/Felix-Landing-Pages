@@ -117,14 +117,14 @@ class Felix_TemplateManager {
     
         if( $this->is_page() ) :
             
-            include( __DIR__ . './../configs/font_choices.php');
+            include( FELIX_LAND_CONF . 'font_choices.php' );
             
-            if( isset( $this->options['primary_font'] ) ) :
-                wp_enqueue_style('felix-font-primary', '//fonts.googleapis.com/css?family=' . $fonts[ $this->template_config['primary_font'] ], array(), FELIX_LAND_VER );
+            if( isset( $this->template_config['primary_font'] ) ) :
+                wp_enqueue_style('felix-font-primary', '//fonts.googleapis.com/css?family=' . $fonts[ $this->template_config['primary_font'] ], FELIX_LAND_VER );
             endif;
             
-            if( isset( $this->options['secondary_font'] ) ) :
-                wp_enqueue_style('felix-font-secondary', '//fonts.googleapis.com/css?family=' . $fonts[ $this->template_config['secondary_font'] ], array(), FELIX_LAND_VER );
+            if( isset( $this->template_config['secondary_font'] ) ) :
+                wp_enqueue_style('felix-font-secondary', '//fonts.googleapis.com/css?family=' . $fonts[ $this->template_config['secondary_font'] ], FELIX_LAND_VER );
             endif;
             
             wp_enqueue_style( 'font-awesome', $this->options['global_res_url'] .'styles/font-awesome.min.css', array(), FELIX_LAND_VER );
