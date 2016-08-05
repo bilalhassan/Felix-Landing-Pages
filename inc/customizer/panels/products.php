@@ -9,7 +9,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
     'panel'         => 'felix_landing_page'
 ) );
 
-    // 
+    // Products Header Title
     $wp_customize->add_setting( 'felix_landing_page_template[products_header]', array(
         'type'              => 'option',
         'transport'         => 'refresh',
@@ -18,7 +18,7 @@ $wp_customize->add_section( 'felix_products_section',  array(
     ) );
     $wp_customize->add_control( 'felix_landing_page_template[products_header]', array(
         'type'              => 'text',
-        'section'           => 'felix_jumbotron_section',
+        'section'           => 'felix_products_section',
         'label'             => __( 'Products Section Heading', 'felix-landing-page' ),
     ) );
 

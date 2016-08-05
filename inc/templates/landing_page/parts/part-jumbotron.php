@@ -74,9 +74,11 @@
 
                                         <?php foreach ( $options[ 'jumbotron_footer_ctas' ] as $cta ) : ?>
                                         
-                                            <div class="jumbotron-footer-cta col-xs-<?php echo 12 / $cta_count; ?>">
-                                                <a href="<?php echo esc_url( $cta[ 'url' ] ); ?>"><?php echo esc_html( $cta[ 'text' ] ); ?></a>
-                                            </div>
+                                            <?php if ( $cta[ 'text' ] != '' ) : ?>
+                                                <div class="jumbotron-footer-cta col-xs-<?php echo 12 / $cta_count; ?>">
+                                                    <a href="<?php echo esc_url( $cta[ 'url' ] ); ?>"><?php echo esc_html( $cta[ 'text' ] ); ?></a>
+                                                </div>
+                                            <?php endif; ?>
                                         
                                         <?php endforeach; ?>
 

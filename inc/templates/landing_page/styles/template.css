@@ -8,10 +8,6 @@ and open the template in the editor.
     Author     : eric
 */
 
-body {
-    font-family: 'Montserrat', sans-serif;
-}
-
 body:not(.custom-background-image):before, body:not(.custom-background-image):after {
     display: none !important;
 }
@@ -25,16 +21,10 @@ a {
     HEADER
 //////////////////////////////////////////////////*/
 
-#header-container {
-    background-color: #07142b;
-}
-
-#pre-header{
+#pre-header {
     padding: 20px 50px;
-    background-color: #07142b;
     color: #fff;
     text-align: right;
-    font-family: 'Montserrat';
 }
 
 #pre-header span {
@@ -51,7 +41,6 @@ a {
 }
 
 #branding-block {
-    background-color: #07142b;
     padding: 50px 0;
     color: #fff;
     text-align: center;
@@ -60,11 +49,11 @@ a {
 }
  
 #branding-block h1 {
-    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     letter-spacing: .2em;
     font-size: 22px;
     margin: 15px 0 0 0;
+    font-weight: 300;
 }
 
 #branding-block img {
@@ -80,11 +69,9 @@ a {
     color: #fff;
     font-size: 10px;
     letter-spacing: .2em;
-    background-color: #0099e5;
     padding: 5px 15px;
     border-radius: 2px;
     margin-left: 2px;
-    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
 }
 
@@ -97,7 +84,6 @@ a {
 //////////////////////////////////////////////////*/
 
 section#nav-bar-block {
-    background-color: #0099e5;
     height: 50px;
     text-align: center;
 }
@@ -106,7 +92,6 @@ section#nav-bar-block nav a {
     line-height: 50px;
     color: #fff;
     font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     letter-spacing: .2em;
     margin: 0 20px;    
@@ -162,13 +147,12 @@ div#jumbotron-container .wrapper .inner {
     font-size: 18px;
     padding: 0 10px;
     letter-spacing: .5em;
-    font-family: 'Montserrat';
     line-height: 22px;
     text-transform: uppercase;
+    font-weight: 300;
 }
 
 #jumbotron-cta p {
-    font-family: 'Raleway';
     font-size: 10px;
     font-weight: 600;
     margin: 10px 0 0 0;
@@ -187,7 +171,6 @@ div#jumbotron-container .wrapper .inner {
 
 #jumbotron-footer {
     margin-top: -100px;
-    background-color: #07142b;
     text-align: center;
     color: #fff;
     line-height: 100px;
@@ -197,29 +180,30 @@ div#jumbotron-container .wrapper .inner {
 #jumbotron-footer a {
     color: #fff;
     letter-spacing: .2em;
-    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     text-transform: uppercase;
 }
 
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    PRODUCTS
+//////////////////////////////////////////////////*/
 
 #products-container {
     background-color: #fff;
 }
 
 #products-header {
-    background-color: #0099e5;
     padding: 0 40px;
     border-radius: 0 0 10px 10px;
 }
 
 #products-header h2 {
-    font-family: 'Montserrat', sans-serif;
     color: #fff;
     margin: 50px 0 0px 0;
     font-size: 20px;
     letter-spacing: .2em;
     text-transform: uppercase;
+    font-weight: 300;
 }
 
 #products-header hr {
@@ -233,7 +217,7 @@ div#jumbotron-container .wrapper .inner {
 
 #products img {
     width: 100%;
-    border-bottom: 10px solid #0099e5;
+    border-radius: 10px 10px 0 0;
 }
 
 .prod-body {
@@ -244,24 +228,20 @@ div#jumbotron-container .wrapper .inner {
 }
 
 .prod-body h4 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
-    margin: 0 0 5px 0;
-}
-
-.prod-body h4 a {
-    color: #0099e5;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
 .prod-body h3 {
-    font-family: 'Abel', sans-serif;
     font-size: 16px;
     margin: 0 0 20px 0;
 }
 
 .prod-body p {
-    font-family: 'Abel', sans-serif;
     font-size: 16px;
+    margin-bottom: 0;
 }
 
 .product-roll-cta {
@@ -269,7 +249,6 @@ div#jumbotron-container .wrapper .inner {
     vertical-align: middle;
     text-align: center;
     height: 400px;
-    background-color: #07142b;
     border-radius: 10px;
     padding: 30px;
 }
@@ -277,7 +256,6 @@ div#jumbotron-container .wrapper .inner {
 .product-roll-cta h4 {
     margin: 0;
     color: #fff;
-    font-family: 'Abel';
     margin-bottom: 15px;
 }
 
@@ -290,4 +268,9 @@ div#jumbotron-container .wrapper .inner {
     width: 60px;
     height: 60px;
     margin-bottom: 15px;
+}
+
+#no-products {
+    text-align: center;
+    padding: 50px 0;
 }

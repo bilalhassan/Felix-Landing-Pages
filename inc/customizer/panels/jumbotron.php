@@ -32,7 +32,7 @@ $wp_customize->add_section( 'felix_jumbotron_section',  array(
     // Primary image
     $wp_customize->add_setting( 'felix_landing_page_template[jumbotron_primary_image]', array(
         'type'              => 'option',
-        'default'           => FELIX_LAND_URL . 'inc/templates/landing_page/images/jumboat.',
+        'default'           => FELIX_LAND_URL . 'inc/templates/landing_page/images/jumboat.jpg',
         'transport'         => 'refresh',
         'sanitize_callback' => 'esc_url_raw'
     ) );

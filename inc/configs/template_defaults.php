@@ -9,14 +9,14 @@ $template_defaults = array(
     // template
 
     // General configuration
-    'primary_color' => '#cbef34',
-    'accent_color' => '#efae33',
+    'primary_color' => '#07142b',
+    'accent_color' => '#0099e5',
 
-    'primary_font'  => 'Raleway, sans-serif',
-    'secondary_font' => 'Raleway, sans-serif',
+    'primary_font'  => 'Montserrat, sans-serif',
+    'secondary_font' => 'Abel, sans-serif',
 
-    'header_font_size' => 20,
-    'body_font_size' => 12,
+    'header_font_size' => 22,
+    'body_font_size' => 14,
 
     'social_icon_facebook_url' => '#',
     'social_icon_google_url' => '#',
