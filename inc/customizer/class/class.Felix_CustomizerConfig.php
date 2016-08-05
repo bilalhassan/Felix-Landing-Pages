@@ -9,8 +9,6 @@
  */
 
 if( !class_exists( 'Felix_CustomizerConfig' ) ) :
-
-require __DIR__ . './../../functions/sanitize.php';
     
 class Felix_CustomizerConfig {
     
