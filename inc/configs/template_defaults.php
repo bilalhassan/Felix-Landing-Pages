@@ -77,9 +77,9 @@ $template_defaults = array(
     ), //6
 
     // Static content area
-    'content_title' => 'Title',
-    'content_subtitle' => 'Subtitle',
-    'content_content' => 'Content',
+    'content_title' => __( 'Sign up now for our mailing list!', 'felix-landing-page' ),
+    'content_subtitle' => __( 'We promise to only send important updates and promotional offers', 'felix-landing-page' ),
+    'content_content' => '',
     'content_buttons' => array(
         array( 'text' => 'Button 1', 'url' => '#' ),
         array( 'text' => 'Button 2', 'url' => '#' )

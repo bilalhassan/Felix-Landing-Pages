@@ -30,7 +30,8 @@ $options = get_option( 'felix_landing_page_template' );
             /* SECONDARY COLOR */
             .accent-button,
             section#nav-bar-block,
-            #products-header {
+            #products-header,
+            section#action-call-block {
                 background-color: <?php echo $options[ 'accent_color' ]; ?>;
             }
             
