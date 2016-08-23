@@ -10,7 +10,8 @@
 
 <div class="wrap">
     <h1><?php _e( 'Felix Landing Page', 'felix-landing-page' ); ?>
-        <a href="<?php echo admin_url( 'customize.php?url=' . get_permalink( $this->options['landing_page_id'] ) ) ?>" class="page-title-action"><?php _e( 'Customize', 'felix-landing-page' ) ?></a>
+        <a class="button button-secondary" href="<?php echo admin_url( 'customize.php?url=' . get_permalink( $this->options['landing_page_id'] ) ) ?>" class="page-title-action"><?php _e( 'Customize', 'felix-landing-page' ) ?></a>
+        <a target="_BLANK" class="button button-primary" href="<?php echo get_permalink( $this->options['landing_page_id'] ); ?>" class="page-title-action"><?php _e( 'View Landing Page', 'felix-landing-page' ) ?></a>
     </h1>
     <h2 class="screen-reader-text"><?php _e( 'Felix Landing Page', 'felix-landing-page' ); ?></h2>
     <div class="card">
@@ -36,14 +37,12 @@
                             <?php _e( 'Show off your best, select up to 6 products and 3 articles to be featured for your visitors to browse when they visit your page.', 'felix-landing-page' ); ?>
                         </p>
                         <h4><?php _e( 'Call To Action', 'felix-landing-page' ); ?></h4>
-                        <p>
-                            <?php _e( 'Provoke response from your guests', 'felix-landing-page' ); ?>
-                        </p>
+                        
                     </td>
 
                 </tr>
             </table>
         </div>
-        <a href="#" id="details-toggle" class="button-primary"><?php _e( 'Show more', 'felix-landing-page' ); ?></a>
+        <a href="#" id="details-toggle" class="button-"><?php _e( 'More', 'felix-landing-page' ); ?></a>
     </div>
 </div>

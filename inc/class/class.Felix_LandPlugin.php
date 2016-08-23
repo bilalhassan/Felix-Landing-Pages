@@ -12,7 +12,7 @@ if( !class_exists( 'Felix_LandPlugin' ) ) :
 
 class Felix_LandPlugin {
     
-    const DEV_MODE = true;
+    const DEV_MODE = false;
     
     private static $instance;
     

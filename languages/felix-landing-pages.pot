@@ -1,0 +1,510 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Felix Landing Pages\n"
+"POT-Creation-Date: 2016-08-22 20:53-0400\n"
+"PO-Revision-Date: 2016-08-22 20:52-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: bootstrap.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/class/class.Felix_Admin.php:103
+msgid "Settings"
+msgstr ""
+
+#: admin/views/main.php:12 admin/views/main.php:16
+#: inc/class/class.Felix_PageCreator.php:27 inc/config/template_defaults.php:38
+#: inc/customizer/class/class.Felix_CustomizerConfig.php:61
+msgid "Felix Landing Page"
+msgstr ""
+
+#: admin/views/main.php:13
+msgid "Customize"
+msgstr ""
+
+#: admin/views/main.php:14
+msgid "View Landing Page"
+msgstr ""
+
+#: admin/views/main.php:18
+msgid "Create landing pages with ease!"
+msgstr ""
+
+#: admin/views/main.php:19
+msgid ""
+"With Felix landing Page you can effortlessly create a custom landing page "
+"for your website in just a few simple clicks using the WordPress customizer."
+msgstr ""
+
+#: admin/views/main.php:20
+msgid "Getting Started"
+msgstr ""
+
+#: admin/views/main.php:21
+msgid ""
+"Simply click the \"Customize\" button and select the \"Felix Landing Page\" "
+"panel to begin customizing."
+msgstr ""
+
+#: admin/views/main.php:27
+msgid "Customization Overview"
+msgstr ""
+
+#: admin/views/main.php:28
+msgid "Modular Page Layout"
+msgstr ""
+
+#: admin/views/main.php:29
+msgid ""
+"The landing page is made up of 7 sections called blocks. You can configure, "
+"reorder, or completely disable each block to tailor your page's experience."
+msgstr ""
+
+#: admin/views/main.php:31
+msgid "Hero Images"
+msgstr ""
+
+#: admin/views/main.php:33
+msgid ""
+"In the Hero section you can set an eye catching full-width banner and "
+"optionally, a detail image to display what you're all about."
+msgstr ""
+
+#: admin/views/main.php:35
+msgid "Featured Articles and Products"
+msgstr ""
+
+#: admin/views/main.php:37
+msgid ""
+"Show off your best, select up to 6 products and 3 articles to be featured "
+"for your visitors to browse when they visit your page."
+msgstr ""
+
+#: admin/views/main.php:39 inc/customizer/panels/content.php:7
+msgid "Call To Action"
+msgstr ""
+
+#: admin/views/main.php:46
+msgid "More"
+msgstr ""
+
+#: inc/config/template_defaults.php:47 inc/customizer/panels/content.php:23
+#: inc/customizer/panels/header.php:26
+msgid "Title"
+msgstr ""
+
+#: inc/config/template_defaults.php:48 inc/customizer/panels/content.php:37
+msgid "Subtitle"
+msgstr ""
+
+#: inc/config/template_defaults.php:50 inc/customizer/panels/content.php:65
+#: inc/customizer/panels/jumbotron.php:115
+msgid "Button 1"
+msgstr ""
+
+#: inc/config/template_defaults.php:51 inc/customizer/panels/content.php:93
+#: inc/customizer/panels/jumbotron.php:143
+msgid "Button 2"
+msgstr ""
+
+#: inc/config/template_defaults.php:55 inc/customizer/panels/jumbotron.php:188
+msgid "CTA 1"
+msgstr ""
+
+#: inc/config/template_defaults.php:56 inc/customizer/panels/jumbotron.php:215
+msgid "CTA 2"
+msgstr ""
+
+#: inc/config/template_defaults.php:57 inc/customizer/panels/jumbotron.php:242
+msgid "CTA 3"
+msgstr ""
+
+#: inc/config/template_defaults.php:62 inc/customizer/panels/navbar.php:23
+msgid "Link 1"
+msgstr ""
+
+#: inc/config/template_defaults.php:63 inc/customizer/panels/navbar.php:51
+msgid "Link 2"
+msgstr ""
+
+#: inc/config/template_defaults.php:64 inc/customizer/panels/navbar.php:79
+msgid "Link 3"
+msgstr ""
+
+#: inc/config/template_defaults.php:65 inc/customizer/panels/navbar.php:107
+msgid "Link 4"
+msgstr ""
+
+#: inc/config/template_defaults.php:69 inc/customizer/panels/products.php:17
+msgid "Store"
+msgstr ""
+
+#: inc/config/template_defaults.php:80
+msgid "Sign up now for our mailing list!"
+msgstr ""
+
+#: inc/config/template_defaults.php:81
+msgid "We will only send important updates and promotional offers"
+msgstr ""
+
+#: inc/config/template_defaults.php:96 inc/customizer/panels/footer.php:18
+msgid "Company Name"
+msgstr ""
+
+#: inc/config/template_defaults.php:97 inc/customizer/panels/footer.php:32
+msgid "Footer Text One"
+msgstr ""
+
+#: inc/config/template_defaults.php:97 inc/customizer/panels/footer.php:46
+msgid "Footer Text Two"
+msgstr ""
+
+#: inc/customizer/class/class.Felix_CustomizerConfig.php:96
+msgid "None"
+msgstr ""
+
+#: inc/customizer/class/class.Felix_CustomizerConfig.php:122
+msgid "Disabled"
+msgstr ""
+
+#: inc/customizer/class/class.Felix_CustomizerConfig.php:123
+#: inc/customizer/panels/header.php:7
+msgid "Header"
+msgstr ""
+
+#: inc/customizer/class/class.Felix_CustomizerConfig.php:124
+msgid "Hero"
+msgstr ""
+
+#: inc/customizer/class/class.Felix_CustomizerConfig.php:125
+#: inc/customizer/panels/navbar.php:7
+msgid "Navigation Bar"
+msgstr ""
+
+#: inc/customizer/class/class.Felix_CustomizerConfig.php:126
+#: inc/customizer/panels/products.php:7
+msgid "Featured Products"
+msgstr ""
+
+#: inc/customizer/class/class.Felix_CustomizerConfig.php:127
+#: inc/customizer/panels/content.php:51
+msgid "Content"
+msgstr ""
+
+#: inc/customizer/class/class.Felix_CustomizerConfig.php:128
+#: inc/customizer/panels/articles.php:7
+msgid "Featured Articles"
+msgstr ""
+
+#: inc/customizer/class/class.Felix_CustomizerConfig.php:129
+#: inc/customizer/panels/footer.php:7
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer/panels/articles.php:8
+msgid "Select up to three articles to be featured."
+msgstr ""
+
+#: inc/customizer/panels/articles.php:24
+msgid "Article 1"
+msgstr ""
+
+#: inc/customizer/panels/articles.php:40
+msgid "Article 2"
+msgstr ""
+
+#: inc/customizer/panels/articles.php:56
+msgid "Article 3"
+msgstr ""
+
+#: inc/customizer/panels/blockorder.php:7
+msgid "Block Order"
+msgstr ""
+
+#: inc/customizer/panels/blockorder.php:8
+msgid ""
+"Customize the stacking order of the modular content blocks that make up your "
+"landing page."
+msgstr ""
+
+#: inc/customizer/panels/blockorder.php:24
+msgid "Block 1"
+msgstr ""
+
+#: inc/customizer/panels/blockorder.php:40
+msgid "Block 2"
+msgstr ""
+
+#: inc/customizer/panels/blockorder.php:56
+msgid "Block 3"
+msgstr ""
+
+#: inc/customizer/panels/blockorder.php:72
+msgid "Block 4"
+msgstr ""
+
+#: inc/customizer/panels/blockorder.php:87
+msgid "Block 5"
+msgstr ""
+
+#: inc/customizer/panels/blockorder.php:102
+msgid "Block 6"
+msgstr ""
+
+#: inc/customizer/panels/blockorder.php:117
+msgid "Block 7"
+msgstr ""
+
+#: inc/customizer/panels/content.php:8
+msgid "Add static content to be displayed. "
+msgstr ""
+
+#: inc/customizer/panels/content.php:66 inc/customizer/panels/content.php:94
+#: inc/customizer/panels/jumbotron.php:116
+#: inc/customizer/panels/jumbotron.php:144
+#: inc/customizer/panels/jumbotron.php:189
+#: inc/customizer/panels/jumbotron.php:216
+#: inc/customizer/panels/jumbotron.php:243 inc/customizer/panels/navbar.php:24
+#: inc/customizer/panels/navbar.php:52 inc/customizer/panels/navbar.php:80
+#: inc/customizer/panels/navbar.php:108
+msgid "Text"
+msgstr ""
+
+#: inc/customizer/panels/content.php:79 inc/customizer/panels/content.php:107
+#: inc/customizer/panels/jumbotron.php:129
+#: inc/customizer/panels/jumbotron.php:157
+#: inc/customizer/panels/jumbotron.php:202
+#: inc/customizer/panels/jumbotron.php:229
+#: inc/customizer/panels/jumbotron.php:256 inc/customizer/panels/navbar.php:37
+#: inc/customizer/panels/navbar.php:65 inc/customizer/panels/navbar.php:93
+#: inc/customizer/panels/navbar.php:121
+msgid "URL"
+msgstr ""
+
+#: inc/customizer/panels/footer.php:8
+msgid "Page footer configuration."
+msgstr ""
+
+#: inc/customizer/panels/footer.php:23
+msgid "Copyright Company Name"
+msgstr ""
+
+#: inc/customizer/panels/footer.php:37
+msgid "Text 1"
+msgstr ""
+
+#: inc/customizer/panels/footer.php:51
+msgid "Text 2"
+msgstr ""
+
+#: inc/customizer/panels/general.php:7
+msgid "General"
+msgstr ""
+
+#: inc/customizer/panels/general.php:8
+msgid "Customize the fonts and colors in use on your landing page"
+msgstr ""
+
+#: inc/customizer/panels/general.php:25 inc/customizer/panels/general.php:43
+msgid "felix_general_section"
+msgstr ""
+
+#: inc/customizer/panels/general.php:26
+msgid "Primary Color"
+msgstr ""
+
+#: inc/customizer/panels/general.php:44
+msgid "Accent Color"
+msgstr ""
+
+#: inc/customizer/panels/general.php:61
+msgid "Primary Font"
+msgstr ""
+
+#: inc/customizer/panels/general.php:76
+msgid "Secondary Font"
+msgstr ""
+
+#: inc/customizer/panels/general.php:91
+msgid "Header Font Size"
+msgstr ""
+
+#: inc/customizer/panels/general.php:107
+msgid "Body Font Size"
+msgstr ""
+
+#: inc/customizer/panels/general.php:124
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/customizer/panels/general.php:136
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/customizer/panels/general.php:148
+msgid "Google+ URL"
+msgstr ""
+
+#: inc/customizer/panels/header.php:8
+msgid "Customize the Header block."
+msgstr ""
+
+#: inc/customizer/panels/header.php:22
+msgid "Header Branding Style"
+msgstr ""
+
+#: inc/customizer/panels/header.php:25 inc/customizer/panels/header.php:54
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer/panels/header.php:27
+msgid "Both"
+msgstr ""
+
+#: inc/customizer/panels/header.php:34
+msgid "refresh"
+msgstr ""
+
+#: inc/customizer/panels/header.php:40
+msgid "Header Block Title"
+msgstr ""
+
+#: inc/customizer/panels/header.php:67
+msgid "Logo Height"
+msgstr ""
+
+#: inc/customizer/panels/header.php:68
+msgid "Logo width will be adjusted automatically to maintain aspect ratio"
+msgstr ""
+
+#: inc/customizer/panels/jumbotron.php:7
+msgid "Jumbotron"
+msgstr ""
+
+#: inc/customizer/panels/jumbotron.php:8
+msgid "Customize the Jumbotron block."
+msgstr ""
+
+#: inc/customizer/panels/jumbotron.php:24
+msgid "Use a background image for the Jumbotron?"
+msgstr ""
+
+#: inc/customizer/panels/jumbotron.php:26
+#: inc/customizer/panels/jumbotron.php:58
+#: inc/customizer/panels/jumbotron.php:174
+msgid "Show"
+msgstr ""
+
+#: inc/customizer/panels/jumbotron.php:27
+#: inc/customizer/panels/jumbotron.php:59
+#: inc/customizer/panels/jumbotron.php:175
+msgid "Hide"
+msgstr ""
+
+#: inc/customizer/panels/jumbotron.php:42
+msgid "Jumbotron Background Image"
+msgstr ""
+
+#: inc/customizer/panels/jumbotron.php:56
+msgid "Use a Secondary Jumbotron Image?"
+msgstr ""
+
+#: inc/customizer/panels/jumbotron.php:72
+msgid "Jumbotron Secondary Image"
+msgstr ""
+
+#: inc/customizer/panels/jumbotron.php:73
+msgid "Appears within the centered Jumbotron overlay container"
+msgstr ""
+
+#: inc/customizer/panels/jumbotron.php:87
+msgid "Overlay Title"
+msgstr ""
+
+#: inc/customizer/panels/jumbotron.php:101
+msgid "Overlay Subtitle"
+msgstr ""
+
+#: inc/customizer/panels/jumbotron.php:172
+msgid "Include the Jumbotron Footer sections?"
+msgstr ""
+
+#: inc/customizer/panels/navbar.php:8
+msgid "Configure the links for the navigation bar."
+msgstr ""
+
+#: inc/customizer/panels/products.php:8
+msgid "Select up to 6 products to be featured."
+msgstr ""
+
+#: inc/customizer/panels/products.php:22
+msgid "Products Section Heading"
+msgstr ""
+
+#: inc/customizer/panels/products.php:36
+msgid "Product 1"
+msgstr ""
+
+#: inc/customizer/panels/products.php:52
+msgid "Product 2"
+msgstr ""
+
+#: inc/customizer/panels/products.php:68
+msgid "Product 3"
+msgstr ""
+
+#: inc/customizer/panels/products.php:84
+msgid "Product 4"
+msgstr ""
+
+#: inc/customizer/panels/products.php:100
+msgid "Product 5"
+msgstr ""
+
+#: inc/customizer/panels/products.php:116
+msgid "Product 6"
+msgstr ""
+
+#: inc/templates/landing_page/parts/part-articles.php:64
+#: inc/templates/landing_page/parts/part-articles.php:74
+msgid "There are no articles to display."
+msgstr ""
+
+#: inc/templates/landing_page/parts/part-products.php:71
+msgid " USD"
+msgstr ""
+
+#: inc/templates/landing_page/parts/part-products.php:88
+#: inc/templates/landing_page/parts/part-products.php:98
+msgid "There are no products to display."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Felix Landing Pages"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Build your professional marketing Landing Page or Flyer in minutes. Easy to "
+"use page builder with WordPress Customizer"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Smartcat"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://smartcatdesign.net"
+msgstr ""
