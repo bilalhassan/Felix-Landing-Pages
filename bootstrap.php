@@ -1,9 +1,8 @@
 <?php
 /*
  * Plugin Name: Felix Landing Pages
- * Plugin URI: http://#/
- * Description: 
- * Version: 0.9.0
+ * Description: Build your professional marketing Landing Page or Flyer in minutes. Easy to use page builder with WordPress Customizer
+ * Version: 1.0.0
  * Author: Smartcat
  * Author URI: https://smartcatdesign.net
  * License: GPL v2

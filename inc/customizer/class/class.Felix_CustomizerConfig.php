@@ -41,8 +41,8 @@ class Felix_CustomizerConfig {
             'page_url'  => get_permalink( $options['landing_page_id'] ),
             'ajax_url'  => admin_url( 'admin-ajax.php' )
         );
-        
-        wp_enqueue_script( 'felix-customizer-js', FELIX_LAND_URL. 'inc/customizer/assets/scripts/customizer.js', array( 'jquery', 'customize-controls' ), FELIX_LAND_VER, true );
+        wp_enqueue_style('felix-customizer-js', FELIX_LAND_URL . 'inc/customizer/assets/styles/customizer.css', array(), FELIX_LAND_VER );
+        wp_enqueue_script( 'felix-customizer-js', FELIX_LAND_URL . 'inc/customizer/assets/scripts/customizer.js', array( 'jquery', 'customize-controls' ), FELIX_LAND_VER, true );
         wp_localize_script( 'felix-customizer-js', 'FelixCustomizer', $localize );
         
     }
